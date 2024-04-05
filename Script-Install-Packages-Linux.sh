@@ -12,7 +12,7 @@ sudo apt install -y tree wget recon-ng htop filezilla zip unzip rar unar unrar n
     bmon tcptrack nmap whois wireshark testdisk tshark git samba gnome-tweaks python3-impacket \
     gnome-disk-utility gparted xournal netdiscover dirb hydra netcat pluma bpytop edb-debugger
 
-# Wireshark
+# Ajout groupe Wireshark
 echo "Ajout de l'utilisateur au groupe "wireshark" :"
 sudo adduser $USER wireshark
 
