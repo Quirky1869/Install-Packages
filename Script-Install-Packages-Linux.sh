@@ -10,7 +10,7 @@ sudo apt update -y && sudo apt upgrade -y
 echo Installation des packets
 sudo apt install -y tree wget recon-ng htop filezilla zip unzip rar unar unrar net-tools \
     bmon tcptrack nmap whois wireshark testdisk tshark git samba gnome-tweaks python3-impacket \
-    gnome-disk-utility gparted xournal netdiscover dirb hydra netcat pluma bpytop
+    gnome-disk-utility gparted xournal netdiscover dirb hydra netcat pluma bpytop edb-debugger
 
 # Wireshark
 echo "Ajout de l'utilisateur au groupe "wireshark" :"
