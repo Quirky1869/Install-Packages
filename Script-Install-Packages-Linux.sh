@@ -75,7 +75,7 @@ echo Installation des packets
 sudo apt install -y tree wget recon-ng htop filezilla zip unzip rar unar unrar net-tools \
     bmon tcptrack nmap whois testdisk tshark git samba gnome-tweaks python3-impacket \
     gnome-disk-utility gparted xournal netdiscover dirb hydra netcat pluma bpytop edb-debugger pip \
-    make gnome-shell-extensions 
+    make gnome-shell-extensions gpaint
 
 sudo pip install -U notify-send
 
