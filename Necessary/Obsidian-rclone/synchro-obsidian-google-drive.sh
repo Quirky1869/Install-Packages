@@ -3,8 +3,8 @@ notify() {
 }
 
 obsync() {
-  rclone copy -vv /home/$USER/Obsidian_Vault/ Google-drive:/Obsidian-Google-Drive
- #rclone sync -vv /home/$USER/Obsidian_Vault/ Google-drive:/Obsidian-Google-Drive
+  rclone copy /home/$USER/Obsidian_Vault/ Google-drive:/Obsidian-Google-Drive
+ #rclone sync /home/$USER/Obsidian_Vault/ Google-drive:/Obsidian-Google-Drive
 
   while [[ -n $(jobs -r) ]]; do
     notify $1 "$2"
