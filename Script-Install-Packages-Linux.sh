@@ -350,12 +350,43 @@ case $choixObsidian in
         sudo cp -f ./Necessary/Obsidian-rclone/synchro-obsidian-google-drive.sh /usr/local/bin
         sudo chmod u+x /usr/local/bin/synchro-obsidian-google-drive.sh
         sudo chown $USER:$USER -R /usr/local/bin/synchro-obsidian-google-drive.sh
+
+        # Copie des logos pour Excalidraw
+        mkdir /home/$USER/Documents/Excalidraw
+        cp -f ./Necessary/Excalidraw/* /home/$USER/Documents/Excalidraw
         notify-send -i dialog-information "Obsidian installé avec succès" "Il faudra finaliser le paramètrage de rclone" -t 2000
-	notify-send -i face-wink "Rclone" "Regarder le fichier memo.txt pour configurer rclone" -t 4000
+	notify-send -i face-wink "Rclone" "Regarder le fichier memo.txt pour configurer rclone" -t 2000
+    notify-send "Excalidraw" "Les logos pour Excalidraw sont dans /home/$USER/Documents/Excalidraw" -t 2000
 	cd
         ;;
     n)  # Si le choix est non
         echo "Vous n'avez pas choisi d'installer Obsidian"
+        ;;
+    *)  # Si aucun choix ne correspond
+        echo "Ta pas fait le bon choix Maurice (Attention à la casse)"
+        ;;
+esac
+done
+
+# Burp Suite
+choixBurpSuite=""
+
+while [[ "$choixBurpSuite" != "y" && "$choixBurpSuite" != "n" ]]; do
+echo "Voulez-vous installer Burp Suite ? ( y  /  n ) :"
+read choixBurpSuite
+
+case $choixBurpSuite in
+    y)  # Si le choix est oui
+        echo "Vous avez choisi d'installer Burp Suite"
+        cd /home/$USER/Documents
+        wget https://portswigger-cdn.net/burp/releases/download?product=community&version=2024.2.1.3&type=Linux
+        chmod +x burpsuite*
+        ./burpsuite*
+        sudo rm -r burpsuite*
+	cd
+        ;;
+    n)  # Si le choix est non
+        echo "Vous n'avez pas choisi d'installer Burp Suite"
         ;;
     *)  # Si aucun choix ne correspond
         echo "Ta pas fait le bon choix Maurice (Attention à la casse)"

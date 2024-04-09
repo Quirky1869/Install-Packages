@@ -14,6 +14,8 @@
 
 # Dans Paramètres -> Apparence installé les themes voulu si cela n'est pas deja fait
 
+# Les logos pour excalidraw sont stockés dans "/home/$USER/Documents/Excalidraw"
+
 ######################################################################
 
 # Exemple de notify-send
