@@ -333,8 +333,37 @@ case $choixNordVPN in
 esac
 done
 
+# Obsidian et début de configuration de rclone
+choixObsidian=""
+
+while [[ "$choixObsidian" != "y" && "$choixObsidian" != "n" ]]; do
+echo "Voulez-vous installer Obsidian et commencer à configurer rclone ? ( y  /  n ) :"
+read choixObsidian
+
+case $choixObsidian in
+    y)  # Si le choix est oui
+        echo "Vous avez choisi d'installer Obsidian et commencer à configurer rclone"
+        mkdir ~/Obsidian_Vault
+        wget https://github.com/obsidianmd/obsidian-releases/releases/download/v1.5.12/obsidian_1.5.12_amd64.deb
+        sudo dpkg -i ./*deb
+        sudo rm -f ./*deb
+        cp -f ./Necessary/Obsidian-rclone/synchro-obsidian-google-drive.sh /user/local/bin
+        sudo chmod u+x synchro-obsidian-google-drive.sh
+        sudo chown $USER:$USER -R synchro-obsidian-google-drive.sh
+        notify-send -i dialog-information "Obsidian installé avec succès" "Il faudra finaliser le paramètrage de rclone" -t 4000
+	cd
+        ;;
+    n)  # Si le choix est non
+        echo "Vous n'avez pas choisi d'installer Obsidian"
+        ;;
+    *)  # Si aucun choix ne correspond
+        echo "Ta pas fait le bon choix Maurice (Attention à la casse)"
+        ;;
+esac
+done
+
 # Création des raccourcis clavier
-gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5/']" # Création des emplacements personnalisés des raccourcis claviers
+gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6/']" # Création des emplacements personnalisés des raccourcis claviers
 
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ name 'Discord' # Nom du raccourci
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ command 'discord' # Commande du raccourci
@@ -359,6 +388,10 @@ gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/or
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5/ name 'Terminal' # Nom du raccourci
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5/ command 'gnome-terminal' # Commande du raccourci
 gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5/ binding '<Alt>t' # Raccourci clavier attribué
+
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6/ name 'Synchro-Obsidian-Google-Drive' # Nom du raccourci
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6/ command 'synchro-obsidian-google-drive.sh' # Commande du raccourci
+gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6/ binding '<Primary><Alt>o' # Raccourci clavier attribué
 
 # Raccourci claviers non personnalisés
 echo "Pensez à configurer les raccourcis clavier non personnalisés"
@@ -399,6 +432,7 @@ case $choixLogoff in
         echo "La session va se fermer dans 1 seconde"
         sleep 1
         skill -KILL -u $USER
+        # pkill -u $USER
         ;;
     n)  # Si le choix est non
         echo "Vous n'avez pas choisi de fermer la session"
@@ -411,12 +445,3 @@ case $choixLogoff in
         ;;
 esac
 done
-
-# Compiz wobbly windows effect :
-# https://extensions.gnome.org/extension/3210/compiz-windows-effect/
-
-
-# Logoff
-# echo Fermeture de session pour application de tout les paramètres :
-# pkill -u $USER
-# skill -KILL -u $USER
