@@ -103,3 +103,6 @@ Faite de Google Chrome votre navigateur par defaut (en le lançant une fenetre d
 
 # Si on veux spécifier un dossier dans google drive alors il faudra taper :
 # rclone copy /home/$USER/Documents/notre-fichier.txt Google-drive:/nom-dossier-cible
+
+# Si on veux télécharger les fichiers/dossiers de google-drive vers notre pc alors il faut taper :
+rclone sync Google-drive:/Obsidian-Google-Drive /home/$USER/Obsidian_Vault/
