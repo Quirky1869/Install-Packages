@@ -47,7 +47,7 @@ case $choixGNS3 in
         sudo make install 
 
         echo "Si vous n'avez pas les VPCs dans GNS3, allez dans ~/Documents et executer le fichier install-dynamips.sh" 
-        notify-send "Si vous n'avez pas les VPCs dans GNS3, allez dans ~/Documents et executer le fichier install-dynamips.sh" 
+        notify-send "Si vous n'avez pas les VPCs dans GNS3, allez dans ~/Documents et executer le fichier install-dynamips.sh" -t 4000
         cd ~/Documents 
         touch install-dynamips.sh 
         echo '#!/bin/bash' >> install-dynamips.sh 
