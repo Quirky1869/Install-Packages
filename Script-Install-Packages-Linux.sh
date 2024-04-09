@@ -350,7 +350,8 @@ case $choixObsidian in
         sudo cp -f ./Necessary/Obsidian-rclone/synchro-obsidian-google-drive.sh /usr/local/bin
         sudo chmod u+x /usr/local/bin/synchro-obsidian-google-drive.sh
         sudo chown $USER:$USER -R /usr/local/bin/synchro-obsidian-google-drive.sh
-        notify-send -i dialog-information "Obsidian installé avec succès" "Il faudra finaliser le paramètrage de rclone" -t 4000
+        notify-send -i dialog-information "Obsidian installé avec succès" "Il faudra finaliser le paramètrage de rclone" -t 2000
+	notify-send -i face-wink "Rclone" "Regarder le fichier memo.txt pour configurer rclone" -t 4000
 	cd
         ;;
     n)  # Si le choix est non
