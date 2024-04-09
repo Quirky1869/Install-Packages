@@ -347,7 +347,7 @@ case $choixObsidian in
         wget https://github.com/obsidianmd/obsidian-releases/releases/download/v1.5.12/obsidian_1.5.12_amd64.deb
         sudo dpkg -i ./*deb
         sudo rm -f ./*deb
-        cp -f ./Necessary/Obsidian-rclone/synchro-obsidian-google-drive.sh /user/local/bin
+        cp -f ./Necessary/Obsidian-rclone/synchro-obsidian-google-drive.sh /usr/local/bin
         sudo chmod u+x synchro-obsidian-google-drive.sh
         sudo chown $USER:$USER -R synchro-obsidian-google-drive.sh
         notify-send -i dialog-information "Obsidian installé avec succès" "Il faudra finaliser le paramètrage de rclone" -t 4000
