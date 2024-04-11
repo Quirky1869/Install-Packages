@@ -347,9 +347,16 @@ case $choixObsidian in
         wget https://github.com/obsidianmd/obsidian-releases/releases/download/v1.5.12/obsidian_1.5.12_amd64.deb
         sudo dpkg -i ./*deb
         sudo rm -f ./*deb
-        sudo cp -f ./Necessary/Obsidian-rclone/synchro-obsidian-google-drive.sh /usr/local/bin
-        sudo chmod u+x /usr/local/bin/synchro-obsidian-google-drive.sh
-        sudo chown $USER:$USER -R /usr/local/bin/synchro-obsidian-google-drive.sh
+
+        # Copie du script qui permet de synchroniser les fichiers du PC vers Google Drive
+        sudo cp -f ./Necessary/Obsidian-rclone/synchro-pc-obidian-to-google-drive.sh /usr/local/bin
+        sudo chmod u+x /usr/local/bin/synchro-pc-obidian-to-google-drive.sh
+        sudo chown $USER:$USER -R /usr/local/bin/synchro-pc-obidian-to-google-drive.sh
+
+        # Copie du script qui permet de synchroniser les fichiers de Google Drive vers le PC
+        sudo cp -f ./Necessary/Obsidian-rclone/synchro-google-drive-to-pc-obsidian.sh /usr/local/bin
+        sudo chmod +x /usr/local/bin/synchro-google-drive-to-pc-obsidian.sh
+        #sudo chown $USER:$USER -R /usr/local/bin/synchro-google-drive-to-pc-obsidian.sh
 
         # Copie des logos pour Excalidraw
         mkdir /home/$USER/Documents/Excalidraw
