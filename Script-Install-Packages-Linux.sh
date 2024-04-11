@@ -436,7 +436,7 @@ sleep 10
 # Suppression du dossier "Necessary"
 #notify-send "Suppression du dossier Necessary" -t 3000
 #rm -rf "/home/$USER/Necessary"
-notify-send -i emblem-important "Pensez à supprimer le dossier ~/Necessary"
+notify-send -i emblem-important "Pensez à supprimer le dossier ~/Necessary" -t 3000
 
 # Pause
 echo Installation terminée il faut fermer la session pour appliquer tous les paramètres
