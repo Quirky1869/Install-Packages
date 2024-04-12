@@ -244,6 +244,7 @@ case $choixDockerDesktop in
         wget https://desktop.docker.com/linux/main/amd64/137060/docker-desktop-4.27.2-amd64.deb
         sudo apt install ./*.deb
         sudo rm ./*deb
+	sudo snap install docker
         cd
         sudo systemctl restart docker
         ;;
