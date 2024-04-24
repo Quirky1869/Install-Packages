@@ -488,6 +488,12 @@ case $choixLogoff in
         echo "Vous n'avez pas choisi de fermer la session"
         notify-send "Vous n'avez pas choisi de fermer la session" -t 5000
         echo "D'accord BYE !!!"
+	echo "██████╗ ██╗   ██╗███████╗"
+        echo "██╔══██╗╚██╗ ██╔╝██╔════╝"
+        echo "██████╔╝ ╚████╔╝ █████╗"  
+        echo "██╔══██╗  ╚██╔╝  ██╔══╝"  
+        echo "██████╔╝   ██║   ███████╗"
+        echo "╚═════╝    ╚═╝   ╚══════╝"        
         sleep 4
         ;;
     *)  # Si aucun choix ne correspond
