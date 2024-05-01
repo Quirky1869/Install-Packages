@@ -411,6 +411,30 @@ case $choixBurpSuite in
 esac
 done
 
+# Bashrc
+choixBashRc=""
+
+while [[ "$choixBashRc" != "y" && "$choixBashRc" != "n" ]]; do
+echo "Voulez-vous copier les fichiers bashrc pour votre terminal ? ( y  /  n ) :"
+read choixBashRc
+
+case $choixBashRc in
+    y)  # Si le choix est oui
+        echo "Vous avez choisi de copier les fichiers bashrc"
+        cp -f ./Necessary/bashrc/* /home/$USER/
+        notify-send -i face-smile "BashRc" "Les fichiers .bashrc ont été copiés dans /home/$USER" -t 3000
+        echo "Vous pouvez faire un : cp -f <.bashrc_voulu> .bashrc"
+	cd
+        ;;
+    n)  # Si le choix est non
+        echo "Vous n'avez pas choisi de copier les fichiers bashrc"
+        ;;
+    *)  # Si aucun choix ne correspond
+        echo "Ta pas fait le bon choix Maurice (Attention à la casse)"
+        ;;
+esac
+done
+
 # Création des raccourcis clavier
 gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6/']" # Création des emplacements personnalisés des raccourcis claviers
 
@@ -488,7 +512,7 @@ case $choixLogoff in
         echo "Vous n'avez pas choisi de fermer la session"
         notify-send "Vous n'avez pas choisi de fermer la session" -t 5000
         echo "D'accord BYE !!!"
-	echo "██████╗ ██╗   ██╗███████╗"
+	    echo "██████╗ ██╗   ██╗███████╗"
         echo "██╔══██╗╚██╗ ██╔╝██╔════╝"
         echo "██████╔╝ ╚████╔╝ █████╗"  
         echo "██╔══██╗  ╚██╔╝  ██╔══╝"  
