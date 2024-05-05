@@ -10,7 +10,7 @@ echo "╚═════╝ ╚═╝╚══════╝╚═╝  ╚═�
 sleep 3
 
 # Emplacement fichier log
-LOG_FILE="/var/log/Script-install-Packages-Linux.sh.log"
+LOG_FILE="/var/log/Script-install-Packages-Linux.sh.log" 
 
 # Fonction pour gérer l'interruption (Ctrl+C)
 interrupt_handler() {
