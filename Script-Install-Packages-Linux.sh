@@ -87,6 +87,7 @@ sudo apt install -y tree wget recon-ng htop filezilla zip unzip rar unar unrar n
     make gnome-shell-extensions gpaint rclone rclone-browser dsniff tcpdump libfuse2
 
 sudo pip install -U notify-send
+python3 -m pip install pwntools
 
 # Import Theme Terminal
 dconf load /org/gnome/terminal/legacy/profiles:/ < ./Necessary/gnome-terminal-profiles.dconf 
