@@ -397,7 +397,7 @@ case $choixBurpSuite in
     y)  # Si le choix est oui
         echo "Vous avez choisi d'installer Burp Suite"
         cd /home/$USER/Documents
-        wget https://portswigger-cdn.net/burp/releases/download?product=community&version=2024.2.1.3&type=Linux
+        wget https://portswigger-cdn.net/burp/releases/download?product=community&version=2024.3.1.4&type=Linux
         chmod +x burpsuite*
         ./burpsuite*
         sudo rm -r burpsuite*
