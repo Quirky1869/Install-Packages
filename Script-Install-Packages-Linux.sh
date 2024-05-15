@@ -84,7 +84,7 @@ echo Installation des packets
 sudo apt install -y tree wget recon-ng htop filezilla zip unzip rar unar unrar net-tools \
     bmon tcptrack nmap whois testdisk tshark git samba gnome-tweaks python3-impacket \
     gnome-disk-utility gparted xournal netdiscover dirb hydra netcat pluma bpytop edb-debugger pip \
-    make gnome-shell-extensions gpaint rclone rclone-browser dsniff tcpdump libfuse2 pv
+    make gnome-shell-extensions gpaint rclone rclone-browser dsniff tcpdump libfuse2 pv curl
 
 sudo pip install -U notify-send
 python3 -m pip install pwntools
@@ -397,9 +397,9 @@ case $choixBurpSuite in
     y)  # Si le choix est oui
         echo "Vous avez choisi d'installer Burp Suite"
         cd /home/$USER/Documents
-        wget https://portswigger-cdn.net/burp/releases/download?product=community&version=2024.3.1.4&type=Linux
+        curl 'https://portswigger-cdn.net/burp/releases/download?product=community&version=2024.3.1.4&type=Linux' -o burpsuite.sh
         chmod +x burpsuite*
-        sudo ./*burpsuite*
+        sudo ./burpsuite*
         sudo rm -r burpsuite*
 	cd
         ;;
