@@ -399,7 +399,7 @@ case $choixBurpSuite in
         cd /home/$USER/Documents
         wget https://portswigger-cdn.net/burp/releases/download?product=community&version=2024.3.1.4&type=Linux
         chmod +x burpsuite*
-        ./burpsuite*
+        sudo ./*burpsuite*
         sudo rm -r burpsuite*
 	cd
         ;;
