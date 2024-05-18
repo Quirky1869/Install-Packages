@@ -318,6 +318,7 @@ case $choixDockerDesktop in
 	sudo snap install docker
         cd
         sudo systemctl restart docker
+	sudo adduser $USER docker
         ;;
     n)  # Si le choix est non
         echo "Vous avez choisi de ne pas installer Docker Desktop"
