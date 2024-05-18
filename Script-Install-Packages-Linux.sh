@@ -33,6 +33,26 @@ echo ===========================
 # Mise à jour et upgrade
 sudo apt update -y && sudo apt upgrade -y 
 
+# Choix install Virtualbox
+choixVirtualbox=""
+
+while [[ "$choixVirtualbox" != "y" && "$choixVirtualbox" != "n" ]]; do
+echo "Voulez-vous installer Virtualbox ? ( y  /  n ) :"
+read choixVirtualbox
+
+case $choixVirtualbox in
+    y)  # Si le choix est oui
+        sudo apt install -y virtualbox virtualbox-ext-pack
+        ;;
+    n)  # Si le choix est non
+        echo "Vous avez choisi de ne pas installer Virtualbox"
+        ;;
+    *)  # Si aucun choix ne correspond
+        echo "Ta pas fait le bon choix Maurice (Attention à la casse)"
+        ;;
+esac
+done
+
 # Choix install Wireshark
 choixWireshark=""
 
@@ -106,7 +126,7 @@ sudo apt install -y tree wget recon-ng htop filezilla zip unzip rar unar unrar n
     bmon tcptrack nmap whois testdisk tshark git samba gnome-tweaks python3-impacket \
     gnome-disk-utility gparted xournal netdiscover dirb hydra netcat pluma bpytop edb-debugger pip \
     make gnome-shell-extensions gpaint rclone rclone-browser dsniff tcpdump libfuse2 pv curl network-manager \
-    virtualbox virtualbox-ext-pack diodon
+    diodon
 
 sudo pip install -U notify-send
 python3 -m pip install pwntools
