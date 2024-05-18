@@ -567,7 +567,7 @@ case $choixBashRc in
     y)  # Si le choix est oui
         echo "Vous avez choisi de copier les fichiers bashrc"
         cp -f ./.bashrc ./.bashrc.ori
-        cp -f ./Necessary/bashrc/* /home/$USER/
+        cp -f ./Necessary/bashrc/.bashrc* /home/$USER/
         notify-send -i face-smile "BashRc" "Les fichiers .bashrc ont été copiés dans /home/$USER" -t 3000
         echo "Vous pouvez faire un : cp -f <.bashrc_voulu> .bashrc"
         source .bashrc
