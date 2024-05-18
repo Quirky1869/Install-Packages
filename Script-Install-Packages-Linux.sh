@@ -10,7 +10,7 @@ echo "╚═════╝ ╚═╝╚══════╝╚═╝  ╚═�
 sleep 3
 
 # Emplacement fichier log
-LOG_FILE="/var/log/Script-install-Packages-Linux.sh.log" 
+LOG_FILE="/var/log/Script-Install-Packages-Linux.sh.log" 
 
 # Déclaration des variables
 varDownload="Téléchargements" # If you're computer is in english replace "Téléchargements" with "Downloads"
