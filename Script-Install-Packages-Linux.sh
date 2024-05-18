@@ -653,6 +653,9 @@ echo Installation terminée il faut fermer la session pour appliquer tous les pa
 notify-send -u critical "Installation terminée il faut fermer la session pour appliquer tous les paramètres" -t 4000
 sleep 3
 
+cd
+rm .sudo_as_admin_successful
+
 # Choix Logoff
 choixLogoff=""
 
