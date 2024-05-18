@@ -116,6 +116,11 @@ if ! shopt -oq posix; then
   fi
 fi
 
+### Encore et encore des alias ###
+
+alias dns="nmcli device show | grep IP4.DNS" # S'appui sur network-manager
+alias ipls="ip link show" # S'appui sur iproute2
+
 ### Post apocalypse ###
  
 symbol=☠
