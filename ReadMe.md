@@ -42,3 +42,4 @@ Le script à été testé uniquement sur :
 
 - Lors de la première installer de docker il est possible que des message d'erreur apparaisse -> **Solution** : après la fin du script et la fermeture de session effectué il faut relancer le script et sélectionner "y" lors de l'installation de docker. Donc si vous devez installer docker ne supprimer pas le dossier "**Necessary**" avant d'avoir lancé le script une deuxième fois :)
 - Discord et Burpsuite ne sont pas à jour -> Oui je sais, il est possible de devoir faire une update à la mano
+- Des .svg ont des erreurs lors du git clone -> Je sais aussi, certaines icones du thème "flat-remix" sont trop grandes pour GitHub
