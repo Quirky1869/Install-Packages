@@ -18,7 +18,7 @@ Install-packages est conçus pour pouvoir installer rapidement et facilement plu
 - Certaines installation durant le script ont besoin d'une fermeture de session (elle est prévu en fin de script), veuillez effectuer la fermeture de session avant d'essayer un packages, applis ...
 - Si vous décider d'installer rclone, les 2 fichiers présent dans "./Necessary/Obsidian-rclone" sont à modifier ; les chemins se nommant "Google-drive:/Obsidian-Google-Drive" et "/home/$USER/Obsidian_Vault/" vous sont personnels, ils dépendent des dossiers de votre pc et des dossiers de votre google-drive
 - Un fichier log se nommant `Script-install-Packages-Linux.sh.log` est créer dans `/var/log/`
-- Si vous décider de copier les `.bashrc` il intègre des petits changements sur le prompt (pour changer de `.bashrc` lancer la commande `cp -f <~/.bashrc_voulu> .bashrc` et relancer le prompt ou lancer un `source ~/.bashrc`) :
+- Si vous décider de copier les `.bashrc` il intègre des petits changements sur le prompt (pour changer de `.bashrc` lancer la commande `cp -f <~/.bashrc_voulu> .bashrc` et relancer le prompt ou lancer un `source ~/.bashrc`) :<br>
 1 - Un changement visuel pour chaque `.bashrc_*`<br>
 2 - Des alias (dns, ipls et metasploit (valide **uniquement** si vous avez fait l'installation de metasploit))
 - Si vous décider d'installer de nouveaux thèmes il génère un changement visuel du prompt que vous pouvez régler via les préférences de votre prompt ; des curseurs et icones qui sont accessibles via "Tweaks" 
