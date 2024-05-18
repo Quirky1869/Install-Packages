@@ -1,6 +1,6 @@
 ################################ MEMO ################################
 
-################################ RESTE A FAIRE ################################
+################################ RESTE A FAIRE ################################ 
 
 # !!!!!!!    Avant de configurer rclone assurez-vous d'ouvrir obsidian une 1ere fois et selectionner comme coffre à ouvrir ~/Obsidian_Vault    !!!!!!! #
 
