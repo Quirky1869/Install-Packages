@@ -12,11 +12,15 @@ sleep 3
 # Emplacement fichier log
 LOG_FILE="/var/log/Script-install-Packages-Linux.sh.log" 
 
+# Déclaration des variables
+varDownload="Téléchargements" # If you're computer is in english replace "Téléchargements" with "Downloads"
+
 # Fonction pour gérer l'interruption (Ctrl+C)
 interrupt_handler() {
     # echo "Suppression du dossier Necessary..."
     # rm -rf "/home/$USER/Necessary"
     echo "Interruption de l'exécution du script."
+    sleep 3
     exit 1
 }
 
@@ -29,10 +33,27 @@ echo ===========================
 # Mise à jour et upgrade
 sudo apt update -y && sudo apt upgrade -y 
 
-# Wireshark
-sudo apt install -y wireshark
-echo "Ajout de l'utilisateur au groupe "wireshark" :"
-sudo adduser $USER wireshark
+# Choix install Wireshark
+choixWireshark=""
+
+while [[ "$choixWireshark" != "y" && "$choixWireshark" != "n" ]]; do
+echo "Voulez-vous installer Wireshark ? ( y  /  n ) :"
+read choixWireshark
+
+case $choixWireshark in
+    y)  # Si le choix est oui
+        sudo apt install -y wireshark
+        echo "Ajout de l'utilisateur au groupe "wireshark" :"
+        sudo adduser $USER wireshark
+        ;;
+    n)  # Si le choix est non
+        echo "Vous avez choisi de ne pas installer Wireshark"
+        ;;
+    *)  # Si aucun choix ne correspond
+        echo "Ta pas fait le bon choix Maurice (Attention à la casse)"
+        ;;
+esac
+done
 
 # Choix installation de GNS3
 choixGNS3="" 
@@ -68,7 +89,7 @@ case $choixGNS3 in
         cd 
         ;;
     n)  # Si le choix est non
-        echo "Vous n'avez pas choisi d'installer GNS3, ouf !!!" 
+        echo "Vous avez choisi de ne pas installer GNS3, ouf !!!" 
         ;;
     *)  # Si aucun choix ne correspond
         echo "Ta pas fait le bon choix Maurice (Attention à la casse)" 
@@ -85,28 +106,47 @@ sudo apt install -y tree wget recon-ng htop filezilla zip unzip rar unar unrar n
     bmon tcptrack nmap whois testdisk tshark git samba gnome-tweaks python3-impacket \
     gnome-disk-utility gparted xournal netdiscover dirb hydra netcat pluma bpytop edb-debugger pip \
     make gnome-shell-extensions gpaint rclone rclone-browser dsniff tcpdump libfuse2 pv curl network-manager \
-    virtualbox virtualbox-ext-pack
+    virtualbox virtualbox-ext-pack diodon
 
 sudo pip install -U notify-send
 python3 -m pip install pwntools
 
-# Import Theme Terminal
-dconf load /org/gnome/terminal/legacy/profiles:/ < ./Necessary/gnome-terminal-profiles.dconf 
 
-# Import Modeles
-cp -r ./Necessary/Nouveaux-documents/* /home/$USER/Modèles 
+#Choix install themes
+choixThemes=""
 
-# Import Themes
-mkdir /home/$USER/.themes/ 
-cp -r ./Necessary/Themes/* /home/$USER/.themes/ 
+while [[ "$choixThemes" != "y" && "$choixThemes" != "n" ]]; do
+echo "Voulez-vous installer de nouveaux themes (Icones, curseurs ...) ? ( y  /  n ) :"
+read choixThemes
 
-# Import Share Icons
-mkdir /home/$USER/.local/share/icons/ 
-cp -r ./Necessary/Share-Icons/* /home/$USER/.local/share/icons/ 
+case $choixThemes in
+    y)  # Si le choix est oui
+        # Import Theme Terminal
+        dconf load /org/gnome/terminal/legacy/profiles:/ < ./Necessary/gnome-terminal-profiles.dconf 
 
-# Import Icons
-mkdir /home/$USER/.icons/ 
-cp -r ./Necessary/Icons/* /home/$USER/.icons/ 
+        # Import Modeles
+        cp -r ./Necessary/Nouveaux-documents/* /home/$USER/Modèles 
+
+        # Import Themes
+        mkdir /home/$USER/.themes/ 
+        cp -r ./Necessary/Themes/* /home/$USER/.themes/ 
+
+        # Import Share Icons
+        mkdir /home/$USER/.local/share/icons/ 
+        cp -r ./Necessary/Share-Icons/* /home/$USER/.local/share/icons/ 
+
+        # Import Icons
+        mkdir /home/$USER/.icons/ 
+        cp -r ./Necessary/Icons/* /home/$USER/.icons/ 
+        ;;
+    n)  # Si le choix est non
+        echo "Vous avez choisi de ne pas installer de nouveaux themes"
+        ;;
+    *)  # Si aucun choix ne correspond
+        echo "Ta pas fait le bon choix Maurice (Attention à la casse)"
+        ;;
+esac
+done
 
 # Choix install Google Chrome
 choixGoogleChrome=""
@@ -117,7 +157,7 @@ read choixGoogleChrome
 
 case $choixGoogleChrome in
     y)  # Si le choix est oui
-        cd ~/Téléchargements
+        cd ~/$varDownload
         wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
         echo Installation de Google Chrome :
         sudo dpkg -i ./*.deb
@@ -125,7 +165,7 @@ case $choixGoogleChrome in
         cd
         ;;
     n)  # Si le choix est non
-        echo "Vous n'avez pas choisi d'installer Google Chrome"
+        echo "Vous avez choisi de ne pas installer Google Chrome"
         ;;
     *)  # Si aucun choix ne correspond
         echo "Ta pas fait le bon choix Maurice (Attention à la casse)"
@@ -143,7 +183,7 @@ read choixVisualStudioCode
 case $choixVisualStudioCode in
     y)  # Si le choix est oui
         echo Telechargement de Visual Studio Code :
-        cd ~/Téléchargements
+        cd ~/$varDownload
         wget --content-disposition https://go.microsoft.com/fwlink/?LinkID=760868
         echo Installation de Visual Studio Code :
         sudo dpkg -i ./*.deb
@@ -151,7 +191,7 @@ case $choixVisualStudioCode in
         cd
         ;;
     n)  # Si le choix est non
-        echo "Vous n'avez pas choisi d'installer Visual Studio Code"
+        echo "Vous avez choisi de ne pas installer Visual Studio Code"
         ;;
     *)  # Si aucun choix ne correspond
         echo "Ta pas fait le bon choix Maurice (Attention à la casse)"
@@ -169,7 +209,7 @@ read choixDiscord
 case $choixDiscord in
     y)  # Si le choix est oui
         echo "Vous avez choisi d'installer Discord"
-        cd ~/Téléchargements
+        cd ~/$varDownload
         wget https://dl.discordapp.net/apps/linux/0.0.47/discord-0.0.47.deb
         echo Installation de Discord :
 	sudo dpkg -i ./*.deb
@@ -177,7 +217,7 @@ case $choixDiscord in
 	cd
         ;;
     n)  # Si le choix est non
-        echo "Vous n'avez pas choisi d'installer Discord"
+        echo "Vous avez choisi de ne pas installer Discord"
         ;;
     *)  # Si aucun choix ne correspond
         echo "Ta pas fait le bon choix Maurice (Attention à la casse)"
@@ -198,7 +238,7 @@ case $choixApache2 in
         sudo apt install -y apache2
         ;;
     n)  # Si le choix est non
-        echo "Vous n'avez pas choisi d'installer Apache2"
+        echo "Vous avez choisi de ne pas installer Apache2"
         ;;
     *)  # Si aucun choix ne correspond
         echo "Ta pas fait le bon choix Maurice (Attention à la casse)"
@@ -219,7 +259,7 @@ case $choixmariadb in
         sudo apt install -y mariadb-server
         ;;
     n)  # Si le choix est non
-        echo "Vous n'avez pas choisi d'installer mariadb"
+        echo "Vous avez choisi de ne pas installer mariadb"
         ;;
     *)  # Si aucun choix ne correspond
         echo "Ta pas fait le bon choix Maurice (Attention à la casse)"
@@ -240,7 +280,7 @@ case $choixDockerDesktop in
     y)  # Si le choix est oui
         echo "Vous avez choisi d'installer Docker Desktop"
         #sudo apt install -y curl docker-ce-cli pass uidmap
-        cd ~/Téléchargements
+        cd ~/$varDownload
         sudo apt install apt-transport-https ca-certificates curl gnupg
         curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker.gpg
         echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu jammy stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
@@ -260,7 +300,7 @@ case $choixDockerDesktop in
         sudo systemctl restart docker
         ;;
     n)  # Si le choix est non
-        echo "Vous n'avez pas choisi d'installer Docker Desktop"
+        echo "Vous avez choisi de ne pas installer Docker Desktop"
         ;;
     *)  # Si aucun choix ne correspond
         echo "Ta pas fait le bon choix Maurice (Attention à la casse)"
@@ -280,7 +320,7 @@ done
 #         sudo systemctl restart docker
 #         ;;
 #     n )  # Si le choix est non
-#         echo "Vous n'avez pas choisi d'installer Docker et Docker Compose"
+#         echo "Vous avez choisi de ne pas installer Docker et Docker Compose"
 #         ;;
 #     *)  # Si aucun choix ne correspond
 #         echo "Ta pas fait le bon choix Maurice (Attention à la casse)"
@@ -298,14 +338,14 @@ case $choixGithubDesktop in
     y)  # Si le choix est oui
         echo "Vous avez choisi d'installer GitHub Desktop"
         sudo apt install -y apt-transport-https gnupg2 software-properties-common
-        cd ~/Téléchargements
+        cd ~/$varDownload
         wget https://github.com/shiftkey/desktop/releases/download/release-3.1.7-linux1/GitHubDesktop-linux-3.1.7-linux1.deb
         sudo apt install -f ./GitHubDesktop-linux-3.1.7-linux1.deb
         rm ./*.deb
 	cd
         ;;
     n)  # Si le choix est non
-        echo "Vous n'avez pas choisi d'installer GitHub Desktop"
+        echo "Vous avez choisi de ne pas installer GitHub Desktop"
         ;;
     *)  # Si aucun choix ne correspond
         echo "Ta pas fait le bon choix Maurice (Attention à la casse)"
@@ -323,7 +363,7 @@ read choixNordVPN
 case $choixNordVPN in
     y)  # Si le choix est oui
         echo "Vous avez choisi d'installer NordVPN"
-        cd ~/Téléchargements
+        cd ~/$varDownload
         wget -c https://repo.nordvpn.com/deb/nordvpn/debian/pool/main/nordvpn-release_1.0.0_all.deb
         sudo dpkg -i nordvpn-release_1.0.0_all.deb
         sudo apt update
@@ -337,7 +377,7 @@ case $choixNordVPN in
 	cd
         ;;
     n)  # Si le choix est non
-        echo "Vous n'avez pas choisi d'installer NordVPN"
+        echo "Vous avez choisi de ne pas installer NordVPN"
         ;;
     *)  # Si aucun choix ne correspond
         echo "Ta pas fait le bon choix Maurice (Attention à la casse)"
@@ -379,7 +419,7 @@ case $choixObsidian in
 	cd
         ;;
     n)  # Si le choix est non
-        echo "Vous n'avez pas choisi d'installer Obsidian"
+        echo "Vous avez choisi de ne pas installer Obsidian"
         ;;
     *)  # Si aucun choix ne correspond
         echo "Ta pas fait le bon choix Maurice (Attention à la casse)"
@@ -387,7 +427,7 @@ case $choixObsidian in
 esac
 done
 
-# Burp Suite
+# Choix install Burp Suite
 choixBurpSuite=""
 
 while [[ "$choixBurpSuite" != "y" && "$choixBurpSuite" != "n" ]]; do
@@ -405,7 +445,7 @@ case $choixBurpSuite in
 	cd
         ;;
     n)  # Si le choix est non
-        echo "Vous n'avez pas choisi d'installer Burp Suite"
+        echo "Vous avez choisi de ne pas installer Burp Suite"
         ;;
     *)  # Si aucun choix ne correspond
         echo "Ta pas fait le bon choix Maurice (Attention à la casse)"
@@ -413,7 +453,90 @@ case $choixBurpSuite in
 esac
 done
 
-# Bashrc
+# Choix install Vagrant
+choixVagrant=""
+
+while [[ "$choixVagrant" != "y" && "$choixVagrant" != "n" ]]; do
+echo "Voulez-vous installer Vagrant ? ( y  /  n ) :"
+read choixVagrant
+
+case $choixVagrant in
+    y)  # Si le choix est oui
+    cd /home/$USER/Documents
+        wget -O- https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
+        echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
+        sudo apt update && sudo apt install -y vagrant
+        vagrant plugin install vagrant-vbguest
+        vagrant --version
+	cd
+        ;;
+    n)  # Si le choix est non
+        echo "Vous avez choisi de ne pas installer Vagrant'"
+        ;;
+    *)  # Si aucun choix ne correspond
+        echo "Ta pas fait le bon choix Maurice (Attention à la casse)"
+        ;;
+esac
+done
+
+# Choix install Ansible
+choixAnsible=""
+
+while [[ "$choixAnsible" != "y" && "$choixAnsible" != "n" ]]; do
+echo "Voulez-vous installer Ansible ? ( y  /  n ) :"
+read choixAnsible
+
+case $choixAnsible in
+    y)  # Si le choix est oui
+    cd /home/$USER/Documents
+        sudo apt update
+        sudo apt install software-properties-common
+        sudo add-apt-repository --yes --update ppa:ansible/ansible
+        sudo apt install -y ansible
+        ansible --version
+	cd
+        ;;
+    n)  # Si le choix est non
+        echo "Vous avez choisi de ne pas installer Ansible'"
+        ;;
+    *)  # Si aucun choix ne correspond
+        echo "Ta pas fait le bon choix Maurice (Attention à la casse)"
+        ;;
+esac
+done
+
+# Choix install Metasploit
+choixMetasploit=""
+
+while [[ "$choixMetasploit" != "y" && "$choixMetasploit" != "n" ]]; do
+echo "Voulez-vous installer Metasploit ? ( y  /  n ) :"
+read choixMetasploit
+
+case $choixMetasploit in
+    y)  # Si le choix est oui
+    cd /home/$USER/Documents
+    sudo apt-get install -y build-essential zlib1g zlib1g-dev libxml2 libxml2-dev libxslt-dev locate libreadline6-dev libcurl4-openssl-dev git-core autoconf curl postgresql postgresql-contrib libpq-dev libapr1 libaprutil1 libsvn1 libpcap-dev
+	git clone https://github.com/rapid7/metasploit-framework.git
+    cd metasploit-framework
+    sudo bash -c 'for MSF in $(ls msf*); do ln -s /usr/local/src/metasploit-framework/$MSF /usr/local/bin/$MSF;done'
+    sudo service postgresql start
+    sudo snap install metasploit-framework
+    sudo msfdb init
+    msfdb init
+    #msfconsole     # Commande pour lancé metasploit
+    notify-send "Metasploit" 'Metasploit peut etre lance avec la commande "msfconsole"'
+    cd
+        ;;
+    n)  # Si le choix est non
+        echo "Vous avez choisi de ne pas installer Metasploit'"
+        ;;
+    *)  # Si aucun choix ne correspond
+        echo "Ta pas fait le bon choix Maurice (Attention à la casse)"
+        ;;
+esac
+done
+
+# Choix Bashrc
 choixBashRc=""
 
 while [[ "$choixBashRc" != "y" && "$choixBashRc" != "n" ]]; do
@@ -423,9 +546,11 @@ read choixBashRc
 case $choixBashRc in
     y)  # Si le choix est oui
         echo "Vous avez choisi de copier les fichiers bashrc"
+        cp -f ./.bashrc ./.bashrc.ori
         cp -f ./Necessary/bashrc/* /home/$USER/
         notify-send -i face-smile "BashRc" "Les fichiers .bashrc ont été copiés dans /home/$USER" -t 3000
         echo "Vous pouvez faire un : cp -f <.bashrc_voulu> .bashrc"
+        source .bashrc
 	cd
         ;;
     n)  # Si le choix est non
@@ -437,44 +562,66 @@ case $choixBashRc in
 esac
 done
 
-# Création des raccourcis clavier
-gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6/']" # Création des emplacements personnalisés des raccourcis claviers
+# Choix création des raccourcis clavier
+choixRaccourcisClavier=""
 
-gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ name 'Discord' # Nom du raccourci
-gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ command 'discord' # Commande du raccourci
-gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ binding '<Alt>d' # Raccourci clavier attribué
+while [[ "$choixRaccourcisClavier" != "y" && "$choixRaccourcisClavier" != "n" ]]; do
+echo "Voulez-vous modifier vos raccourcis clavier ? ( y  /  n ) :"
+read choixRaccourcisClavier
 
-gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/ name 'Chrome' # Nom du raccourci
-gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/ command 'google-chrome' # Commande du raccourci
-gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/ binding '<Alt>c' # Raccourci clavier attribué
+case $choixRaccourcisClavier in
+    y)  # Si le choix est oui
+        gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7/']" # Création des emplacements personnalisés des raccourcis claviers
 
-gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/ name 'Gestionnaire des tâches' # Nom du raccourci
-gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/ command 'gnome-system-monitor' # Commande du raccourci
-gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/ binding '<Primary><Shift>Escape' # Raccourci clavier attribué
+        gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ name 'Discord' # Nom du raccourci
+        gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ command 'discord' # Commande du raccourci
+        gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ binding '<Alt>d' # Raccourci clavier attribué
 
-gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/ name 'Paramètres' # Nom du raccourci
-gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/ command 'gnome-control-center' # Commande du raccourci
-gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/ binding '<Super>i' # Raccourci clavier attribué
+        gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/ name 'Chrome' # Nom du raccourci
+        gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/ command 'google-chrome' # Commande du raccourci
+        gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/ binding '<Alt>c' # Raccourci clavier attribué
 
-gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/ name 'Tweaks' # Nom du raccourci
-gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/ command 'gnome-tweaks' # Commande du raccourci
-gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/ binding '<Super>t' # Raccourci clavier attribué
+        gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/ name 'Gestionnaire des tâches' # Nom du raccourci
+        gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/ command 'gnome-system-monitor' # Commande du raccourci
+        gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/ binding '<Primary><Shift>Escape' # Raccourci clavier attribué
 
-gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5/ name 'Terminal' # Nom du raccourci
-gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5/ command 'gnome-terminal' # Commande du raccourci
-gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5/ binding '<Alt>t' # Raccourci clavier attribué
+        gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/ name 'Paramètres' # Nom du raccourci
+        gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/ command 'gnome-control-center' # Commande du raccourci
+        gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/ binding '<Super>i' # Raccourci clavier attribué
 
-gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6/ name 'Synchro-Obsidian-Google-Drive' # Nom du raccourci
-gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6/ command 'synchro-obsidian-google-drive.sh' # Commande du raccourci
-gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6/ binding '<Primary><Alt>o' # Raccourci clavier attribué
+        gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/ name 'Tweaks' # Nom du raccourci
+        gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/ command 'gnome-tweaks' # Commande du raccourci
+        gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/ binding '<Super>t' # Raccourci clavier attribué
 
-# Raccourci claviers non personnalisés
-echo "Pensez à configurer les raccourcis clavier non personnalisés"
-echo "Capture d'écran -> Effectuer une capture d'écran interactivement -> Maj + Super + S"
-echo "Navigation -> Changer de fenêtre directement -> Alt + Tabulation"
-echo "Lanceurs -> Dossier Personnel -> Super + E"
-echo "Lanceurs -> Lancer un terminal -> Alt + T"
-sleep 10
+        gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5/ name 'Terminal' # Nom du raccourci
+        gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5/ command 'gnome-terminal' # Commande du raccourci
+        gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5/ binding '<Alt>t' # Raccourci clavier attribué
+
+        gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6/ name 'Synchro-Obsidian-Google-Drive' # Nom du raccourci
+        gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6/ command 'synchro-obsidian-google-drive.sh' # Commande du raccourci
+        gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6/ binding '<Primary><Alt>o' # Raccourci clavier attribué
+
+        gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7/ name 'Diodon' # Nom du raccourci
+        gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7/ command '/usr/bin/diodon' # Commande du raccourci
+        gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7/ binding '<Super>v' # Raccourci clavier attribué
+        
+        # Raccourci claviers non personnalisés
+        echo "Pensez à configurer les raccourcis clavier non personnalisés"
+        echo "Capture d'écran -> Effectuer une capture d'écran interactivement -> Maj + Super + S"
+        echo "Navigation -> Changer de fenêtre directement -> Alt + Tabulation"
+        echo "Lanceurs -> Dossier Personnel -> Super + E"
+        echo "Lanceurs -> Lancer un terminal -> Alt + T"
+        sleep 10
+	cd
+        ;;
+    n)  # Si le choix est non
+        echo "Vous n'avez pas choisi de ne pas modifier vos raccourcis clavier"
+        ;;
+    *)  # Si aucun choix ne correspond
+        echo "Ta pas fait le bon choix Maurice (Attention à la casse)"
+        ;;
+esac
+done
 
 # Suppression du dossier "Necessary"
 #notify-send "Suppression du dossier Necessary" -t 3000
@@ -514,7 +661,7 @@ case $choixLogoff in
         echo "Vous n'avez pas choisi de fermer la session"
         notify-send "Vous n'avez pas choisi de fermer la session" -t 5000
         echo "D'accord BYE !!!"
-	echo "██████╗ ██╗   ██╗███████╗"
+	    echo "██████╗ ██╗   ██╗███████╗"
         echo "██╔══██╗╚██╗ ██╔╝██╔════╝"
         echo "██████╔╝ ╚████╔╝ █████╗"  
         echo "██╔══██╗  ╚██╔╝  ██╔══╝"  
