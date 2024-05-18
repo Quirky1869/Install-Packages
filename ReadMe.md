@@ -1,9 +1,8 @@
+![pingouin](./Necessary/Images/Linux.png)
+
 # README
 
 **Veuillez lire tout le readme.md svp**
-
-![pingouin](./Necessary/Images/Linux.png)
-
 
 # Disclaimer
 
@@ -20,19 +19,20 @@ Install-packages est conçus pour pouvoir installer rapidement et facilement plu
 - Si vous décider d'installer rclone, les 2 fichiers présent dans "./Necessary/Obsidian-rclone" sont à modifier ; les chemins se nommant "Google-drive:/Obsidian-Google-Drive" et "/home/$USER/Obsidian_Vault/" vous sont personnels, ils dépendent des dossiers de votre pc et des dossiers de votre google-drive
 - Un fichier log se nommant `Script-install-Packages-Linux.sh.log` est créer dans `/var/log/`
 - Si vous décider de copier les `.bashrc` il intègre des petits changements sur le prompt (pour changer de `.bashrc` lancer la commande `cp -f <~/.bashrc_voulu> .bashrc` et relancer le prompt ou lancer un `source ~/.bashrc`) :
-	1 - Un changement visuel pour chaque `.bashrc_*` 
-		2 - Des alias (dns, ipls et metasploit (valide **uniquement** si vous avez fait l'installation de metasploit))
+
+1 - Un changement visuel pour chaque `.bashrc_*` 
+2 - Des alias (dns, ipls et metasploit (valide **uniquement** si vous avez fait l'installation de metasploit))
 - Si vous décider d'installer de nouveaux thèmes il génère un changement visuel du prompt que vous pouvez régler via les préférences de votre prompt ; des curseurs et icones qui sont accessibles via "Tweaks" 
 
 # Etape d'installation
 
-1 - Copier le dossier "**Necessary**" dans votre dossier personnel -> ~ ou /home/$USER
+- 1 - Copier le dossier "**Necessary**" dans votre dossier personnel -> ~ ou /home/$USER
 
-1.1 - Lancé un **chmod +x Script-Install-Packages-Linux.sh**
+- 1.1 - Lancé un **chmod +x Script-Install-Packages-Linux.sh**
 
-2 - Lancer le fichier "**Script-Install-Packages-Linux.sh**" et suivez les instructions
+- 2 - Lancer le fichier "**Script-Install-Packages-Linux.sh**" et suivez les instructions
 
-3 - Après l'installation lire le memo.txt si besoin
+- 3 - Après l'installation lire le memo.txt si besoin
 
 # Version validé
 
