@@ -19,7 +19,7 @@ varDownload="Téléchargements" # If you're computer is in english replace "Tél
 interrupt_handler() {
     # echo "Suppression du dossier Necessary..."
     # rm -rf "/home/$USER/Necessary"
-    echo "Interruption de l'exécution du script."
+    echo "Interruption de l'exécution du script par l'utilisateur."
     sleep 3
     exit 1
 }
