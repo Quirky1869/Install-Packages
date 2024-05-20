@@ -122,6 +122,7 @@ alias dns="nmcli device show | grep IP4.DNS" # S'appui sur network-manager
 alias ipls="ip link show" # S'appui sur iproute2
 alias metasploit="msfconsole" # S'appui sur metasploit-framework
 alias bat="batcat" # S'appui sur bat
+alias logoff="skill -KILL -u $USER"
 
 ### Neon ###
 
