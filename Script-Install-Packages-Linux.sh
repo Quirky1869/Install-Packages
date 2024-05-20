@@ -329,25 +329,6 @@ case $choixDockerDesktop in
 esac
 done
 
-# Choix install DockerEtDockerCompose
-# Lien : https://docs.docker.com/engine/install/ubuntu/
-# echo "Voulez-vous installer Docker et Docker Compose ? ( y  /  n ) :"
-# read choixDockerEtDockerCompose
-# 
-# case $choixDockerEtDockerCompose in
-#     y )  # Si le choix est oui
-#         echo "Vous avez choisi d'installer Docker et Docker Compose"
-#         sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-#         sudo systemctl restart docker
-#         ;;
-#     n )  # Si le choix est non
-#         echo "Vous avez choisi de ne pas installer Docker et Docker Compose"
-#         ;;
-#     *)  # Si aucun choix ne correspond
-#         echo "Ta pas fait le bon choix Maurice (Attention à la casse)"
-#         ;;
-# esac
-
 # Choix install GitHub Desktop
 choixGithubDesktop=""
 
