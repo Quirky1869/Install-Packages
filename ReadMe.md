@@ -20,7 +20,7 @@ Install-packages est conçus pour pouvoir installer rapidement et facilement plu
 - Un fichier log se nommant `Script-Install-Packages-Linux.sh.log` est créer dans `/var/log/`
 - Si vous décider de copier les `.bashrc` il intègre des petits changements sur le prompt (pour changer de `.bashrc` lancer la commande `cp -f <~/.bashrc_voulu> .bashrc` et relancer le prompt ou lancer un `source ~/.bashrc`) :<br>
 1 - Un changement visuel pour chaque `.bashrc_*`<br>
-2 - Des alias (dns, ipls et metasploit (valide **uniquement** si vous avez fait l'installation de metasploit))
+2 - Des alias (dns, ipls, bat et metasploit (valide **uniquement** si vous avez fait l'installation de metasploit))
 - Si vous décider d'installer de nouveaux thèmes il génère un changement visuel du prompt que vous pouvez régler via les préférences de votre prompt ; des curseurs et icones qui sont accessibles via "Tweaks" 
 
 # Etape d'installation
