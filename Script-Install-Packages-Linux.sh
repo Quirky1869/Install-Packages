@@ -539,6 +539,8 @@ esac
 done
 
 # Choix install The Harvester
+# Lien : https://github.com/laramies/theHarvester
+# Lien : https://julien.io/retrouver-les-adresses-emails-avec-theharvester/
 choixTheHarvester=""
 
 while [[ "$choixTheHarvester" != "y" && "$choixTheHarvester" != "n" ]]; do
@@ -564,6 +566,8 @@ esac
 done
 
 # Choix install Sherlock
+# Lien : https://github.com/sherlock-project/sherlock
+# Lien : https://www.geeek.org/sherlock-securite-linux/
 choixSherlock=""
 
 while [[ "$choixSherlock" != "y" && "$choixSherlock" != "n" ]]; do
@@ -580,6 +584,31 @@ case $choixSherlock in
         ;;
     n)  # Si le choix est non
         echo "Vous avez choisi de ne pas installer Sherlock'"
+        ;;
+    *)  # Si aucun choix ne correspond
+        echo "Ta pas fait le bon choix Maurice (Attention à la casse)"
+        ;;
+esac
+done
+
+# Choix install Holehe
+# Lien : https://github.com/megadose/holehe?tab=readme-ov-file
+choixHolehe=""
+
+while [[ "$choixHolehe" != "y" && "$choixHolehe" != "n" ]]; do
+echo "Voulez-vous installer Holehe (OSINT) ? ( y  /  n ) :"
+read choixHolehe
+
+case $choixHolehe in
+    y)  # Si le choix est oui
+    	cd /opt
+  	git clone https://github.com/megadose/holehe.git
+	cd holehe/
+	python3 setup.py install
+    cd
+        ;;
+    n)  # Si le choix est non
+        echo "Vous avez choisi de ne pas installer Holehe'"
         ;;
     *)  # Si aucun choix ne correspond
         echo "Ta pas fait le bon choix Maurice (Attention à la casse)"
