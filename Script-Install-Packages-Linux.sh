@@ -298,7 +298,7 @@ read choixDockerDesktop
 
 case $choixDockerDesktop in
     y)  # Si le choix est oui
-        echo "Vous avez choisi d'installer Docker Desktop"
+        echo "Vous avez choisi d'installer Docker / Docker compose / Docker Desktop"
         #sudo apt install -y curl docker-ce-cli pass uidmap
         cd ~/$varDownload
         sudo apt install apt-transport-https ca-certificates curl gnupg
