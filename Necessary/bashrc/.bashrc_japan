@@ -116,6 +116,11 @@ if ! shopt -oq posix; then
   fi
 fi
 
+### PATH ###
+export PATH="opt/theHarvester:$PATH"
+export PATH="opt/sherlock:$PATH"
+export PATH="opt/holehe:$PATH"
+
 ### Encore et encore des alias ###
 
 alias dns="nmcli device show | grep IP4.DNS" # S'appui sur network-manager
@@ -123,6 +128,9 @@ alias ipls="ip link show" # S'appui sur iproute2
 alias metasploit="msfconsole" # S'appui sur metasploit-framework
 alias bat="batcat" # S'appui sur bat
 alias logoff="skill -KILL -u $USER"
+alias sherlock="python3 sherlock.py"
+alias harvester="python3 theHarvester.py"
+#holehe
 
 ### Japan ###
 
