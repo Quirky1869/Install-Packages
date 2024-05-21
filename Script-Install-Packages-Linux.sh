@@ -563,6 +563,30 @@ case $choixTheHarvester in
 esac
 done
 
+# Choix install Sherlock
+choixSherlock=""
+
+while [[ "$choixSherlock" != "y" && "$choixSherlock" != "n" ]]; do
+echo "Voulez-vous installer Sherlock (OSINT) ? ( y  /  n ) :"
+read choixSherlock
+
+case $choixSherlock in
+    y)  # Si le choix est oui
+  	cd /opt
+   	git clone https://github.com/sherlock-project/sherlock.git
+    	cd sherlock
+     	python3 -m pip install -r requirements.txt
+    cd
+        ;;
+    n)  # Si le choix est non
+        echo "Vous avez choisi de ne pas installer Sherlock'"
+        ;;
+    *)  # Si aucun choix ne correspond
+        echo "Ta pas fait le bon choix Maurice (Attention à la casse)"
+        ;;
+esac
+done
+
 # Choix Bashrc
 choixBashRc=""
 
