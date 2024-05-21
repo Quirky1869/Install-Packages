@@ -538,6 +538,31 @@ case $choixMetasploit in
 esac
 done
 
+# Choix install The Harvester
+choixTheHarvester=""
+
+while [[ "$choixTheHarvester" != "y" && "$choixTheHarvester" != "n" ]]; do
+echo "Voulez-vous installer The Harvester (OSINT) ? ( y  /  n ) :"
+read choixTheHarvester
+
+case $choixTheHarvester in
+    y)  # Si le choix est oui
+  	cd /opt
+   	git clone https://github.com/laramies/theHarvester.git
+    	sudo chown $USER:$USER -R theHarvester # Changement du owner ; si l'option -f est entrée des problèmes ont lieu lors de la génération des fichiers si le owner est root
+     	cd theHarvester
+    	python3 -m pip install -r requirements/base.txt
+    cd
+        ;;
+    n)  # Si le choix est non
+        echo "Vous avez choisi de ne pas installer TheHarvester'"
+        ;;
+    *)  # Si aucun choix ne correspond
+        echo "Ta pas fait le bon choix Maurice (Attention à la casse)"
+        ;;
+esac
+done
+
 # Choix Bashrc
 choixBashRc=""
 
