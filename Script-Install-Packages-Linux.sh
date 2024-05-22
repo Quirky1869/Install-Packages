@@ -602,7 +602,7 @@ read choixHolehe
 case $choixHolehe in
     y)  # Si le choix est oui
     	cd /opt
-  	git clone https://github.com/megadose/holehe.git
+  	sudo git clone https://github.com/megadose/holehe.git
 	cd holehe/
 	python3 setup.py install
     cd
