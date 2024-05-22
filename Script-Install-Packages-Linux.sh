@@ -607,7 +607,7 @@ case $choixHolehe in
   	sudo git clone https://github.com/megadose/holehe.git
    	sudo chown $USER:$USER -R holehe
 	cd holehe/
-	python3 setup.py install
+	sudo python3 setup.py install
     cd
         ;;
     n)  # Si le choix est non
