@@ -579,6 +579,7 @@ case $choixSherlock in
   	cd /opt
    	sudo git clone https://github.com/sherlock-project/sherlock.git
     	sudo chown $USER:$USER -R sherlock # Changement du owner ; sinon à la fin de l'execution des erreurs ont lieu sur les scripts "threading.py", "thread.py", "sherlock.py" (line : 508)
+     	chmod +x /opt/sherlock/sherlock/sherlock.py
     	cd sherlock
      	python3 -m pip install -r requirements.txt
     cd
