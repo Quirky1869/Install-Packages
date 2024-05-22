@@ -550,7 +550,7 @@ read choixTheHarvester
 case $choixTheHarvester in
     y)  # Si le choix est oui
   	cd /opt
-   	git clone https://github.com/laramies/theHarvester.git
+   	sudo git clone https://github.com/laramies/theHarvester.git
     	sudo chown $USER:$USER -R theHarvester # Changement du owner ; si l'option -f est entrée des problèmes ont lieu lors de la génération des fichiers si le owner est root
      	cd theHarvester
     	python3 -m pip install -r requirements/base.txt
@@ -577,7 +577,7 @@ read choixSherlock
 case $choixSherlock in
     y)  # Si le choix est oui
   	cd /opt
-   	git clone https://github.com/sherlock-project/sherlock.git
+   	sudo git clone https://github.com/sherlock-project/sherlock.git
     	cd sherlock
      	python3 -m pip install -r requirements.txt
     cd
