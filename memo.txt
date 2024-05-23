@@ -59,7 +59,7 @@ rclone sync Google-drive:/Obsidian-Google-Drive /home/$USER/Obsidian_Vault/
 # Bonnes pratiques obsidian
 
 # Activer les modules -> paramètres -> Modules complémentaires -> activé
-# Rechercher Excalidraw et l'installer + installer les plugins de logo (sur le nas)
+# Rechercher Excalidraw et l'installer + installer les plugins de logo
 
 # Dans Paramètres -> fichiers et liens -> chemin du dossier des pièces jointes -> "Dans le dossier spécifié ci-dessous" -> selectionner un dossier créer 
 
