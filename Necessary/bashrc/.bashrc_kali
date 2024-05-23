@@ -116,13 +116,20 @@ if ! shopt -oq posix; then
   fi
 fi
 
+### PATH ###
+export PATH="/home/$USER/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin"
+export PATH="/opt/theHarvester:$PATH"
+export PATH="/opt/sherlock/sherlock:$PATH"
+
 ### Encore et encore des alias ###
 
 alias dns="nmcli device show | grep IP4.DNS" # S'appui sur network-manager
 alias ipls="ip link show" # S'appui sur iproute2
 alias metasploit="msfconsole" # S'appui sur metasploit-framework
 alias bat="batcat" # S'appui sur bat
-alias logoff="skill -KILL -u $USER"
+alias logoff="skill -KILL -u $USER" # S'appui sur procps
+alias sherlock="sherlock.py" # S'appui sur sherlock
+alias harvester="theHarvester.py" # S'appui sur The Harvester
 
 ### Kali ###
  
