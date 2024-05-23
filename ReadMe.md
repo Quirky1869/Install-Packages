@@ -28,8 +28,8 @@ Install-packages est conçus pour pouvoir installer rapidement et facilement plu
 >- sherlock (valide **uniquement** si vous avez fait l'installation de sherlock)
 >- metasploit (valide **uniquement** si vous avez fait l'installation de metasploit)
 >- harvester (valide **uniquement** si vous avez fait l'installation de theHarvester)
-<br>
-3 - Une modification du $PATH (certaines modifications servent pour les alias)
+
+3 - Une modification du $PATH (Ils servent pour les alias)
 
 - Si vous décider d'installer de nouveaux thèmes il génère un changement visuel du prompt que vous pouvez régler via les préférences de votre prompt ; des curseurs et icones qui sont accessibles via "Tweaks" 
 
