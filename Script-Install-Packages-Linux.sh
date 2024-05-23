@@ -509,6 +509,7 @@ esac
 done
 
 # Choix install Metasploit
+# Lien : https://www.metasploit.com/
 choixMetasploit=""
 
 while [[ "$choixMetasploit" != "y" && "$choixMetasploit" != "n" ]]; do
