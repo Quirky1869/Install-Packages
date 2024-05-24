@@ -16,18 +16,6 @@ LOG_FILE="/var/log/Script-Install-Packages-Linux.sh.log"
 # Déclaration des variables
 varDownload="Téléchargements" # If you're computer is in english replace "Téléchargements" with "Downloads"
 
-# Fonction pour gérer l'interruption (Ctrl+C)
-interrupt_handler() {
-    # echo "Suppression du dossier Necessary..."
-    # rm -rf "/home/$USER/Necessary"
-    echo "Interruption de l'exécution du script par l'utilisateur."
-    sleep 3
-    exit 1
-}
-
-# SIGINT = CTRL + C
-trap interrupt_handler SIGINT
-
 echo "Debut de l'installation :" 
 echo =========================== 
 
@@ -120,6 +108,18 @@ done
 
 # Redirection des log après installation de GNS3 et Wireshark
 exec > >(sudo tee -a "$LOG_FILE") 2>&1
+
+# Fonction pour gérer l'interruption (Ctrl+C)
+interrupt_handler() {
+    # echo "Suppression du dossier Necessary..."
+    # rm -rf "/home/$USER/Necessary"
+    echo "Interruption de l'exécution du script par l'utilisateur."
+    sleep 3
+    exit 1
+}
+
+# SIGINT = CTRL + C
+trap interrupt_handler SIGINT
 
 # Installation des packets
 echo Installation des packets 
