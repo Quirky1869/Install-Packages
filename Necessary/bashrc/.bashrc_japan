@@ -128,8 +128,11 @@ alias ipls="ip link show" # S'appui sur iproute2
 alias metasploit="msfconsole" # S'appui sur metasploit-framework
 alias bat="batcat" # S'appui sur bat
 alias logoff="skill -KILL -u $USER" # S'appui sur procps
+alias getusera="cut -d: -f1 /etc/passwd" # s'appui sur cut
+alias getuser="awk -F: '$3 >= 1000 { print $1 }' /etc/passwd" # S'appui sur awk
 alias sherlock="sherlock.py" # S'appui sur sherlock
 alias harvester="theHarvester.py" # S'appui sur The Harvester
+
 
 ### Japan ###
 
