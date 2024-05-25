@@ -26,6 +26,7 @@ Install-packages est conçus pour pouvoir installer rapidement et facilement plu
 >- ipls
 >- bat
 >- logoff
+>- getuser
 >- sherlock (valide **uniquement** si vous avez fait l'installation de sherlock)
 >- metasploit (valide **uniquement** si vous avez fait l'installation de metasploit)
 >- harvester (valide **uniquement** si vous avez fait l'installation de theHarvester)
