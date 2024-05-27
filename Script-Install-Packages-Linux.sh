@@ -621,7 +621,7 @@ case $choixHolehe in
 esac
 done
 
-# Choix install Holehe
+# Choix install SQLmap
 # Lien : https://github.com/sqlmapproject/sqlmap
 choixSQLmap=""
 
