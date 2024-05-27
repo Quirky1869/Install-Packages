@@ -127,7 +127,7 @@ sudo apt install -y tree wget recon-ng htop filezilla zip unzip rar unar unrar n
     bmon tcptrack nmap whois testdisk tshark git samba gnome-tweaks python3-impacket \
     gnome-disk-utility gparted xournal netdiscover dirb hydra netcat pluma bpytop edb-debugger pip \
     make gnome-shell-extensions gpaint rclone rclone-browser dsniff tcpdump libfuse2 pv curl network-manager \
-    diodon bat
+    diodon bat john
 
 sudo pip install -U notify-send
 python3 -m pip install pwntools
@@ -614,6 +614,31 @@ case $choixHolehe in
         ;;
     n)  # Si le choix est non
         echo "Vous avez choisi de ne pas installer Holehe'"
+        ;;
+    *)  # Si aucun choix ne correspond
+        echo "Ta pas fait le bon choix Maurice (Attention à la casse)"
+        ;;
+esac
+done
+
+# Choix install Holehe
+# Lien : 
+choixSQLmap=""
+
+while [[ "$choixSQLmap" != "y" && "$choixSQLmap" != "n" ]]; do
+echo "Voulez-vous installer SQLmap ? ( y  /  n ) :"
+read choixSQLmap
+
+case $choixSQLmap in
+    y)  # Si le choix est oui
+    	cd /opt
+  	sudo git clone --depth 1 https://github.com/sqlmapproject/sqlmap.git sqlmap-dev
+   	sudo chown $USER:$USER -R sqlmap-dev
+    	sed -i 's|#!/usr/bin/env python|#!/usr/bin/env python3|' sqlmap.py
+    cd
+        ;;
+    n)  # Si le choix est non
+        echo "Vous avez choisi de ne pas installer SQLmap'"
         ;;
     *)  # Si aucun choix ne correspond
         echo "Ta pas fait le bon choix Maurice (Attention à la casse)"
