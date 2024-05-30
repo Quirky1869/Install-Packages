@@ -634,7 +634,7 @@ case $choixSQLmap in
     	cd /opt
   	sudo git clone --depth 1 https://github.com/sqlmapproject/sqlmap.git sqlmap-dev
    	sudo chown $USER:$USER -R sqlmap-dev
-    	sed -i 's|#!/usr/bin/env python|#!/usr/bin/env python3|' sqlmap.py
+    	sed -i 's|#!/usr/bin/env python|#!/usr/bin/env python3|' /opt/sqlmap-dev/sqlmap.py
     cd
         ;;
     n)  # Si le choix est non
