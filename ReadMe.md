@@ -31,6 +31,9 @@ Install-packages est conçus pour pouvoir installer rapidement et facilement plu
 >- metasploit (valide **uniquement** si vous avez fait l'installation de metasploit)
 >- harvester (valide **uniquement** si vous avez fait l'installation de theHarvester)
 >- sqlmap (valide **uniquement** si vous avez fait l'installation de SQLmap)
+>- service
+>- allservice
+>- servicesystemd
 
 - Si vous décider d'installer de nouveaux thèmes il génère un changement visuel du prompt que vous pouvez régler via les préférences de votre prompt ; des curseurs et icones qui sont accessibles via "Tweaks" 
 
