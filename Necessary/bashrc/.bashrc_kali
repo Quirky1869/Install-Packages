@@ -133,6 +133,9 @@ alias sherlock="sherlock.py" # S'appui sur sherlock
 alias harvester="theHarvester.py" # S'appui sur The Harvester
 alias sqlmap="sqlmap.py" # S'appui sur SQLmap
 
+alias service="systemctl list-units --type=service" # S'appui sur systemctl
+alias allservice="systemctl list-units --type=service --all" # S'appui sur systemctl
+alias servicesystemd="systemctl list-unit-files" # S'appui sur systemd
 
 ### Kali ###
 symbol=㉿
