@@ -720,7 +720,7 @@ case $choixRaccourcisClavier in
 
  	gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom8/ name 'Flameshot' # Nom du raccourci
         gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom8/ command 'flameshot gui' # Commande du raccourci
-        gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom8/ binding '<Primary><Alt>f' # Raccourci clavier attribué
+        gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom8/ binding '<Super><Shift>f' # Raccourci clavier attribué
         
         # Raccourci claviers non personnalisés
         echo "Pensez à configurer les raccourcis clavier non personnalisés"
