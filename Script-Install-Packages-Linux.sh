@@ -127,7 +127,7 @@ sudo apt install -y tree wget recon-ng htop filezilla zip unzip rar unar unrar n
     bmon tcptrack nmap whois testdisk tshark git samba gnome-tweaks python3-impacket \
     gnome-disk-utility gparted xournal netdiscover dirb hydra netcat pluma bpytop edb-debugger pip \
     make gnome-shell-extensions gpaint rclone rclone-browser dsniff tcpdump libfuse2 pv curl network-manager \
-    diodon bat john
+    diodon bat john flameshot
 
 sudo pip install -U notify-send
 python3 -m pip install pwntools
@@ -684,7 +684,7 @@ case $choixRaccourcisClavier in
 
 	gsettings set org.gnome.shell.keybindings toggle-message-tray "[]" # Valeur raccourci "Afficher la liste des notifications" supprimé
 	
-        gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7/']" # Création des emplacements personnalisés des raccourcis claviers
+        gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom8/']" # Création des emplacements personnalisés des raccourcis claviers
 
         gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ name 'Discord' # Nom du raccourci
         gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/ command 'discord' # Commande du raccourci
@@ -717,6 +717,10 @@ case $choixRaccourcisClavier in
         gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7/ name 'Diodon' # Nom du raccourci
         gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7/ command '/usr/bin/diodon' # Commande du raccourci
         gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7/ binding '<Super>v' # Raccourci clavier attribué
+
+ 	gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7/ name 'Flameshot' # Nom du raccourci
+        gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7/ command 'flameshot gui' # Commande du raccourci
+        gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7/ binding '<Primary><Alt>f' # Raccourci clavier attribué
         
         # Raccourci claviers non personnalisés
         echo "Pensez à configurer les raccourcis clavier non personnalisés"
