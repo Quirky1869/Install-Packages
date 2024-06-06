@@ -294,7 +294,7 @@ done
 choixDockerDesktop=""
 
 while [[ "$choixDockerDesktop" != "y" && "$choixDockerDesktop" != "n" ]]; do
-echo "Voulez-vous installer Docker / Docker Desktop ? ( y  /  n ) :"
+echo "Voulez-vous installer Docker / Docker compose / Docker Desktop ? ( y  /  n ) :"
 read choixDockerDesktop
 
 case $choixDockerDesktop in
