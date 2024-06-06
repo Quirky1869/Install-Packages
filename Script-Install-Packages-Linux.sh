@@ -519,9 +519,11 @@ read choixMetasploit
 
 case $choixMetasploit in
     y)  # Si le choix est oui
-    cd /home/$USER/Documents
+    #cd /home/$USER/Documents
+    cd /opt
     sudo apt-get install -y build-essential zlib1g zlib1g-dev libxml2 libxml2-dev libxslt-dev locate libreadline6-dev libcurl4-openssl-dev git-core autoconf curl postgresql postgresql-contrib libpq-dev libapr1 libaprutil1 libsvn1 libpcap-dev
-	git clone https://github.com/rapid7/metasploit-framework.git
+    sudo git clone https://github.com/rapid7/metasploit-framework.git
+    sudo chown $USER:$USER -R metasploit-framework
     cd metasploit-framework
     sudo bash -c 'for MSF in $(ls msf*); do ln -s /usr/local/src/metasploit-framework/$MSF /usr/local/bin/$MSF;done'
     sudo service postgresql start
