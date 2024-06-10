@@ -131,6 +131,7 @@ sudo apt install -y tree wget recon-ng htop filezilla zip unzip rar unar unrar n
 
 sudo pip install -U notify-send
 python3 -m pip install pwntools
+sudo pip install scapy
 
 
 #Choix install themes
