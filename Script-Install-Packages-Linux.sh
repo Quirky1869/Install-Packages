@@ -144,7 +144,9 @@ read choixThemes
 case $choixThemes in
     y)  # Si le choix est oui
         # Import Theme Terminal
-        dconf load /org/gnome/terminal/legacy/profiles:/ < ./Necessary/gnome-terminal-profiles.dconf 
+        dconf load /org/gnome/terminal/legacy/profiles:/ < ./Necessary/gnome-terminal-profiles.dconf
+	# Export
+ 	# dconf dump /org/gnome/terminal/legacy/profiles:/ > ./gnome-terminal-profiles.dconf
 
         # Import Modeles
         cp -r ./Necessary/Nouveaux-documents/* /home/$USER/Modèles 
