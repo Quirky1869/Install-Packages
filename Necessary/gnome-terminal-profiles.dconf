@@ -1,6 +1,6 @@
 [/]
-default='a915df99-456d-4fae-93ca-4fae09493f36'
-list=['b1dcc9dd-5262-4d8d-a863-c897e6d979b9', '6693e362-5fd1-43c2-bb29-f81fbba54f18', 'c3f0b705-2145-497f-9d31-4af418cb3c32', '7f28e10c-a3d0-42b8-afa6-068c9523fd71', 'a862c441-edfc-4251-b2c0-f0bc882b38b9', 'c33c90ff-f58e-4196-95f8-dbcf962e635c', 'a915df99-456d-4fae-93ca-4fae09493f36']
+default='ed9c85c3-05f4-456e-b2b0-a4d8c3f68cdb'
+list=['b1dcc9dd-5262-4d8d-a863-c897e6d979b9', '6693e362-5fd1-43c2-bb29-f81fbba54f18', 'c3f0b705-2145-497f-9d31-4af418cb3c32', '7f28e10c-a3d0-42b8-afa6-068c9523fd71', 'a862c441-edfc-4251-b2c0-f0bc882b38b9', 'c33c90ff-f58e-4196-95f8-dbcf962e635c', 'a915df99-456d-4fae-93ca-4fae09493f36', 'ed9c85c3-05f4-456e-b2b0-a4d8c3f68cdb']
 
 [:6693e362-5fd1-43c2-bb29-f81fbba54f18]
 background-color='rgb(0,0,0)'
@@ -41,6 +41,24 @@ use-theme-transparency=false
 use-transparent-background=true
 visible-name='Space'
 
+[:a85590a9-fff8-4a30-a500-057fd2da2213]
+background-color='rgb(48,48,48)'
+background-transparency-percent=5
+bold-color='rgb(85,99,67)'
+bold-color-same-as-fg=false
+bold-is-bright=false
+default-size-columns=150
+default-size-rows=40
+foreground-color='rgb(255,255,255)'
+highlight-background-color='rgb(139,79,0)'
+highlight-colors-set=true
+highlight-foreground-color='rgb(255,255,255)'
+palette=['rgb(23,20,33)', 'rgb(192,28,40)', 'rgb(0,255,48)', 'rgb(162,115,76)', 'rgb(18,72,139)', 'rgb(163,71,186)', 'rgb(255,171,0)', 'rgb(208,207,204)', 'rgb(94,92,100)', 'rgb(246,97,81)', 'rgb(51,218,122)', 'rgb(233,173,12)', 'rgb(42,123,222)', 'rgb(192,97,203)', 'rgb(51,199,222)', 'rgb(255,255,255)']
+use-theme-colors=false
+use-theme-transparency=false
+use-transparent-background=true
+visible-name='Post-apocalypse'
+
 [:a862c441-edfc-4251-b2c0-f0bc882b38b9]
 background-color='rgb(0,0,0)'
 background-transparency-percent=6
@@ -72,13 +90,14 @@ default-size-rows=40
 foreground-color='rgb(255,255,255)'
 highlight-background-color='rgb(166,83,173)'
 highlight-colors-set=true
-palette=['rgb(23,20,33)', 'rgb(192,28,40)', 'rgb(169,169,169)', 'rgb(162,115,76)', 'rgb(136,28,19)', 'rgb(163,71,186)', 'rgb(204,0,255)', 'rgb(208,207,204)', 'rgb(94,92,100)', 'rgb(246,97,81)', 'rgb(51,218,122)', 'rgb(233,173,12)', 'rgb(42,123,222)', 'rgb(192,97,203)', 'rgb(51,199,222)', 'rgb(255,255,255)']
+palette=['rgb(23,20,33)', 'rgb(169,169,169)', 'rgb(42,221,13)', 'rgb(162,115,76)', 'rgb(136,28,19)', 'rgb(163,71,186)', 'rgb(204,0,255)', 'rgb(208,207,204)', 'rgb(94,92,100)', 'rgb(246,97,81)', 'rgb(51,218,122)', 'rgb(233,173,12)', 'rgb(42,123,222)', 'rgb(192,97,203)', 'rgb(51,199,222)', 'rgb(255,255,255)']
 use-theme-colors=false
 use-theme-transparency=false
 use-transparent-background=true
 visible-name='Japan'
 
 [:b1dcc9dd-5262-4d8d-a863-c897e6d979b9]
+default-size-rows=40
 visible-name='Default'
 
 [:c33c90ff-f58e-4196-95f8-dbcf962e635c]
@@ -111,10 +130,29 @@ foreground-color='rgb(14,195,241)'
 highlight-background-color='rgb(83,6,248)'
 highlight-colors-set=true
 highlight-foreground-color='rgb(255,255,255)'
-palette=['rgb(23,20,33)', 'rgb(255,0,19)', 'rgb(214,141,161)', 'rgb(255,255,255)', 'rgb(161,16,242)', 'rgb(5,255,0)', 'rgb(153,166,36)', 'rgb(208,207,204)', 'rgb(94,92,100)', 'rgb(246,97,81)', 'rgb(122,126,124)', 'rgb(233,173,12)', 'rgb(255,255,255)', 'rgb(192,97,203)', 'rgb(51,199,222)', 'rgb(255,255,255)']
+palette=['rgb(23,20,33)', 'rgb(255,0,19)', 'rgb(0,255,38)', 'rgb(255,255,255)', 'rgb(161,16,242)', 'rgb(5,255,0)', 'rgb(153,166,36)', 'rgb(208,207,204)', 'rgb(94,92,100)', 'rgb(246,97,81)', 'rgb(122,126,124)', 'rgb(233,173,12)', 'rgb(255,255,255)', 'rgb(192,97,203)', 'rgb(51,199,222)', 'rgb(255,255,255)']
 scrollback-lines=50000
 use-system-font=true
 use-theme-colors=false
 use-theme-transparency=false
 use-transparent-background=true
 visible-name='Neon'
+
+[:ed9c85c3-05f4-456e-b2b0-a4d8c3f68cdb]
+background-color='rgb(0,0,0)'
+background-transparency-percent=5
+bold-color='rgb(190,0,255)'
+bold-color-same-as-fg=false
+default-size-columns=150
+default-size-rows=40
+font='FreeMono 14'
+foreground-color='rgb(14,255,0)'
+highlight-background-color='rgb(134,134,134)'
+highlight-colors-set=true
+highlight-foreground-color='rgb(0,255,162)'
+palette=['rgb(184,0,255)', 'rgb(192,28,40)', 'rgb(0,255,10)', 'rgb(162,115,76)', 'rgb(139,139,139)', 'rgb(163,71,186)', 'rgb(0,224,255)', 'rgb(217,217,217)', 'rgb(94,92,100)', 'rgb(246,97,81)', 'rgb(51,218,122)', 'rgb(233,173,12)', 'rgb(42,123,222)', 'rgb(192,97,203)', 'rgb(51,199,222)', 'rgb(255,255,255)']
+use-system-font=false
+use-theme-colors=false
+use-theme-transparency=false
+use-transparent-background=true
+visible-name='Biohazard'
