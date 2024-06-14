@@ -149,4 +149,4 @@ path_w='[38;5;226m\]'
 down_universal_char_map=└───────
 
 
-export PS1="\[\e$user_u$up_universal_char_map(\u\[\e$color_symbol$symbol \[\e$hostname_h\h)\[\e$path_w$separator [\w] \[\033[0m\]\n$down_universal_char_map$ "
+export PS1="\[\e$user_u$up_universal_char_map(\u\[\e$color_symbol$symbol  \[\e$hostname_h\h)\[\e$path_w$separator [\w] \[\033[0m\]\n$down_universal_char_map$ "

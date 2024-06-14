@@ -30,13 +30,13 @@ echo "Voulez-vous installer Virtualbox ? ( y  /  n ) :"
 read choixVirtualbox
 
 case $choixVirtualbox in
-    y)  # Si le choix est oui
+    y)  # Si le choix est oui)
         sudo apt install -y virtualbox virtualbox-ext-pack
         ;;
-    n)  # Si le choix est non
+    n)  # Si le choix est non)
         echo "Vous avez choisi de ne pas installer Virtualbox"
         ;;
-    *)  # Si aucun choix ne correspond
+    *)  # Si aucun choix ne correspond)
         echo "Ta pas fait le bon choix Maurice (Attention à la casse)"
         ;;
 esac
@@ -50,15 +50,15 @@ echo "Voulez-vous installer Wireshark ? ( y  /  n ) :"
 read choixWireshark
 
 case $choixWireshark in
-    y)  # Si le choix est oui
+    y)  # Si le choix est oui)
         sudo apt install -y wireshark
         echo "Ajout de l'utilisateur au groupe "wireshark" :"
         sudo adduser $USER wireshark
         ;;
-    n)  # Si le choix est non
+    n)  # Si le choix est non)
         echo "Vous avez choisi de ne pas installer Wireshark"
         ;;
-    *)  # Si aucun choix ne correspond
+    *)  # Si aucun choix ne correspond)
         echo "Ta pas fait le bon choix Maurice (Attention à la casse)"
         ;;
 esac
@@ -73,7 +73,7 @@ echo "Voulez-vous installer GNS3 ? ( y / n ) :"
 read choixGNS3 
 
 case $choixGNS3 in 
-    y)  # Si le choix est oui
+    y)  # Si le choix est oui)
         echo "Vous avez choisi d'installer GNS3 à vos risques et périls" 
         cd ~/Documents 
         sudo add-apt-repository ppa:gns3/ppa 
@@ -97,10 +97,10 @@ case $choixGNS3 in
         sudo chmod +x install-dynamips.sh 
         cd 
         ;;
-    n)  # Si le choix est non
+    n)  # Si le choix est non)
         echo "Vous avez choisi de ne pas installer GNS3, ouf !!!" 
         ;;
-    *)  # Si aucun choix ne correspond
+    *)  # Si aucun choix ne correspond)
         echo "Ta pas fait le bon choix Maurice (Attention à la casse)" 
         ;;
 esac
@@ -142,7 +142,7 @@ echo "Voulez-vous installer de nouveaux themes (Icones, curseurs ...) ? ( y  /  
 read choixThemes
 
 case $choixThemes in
-    y)  # Si le choix est oui
+    y)  # Si le choix est oui)
         # Import Theme Terminal
         dconf load /org/gnome/terminal/legacy/profiles:/ < ./Necessary/gnome-terminal-profiles.dconf
 	# Export
@@ -163,10 +163,10 @@ case $choixThemes in
         mkdir /home/$USER/.icons/ 
         cp -r ./Necessary/Icons/* /home/$USER/.icons/ 
         ;;
-    n)  # Si le choix est non
+    n)  # Si le choix est non)
         echo "Vous avez choisi de ne pas installer de nouveaux themes"
         ;;
-    *)  # Si aucun choix ne correspond
+    *)  # Si aucun choix ne correspond)
         echo "Ta pas fait le bon choix Maurice (Attention à la casse)"
         ;;
 esac
@@ -180,7 +180,7 @@ echo "Voulez-vous installer Google Chrome ? ( y  /  n ) :"
 read choixGoogleChrome
 
 case $choixGoogleChrome in
-    y)  # Si le choix est oui
+    y)  # Si le choix est oui)
         cd ~/$varDownload
         wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
         echo Installation de Google Chrome :
@@ -188,10 +188,10 @@ case $choixGoogleChrome in
         sudo rm ./*deb
         cd
         ;;
-    n)  # Si le choix est non
+    n)  # Si le choix est non)
         echo "Vous avez choisi de ne pas installer Google Chrome"
         ;;
-    *)  # Si aucun choix ne correspond
+    *)  # Si aucun choix ne correspond)
         echo "Ta pas fait le bon choix Maurice (Attention à la casse)"
         ;;
 esac
@@ -205,7 +205,7 @@ echo "Voulez-vous installer Visual Studio Code ? ( y  /  n ) :"
 read choixVisualStudioCode
 
 case $choixVisualStudioCode in
-    y)  # Si le choix est oui
+    y)  # Si le choix est oui)
         echo Telechargement de Visual Studio Code :
         cd ~/$varDownload
         wget --content-disposition https://go.microsoft.com/fwlink/?LinkID=760868
@@ -214,10 +214,10 @@ case $choixVisualStudioCode in
         sudo rm ./*deb
         cd
         ;;
-    n)  # Si le choix est non
+    n)  # Si le choix est non)
         echo "Vous avez choisi de ne pas installer Visual Studio Code"
         ;;
-    *)  # Si aucun choix ne correspond
+    *)  # Si aucun choix ne correspond)
         echo "Ta pas fait le bon choix Maurice (Attention à la casse)"
         ;;
 esac
@@ -231,7 +231,7 @@ echo "Voulez-vous installer Discord ? ( y  /  n ) :"
 read choixDiscord
 
 case $choixDiscord in
-    y)  # Si le choix est oui
+    y)  # Si le choix est oui)
         echo "Vous avez choisi d'installer Discord"
         cd ~/$varDownload
         wget https://dl.discordapp.net/apps/linux/0.0.54/discord-0.0.54.deb
@@ -240,10 +240,10 @@ case $choixDiscord in
 	sudo rm ./*deb
 	cd
         ;;
-    n)  # Si le choix est non
+    n)  # Si le choix est non)
         echo "Vous avez choisi de ne pas installer Discord"
         ;;
-    *)  # Si aucun choix ne correspond
+    *)  # Si aucun choix ne correspond)
         echo "Ta pas fait le bon choix Maurice (Attention à la casse)"
         ;;
 esac
@@ -257,14 +257,14 @@ echo "Voulez-vous installer Apache2 ? ( y /  n ) :"
 read choixApache2
 
 case $choixApache2 in
-    y)  # Si le choix est oui
+    y)  # Si le choix est oui)
         echo "Vous avez choisi d'installer Apache2"
         sudo apt install -y apache2
         ;;
-    n)  # Si le choix est non
+    n)  # Si le choix est non)
         echo "Vous avez choisi de ne pas installer Apache2"
         ;;
-    *)  # Si aucun choix ne correspond
+    *)  # Si aucun choix ne correspond)
         echo "Ta pas fait le bon choix Maurice (Attention à la casse)"
         ;;
 esac
@@ -278,14 +278,14 @@ echo "Voulez-vous installer mariadb ? ( y  /  n ) :"
 read choixmariadb
 
 case $choixmariadb in
-    y)  # Si le choix est oui
+    y)  # Si le choix est oui)
         echo "Vous avez choisi d'installer mariadb"
         sudo apt install -y mariadb-server
         ;;
-    n)  # Si le choix est non
+    n)  # Si le choix est non)
         echo "Vous avez choisi de ne pas installer mariadb"
         ;;
-    *)  # Si aucun choix ne correspond
+    *)  # Si aucun choix ne correspond)
         echo "Ta pas fait le bon choix Maurice (Attention à la casse)"
         ;;
 esac
@@ -301,7 +301,7 @@ echo "Voulez-vous installer Docker / Docker compose / Docker Desktop ? ( y  /  n
 read choixDockerDesktop
 
 case $choixDockerDesktop in
-    y)  # Si le choix est oui
+    y)  # Si le choix est oui)
         echo "Vous avez choisi d'installer Docker / Docker compose / Docker Desktop"
         #sudo apt install -y curl docker-ce-cli pass uidmap
         cd ~/$varDownload
@@ -325,10 +325,10 @@ case $choixDockerDesktop in
         sudo systemctl restart docker
 	sudo adduser $USER docker
         ;;
-    n)  # Si le choix est non
+    n)  # Si le choix est non)
         echo "Vous avez choisi de ne pas installer Docker Desktop"
         ;;
-    *)  # Si aucun choix ne correspond
+    *)  # Si aucun choix ne correspond)
         echo "Ta pas fait le bon choix Maurice (Attention à la casse)"
         ;;
 esac
@@ -342,7 +342,7 @@ echo "Voulez-vous installer GitHub Desktop ? ( y  /  n ) :"
 read choixGithubDesktop
 
 case $choixGithubDesktop in
-    y)  # Si le choix est oui
+    y)  # Si le choix est oui)
         echo "Vous avez choisi d'installer GitHub Desktop"
         sudo apt install -y apt-transport-https gnupg2 software-properties-common
         cd ~/$varDownload
@@ -351,10 +351,10 @@ case $choixGithubDesktop in
         rm ./*.deb
 	cd
         ;;
-    n)  # Si le choix est non
+    n)  # Si le choix est non)
         echo "Vous avez choisi de ne pas installer GitHub Desktop"
         ;;
-    *)  # Si aucun choix ne correspond
+    *)  # Si aucun choix ne correspond)
         echo "Ta pas fait le bon choix Maurice (Attention à la casse)"
         ;;
 esac
@@ -368,7 +368,7 @@ echo "Voulez-vous installer NordVPN ? ( y  /  n ) :"
 read choixNordVPN
 
 case $choixNordVPN in
-    y)  # Si le choix est oui
+    y)  # Si le choix est oui)
         echo "Vous avez choisi d'installer NordVPN"
         cd ~/$varDownload
         wget -c https://repo.nordvpn.com/deb/nordvpn/debian/pool/main/nordvpn-release_1.0.0_all.deb
@@ -383,10 +383,10 @@ case $choixNordVPN in
         sudo rm ./*.deb
 	cd
         ;;
-    n)  # Si le choix est non
+    n)  # Si le choix est non)
         echo "Vous avez choisi de ne pas installer NordVPN"
         ;;
-    *)  # Si aucun choix ne correspond
+    *)  # Si aucun choix ne correspond)
         echo "Ta pas fait le bon choix Maurice (Attention à la casse)"
         ;;
 esac
@@ -400,7 +400,7 @@ echo "Voulez-vous installer Obsidian et commencer à configurer rclone ? ( y  / 
 read choixObsidian
 
 case $choixObsidian in
-    y)  # Si le choix est oui
+    y)  # Si le choix est oui)
         echo "Vous avez choisi d'installer Obsidian et commencer à configurer rclone"
         mkdir ~/Obsidian_Vault
         wget https://github.com/obsidianmd/obsidian-releases/releases/download/v1.5.12/obsidian_1.5.12_amd64.deb
@@ -425,10 +425,10 @@ case $choixObsidian in
     notify-send "Excalidraw" "Les logos pour Excalidraw sont dans /home/$USER/Documents/Excalidraw" -t 2000
 	cd
         ;;
-    n)  # Si le choix est non
+    n)  # Si le choix est non)
         echo "Vous avez choisi de ne pas installer Obsidian"
         ;;
-    *)  # Si aucun choix ne correspond
+    *)  # Si aucun choix ne correspond)
         echo "Ta pas fait le bon choix Maurice (Attention à la casse)"
         ;;
 esac
@@ -442,7 +442,7 @@ echo "Voulez-vous installer Burp Suite ? ( y  /  n ) :"
 read choixBurpSuite
 
 case $choixBurpSuite in
-    y)  # Si le choix est oui
+    y)  # Si le choix est oui)
         echo "Vous avez choisi d'installer Burp Suite"
         cd /home/$USER/Documents
         curl 'https://portswigger-cdn.net/burp/releases/download?product=community&version=2024.3.1.4&type=Linux' -o burpsuite.sh
@@ -451,10 +451,10 @@ case $choixBurpSuite in
         sudo rm -r burpsuite*
 	cd
         ;;
-    n)  # Si le choix est non
+    n)  # Si le choix est non)
         echo "Vous avez choisi de ne pas installer Burp Suite"
         ;;
-    *)  # Si aucun choix ne correspond
+    *)  # Si aucun choix ne correspond)
         echo "Ta pas fait le bon choix Maurice (Attention à la casse)"
         ;;
 esac
@@ -468,7 +468,7 @@ echo "Voulez-vous installer Vagrant ? ( y  /  n ) :"
 read choixVagrant
 
 case $choixVagrant in
-    y)  # Si le choix est oui
+    y)  # Si le choix est oui)
     cd /home/$USER/Documents
         wget -O- https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
         echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
@@ -477,10 +477,10 @@ case $choixVagrant in
         vagrant --version
 	cd
         ;;
-    n)  # Si le choix est non
+    n)  # Si le choix est non)
         echo "Vous avez choisi de ne pas installer Vagrant'"
         ;;
-    *)  # Si aucun choix ne correspond
+    *)  # Si aucun choix ne correspond)
         echo "Ta pas fait le bon choix Maurice (Attention à la casse)"
         ;;
 esac
@@ -494,7 +494,7 @@ echo "Voulez-vous installer Ansible ? ( y  /  n ) :"
 read choixAnsible
 
 case $choixAnsible in
-    y)  # Si le choix est oui
+    y)  # Si le choix est oui)
     cd /home/$USER/Documents
         sudo apt update
         sudo apt install software-properties-common
@@ -503,10 +503,10 @@ case $choixAnsible in
         ansible --version
 	cd
         ;;
-    n)  # Si le choix est non
+    n)  # Si le choix est non)
         echo "Vous avez choisi de ne pas installer Ansible'"
         ;;
-    *)  # Si aucun choix ne correspond
+    *)  # Si aucun choix ne correspond)
         echo "Ta pas fait le bon choix Maurice (Attention à la casse)"
         ;;
 esac
@@ -521,7 +521,7 @@ echo "Voulez-vous installer Metasploit ? ( y  /  n ) :"
 read choixMetasploit
 
 case $choixMetasploit in
-    y)  # Si le choix est oui
+    y)  # Si le choix est oui)
     #cd /home/$USER/Documents
     cd /opt
     sudo apt-get install -y build-essential zlib1g zlib1g-dev libxml2 libxml2-dev libxslt-dev locate libreadline6-dev libcurl4-openssl-dev git-core autoconf curl postgresql postgresql-contrib libpq-dev libapr1 libaprutil1 libsvn1 libpcap-dev
@@ -556,18 +556,18 @@ echo "Voulez-vous installer The Harvester (OSINT) ? ( y  /  n ) :"
 read choixTheHarvester
 
 case $choixTheHarvester in
-    y)  # Si le choix est oui
-  	cd /opt
-   	sudo git clone https://github.com/laramies/theHarvester.git
-    	sudo chown $USER:$USER -R theHarvester # Changement du owner ; si l'option -f est entrée des problèmes ont lieu lors de la génération des fichiers si le owner est root
-     	cd theHarvester
-    	python3 -m pip install -r requirements/base.txt
+    y)  # Si le choix est oui)
+    cd /opt
+    sudo git clone https://github.com/laramies/theHarvester.git
+    sudo chown $USER:$USER -R theHarvester # Changement du owner ; si l'option -f est entrée des problèmes ont lieu lors de la génération des fichiers si le owner est root
+    cd theHarvester
+    python3 -m pip install -r requirements/base.txt
     cd
         ;;
-    n)  # Si le choix est non
+    n)  # Si le choix est non)
         echo "Vous avez choisi de ne pas installer TheHarvester'"
         ;;
-    *)  # Si aucun choix ne correspond
+    *)  # Si aucun choix ne correspond)
         echo "Ta pas fait le bon choix Maurice (Attention à la casse)"
         ;;
 esac
@@ -583,13 +583,13 @@ echo "Voulez-vous installer Sherlock (OSINT) ? ( y  /  n ) :"
 read choixSherlock
 
 case $choixSherlock in
-    y)  # Si le choix est oui
-  	cd /opt
-   	sudo git clone https://github.com/sherlock-project/sherlock.git
-    	sudo chown $USER:$USER -R sherlock # Changement du owner ; sinon à la fin de l'execution des erreurs ont lieu sur les scripts "threading.py", "thread.py", "sherlock.py" (line : 508)
-     	chmod +x /opt/sherlock/sherlock/sherlock.py
-    	cd sherlock
-     	python3 -m pip install -r requirements.txt
+    y)  # Si le choix est oui)
+    cd /opt
+    sudo git clone https://github.com/sherlock-project/sherlock.git
+    sudo chown $USER:$USER -R sherlock # Changement du owner ; sinon à la fin de l'execution des erreurs ont lieu sur les scripts "threading.py", "thread.py", "sherlock.py" (line : 508)
+    chmod +x /opt/sherlock/sherlock/sherlock.py
+    cd sherlock
+    python3 -m pip install -r requirements.txt
     cd
         ;;
     n)  # Si le choix est non
@@ -610,7 +610,7 @@ echo "Voulez-vous installer Holehe (OSINT) ? ( y  /  n ) :"
 read choixHolehe
 
 case $choixHolehe in
-    y)  # Si le choix est oui
+    y)  # Si le choix est oui)
     	cd /opt
   	sudo git clone https://github.com/megadose/holehe.git
    	sudo chown $USER:$USER -R holehe
@@ -618,10 +618,10 @@ case $choixHolehe in
 	sudo python3 setup.py install
     cd
         ;;
-    n)  # Si le choix est non
+    n)  # Si le choix est non)
         echo "Vous avez choisi de ne pas installer Holehe'"
         ;;
-    *)  # Si aucun choix ne correspond
+    *)  # Si aucun choix ne correspond)
         echo "Ta pas fait le bon choix Maurice (Attention à la casse)"
         ;;
 esac
@@ -636,17 +636,17 @@ echo "Voulez-vous installer SQLmap ? ( y  /  n ) :"
 read choixSQLmap
 
 case $choixSQLmap in
-    y)  # Si le choix est oui
+    y)  # Si le choix est oui)
     	cd /opt
   	sudo git clone --depth 1 https://github.com/sqlmapproject/sqlmap.git sqlmap-dev
    	sudo chown $USER:$USER -R sqlmap-dev
     	sed -i 's|#!/usr/bin/env python|#!/usr/bin/env python3|' /opt/sqlmap-dev/sqlmap.py
     cd
         ;;
-    n)  # Si le choix est non
+    n)  # Si le choix est non)
         echo "Vous avez choisi de ne pas installer SQLmap'"
         ;;
-    *)  # Si aucun choix ne correspond
+    *)  # Si aucun choix ne correspond)
         echo "Ta pas fait le bon choix Maurice (Attention à la casse)"
         ;;
 esac
@@ -660,19 +660,44 @@ echo "Voulez-vous copier les fichiers bashrc pour votre terminal ? ( y  /  n ) :
 read choixBashRc
 
 case $choixBashRc in
-    y)  # Si le choix est oui
+    y)  # Si le choix est oui)
         echo "Vous avez choisi de copier les fichiers bashrc"
         cp -f ./.bashrc ./.bashrc.ori
+echo "Vous avez choisi de copier les fichiers bashrc"
+cat << 'EOF' >> ~/.bashrc
+
+### PATH ###
+export PATH="/home/$USER/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin"
+export PATH="/opt/theHarvester:$PATH"
+export PATH="/opt/sherlock/sherlock:$PATH"
+export PATH="/opt/sqlmap-dev:$PATH"
+
+### Encore et encore des alias ###
+alias dns="nmcli device show | grep IP4.DNS" # S'appui sur network-manager
+alias ipls="netplan status" # S'appui sur iproute2
+alias metasploit="msfconsole" # S'appui sur metasploit-framework
+alias bat="batcat" # S'appui sur bat
+alias logoff="skill -KILL -u $USER" # S'appui sur procps
+alias getuser="cut -d: -f1 /etc/passwd" # s'appui sur cut
+alias sherlock="sherlock.py" # S'appui sur sherlock
+alias harvester="theHarvester.py" # S'appui sur The Harvester
+alias sqlmap="sqlmap.py" # S'appui sur SQLmap
+
+alias service="systemctl list-units --type=service" # S'appui sur systemctl
+alias allservice="systemctl list-units --type=service --all" # S'appui sur systemctl
+alias servicesystemd="systemctl list-unit-files" # S'appui sur systemd
+EOF
+
         cp -f ./Necessary/bashrc/.bashrc* /home/$USER/
         notify-send -i face-smile "BashRc" "Les fichiers .bashrc ont été copiés dans /home/$USER" -t 3000
         echo "Vous pouvez faire un : cp -f <.bashrc_voulu> .bashrc"
         source .bashrc
 	cd
         ;;
-    n)  # Si le choix est non
+    n)  # Si le choix est non)
         echo "Vous n'avez pas choisi de copier les fichiers bashrc"
         ;;
-    *)  # Si aucun choix ne correspond
+    *)  # Si aucun choix ne correspond)
         echo "Ta pas fait le bon choix Maurice (Attention à la casse)"
         ;;
 esac
@@ -686,7 +711,7 @@ echo "Voulez-vous modifier vos raccourcis clavier ? ( y  /  n ) :"
 read choixRaccourcisClavier
 
 case $choixRaccourcisClavier in
-    y)  # Si le choix est oui
+    y)  # Si le choix est oui)
 
 	gsettings set org.gnome.shell.keybindings toggle-message-tray "[]" # Valeur raccourci "Afficher la liste des notifications" supprimé
 	
@@ -724,7 +749,7 @@ case $choixRaccourcisClavier in
         gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7/ command '/usr/bin/diodon' # Commande du raccourci
         gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7/ binding '<Super>v' # Raccourci clavier attribué
 
- 	gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom8/ name 'Flameshot' # Nom du raccourci
+        gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom8/ name 'Flameshot' # Nom du raccourci
         gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom8/ command 'flameshot gui' # Commande du raccourci
         gsettings set org.gnome.settings-daemon.plugins.media-keys.custom-keybinding:/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom8/ binding '<Super><Shift>f' # Raccourci clavier attribué
         
@@ -767,7 +792,7 @@ echo "Voulez-vous fermer la session maintenant ? ( y  /  n ) :"
 read choixLogoff
 
 case $choixLogoff in
-    y)  # Si le choix est oui
+    y)  # Si le choix est oui)
         echo "Vous avez choisi de fermer la session"
         sleep 1
         echo "La session va se fermer dans 5 secondes"
@@ -783,11 +808,11 @@ case $choixLogoff in
         skill -KILL -u $USER
         # pkill -u $USER
         ;;
-    n)  # Si le choix est non
+    n)  # Si le choix est non)
         echo "Vous n'avez pas choisi de fermer la session"
         notify-send "Vous n'avez pas choisi de fermer la session" -t 5000
         echo "D'accord BYE !!!"
-	    echo "██████╗ ██╗   ██╗███████╗"
+        echo "██████╗ ██╗   ██╗███████╗"
         echo "██╔══██╗╚██╗ ██╔╝██╔════╝"
         echo "██████╔╝ ╚████╔╝ █████╗"  
         echo "██╔══██╗  ╚██╔╝  ██╔══╝"  
@@ -795,7 +820,7 @@ case $choixLogoff in
         echo "╚═════╝    ╚═╝   ╚══════╝"        
         sleep 4
         ;;
-    *)  # Si aucun choix ne correspond
+    *)  # Si aucun choix ne correspond)
         echo "Ta pas fait le bon choix Maurice (Attention à la casse)"
         ;;
 esac
