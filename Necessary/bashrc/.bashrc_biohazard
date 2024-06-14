@@ -132,7 +132,7 @@ alias getuser="cut -d: -f1 /etc/passwd" # s'appui sur cut
 alias sherlock="sherlock.py" # S'appui sur sherlock
 alias harvester="theHarvester.py" # S'appui sur The Harvester
 
-### Neon ###
+### Biohazard ###
 
 up_universal_char_map=┌───
 user_u='[38;5;46m\]'
