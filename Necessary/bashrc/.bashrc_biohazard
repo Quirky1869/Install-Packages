@@ -136,11 +136,11 @@ alias harvester="theHarvester.py" # S'appui sur The Harvester
 
 up_universal_char_map=┌───
 user_u='[38;5;46m\]'
-symbol=☣︎
+symbol=☣️
 color_symbol='[38;5;255m\]'
-hostname_h='[38;5;98m\]'
-separator=☠︎︎
-path_w='[38;5;46m\]'
+hostname_h='[38;5;46m\]'
+separator=☠️
+path_w='[38;5;226m\]'
 down_universal_char_map=└───────
 
 
