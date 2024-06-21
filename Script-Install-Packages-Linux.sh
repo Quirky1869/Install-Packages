@@ -652,6 +652,29 @@ case $choixSQLmap in
 esac
 done
 
+# Choix install Aperi'solve
+# Lien : https://github.com/Zeecka/AperiSolve
+choixAperisolve=""
+
+while [[ "$choixAperisolve" != "y" && "$choixAperisolve" != "n" ]]; do
+echo "Voulez-vous installer Aperi'solve (STEGANOGRAPHIE) ? ( y  /  n ) :"
+read choixAperisolve
+
+case $choixAperisolve in
+    y)  # Si le choix est oui)
+ 	sudo sh -c "$(curl -fs https://www.aperisolve.com/install.sh)"
+  	sleep 3
+    cd
+        ;;
+    n)  # Si le choix est non)
+        echo "Vous avez choisi de ne pas installer Aperi'solve"
+        ;;
+    *)  # Si aucun choix ne correspond)
+        echo "Ta pas fait le bon choix Maurice (Attention à la casse)"
+        ;;
+esac
+done
+
 # Choix Bashrc
 choixBashRc=""
 
