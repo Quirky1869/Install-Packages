@@ -695,7 +695,8 @@ cat << 'EOF' >> ~/.bashrc
 ### PATH ###
 export PATH="/home/$USER/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin"
 export PATH="/opt/theHarvester:$PATH"
-export PATH="/opt/sherlock/sherlock:$PATH"
+#export PATH="/opt/sherlock/sherlock:$PATH"   #OLD SHERLOCK
+export PATH="/home/$USER/.local/bin:$PATH"    #SHERLOCK
 export PATH="/opt/sqlmap-dev:$PATH"
 
 ### Encore et encore des alias ###
@@ -705,7 +706,7 @@ alias metasploit="msfconsole" # S'appui sur metasploit-framework
 alias bat="batcat" # S'appui sur bat
 alias logoff="skill -KILL -u $USER" # S'appui sur procps
 alias getuser="cut -d: -f1 /etc/passwd" # s'appui sur cut
-alias sherlock="sherlock.py" # S'appui sur sherlock
+#alias sherlock="sherlock.py" # S'appui sur sherlock        #OLD SHERLOCK
 alias harvester="theHarvester.py" # S'appui sur The Harvester
 alias sqlmap="sqlmap.py" # S'appui sur SQLmap
 
