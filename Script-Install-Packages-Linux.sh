@@ -317,7 +317,8 @@ case $choixDockerDesktop in
         echo "Etat actuel de Docker"
         sudo systemctl is-active docker
         sleep 5
-        wget https://desktop.docker.com/linux/main/amd64/137060/docker-desktop-4.27.2-amd64.deb
+        #wget https://desktop.docker.com/linux/main/amd64/137060/docker-desktop-4.27.2-amd64.deb
+	curl 'https://desktop.docker.com/linux/main/amd64/docker-desktop-amd64.deb?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-linux-amd64' -o docker-desktop.deb
         sudo apt install ./*.deb
         sudo rm ./*deb
 	#sudo snap install docker
