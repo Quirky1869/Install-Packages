@@ -409,9 +409,9 @@ case $choixObsidian in
         sudo rm -f ./*deb
 
         # Copie du script qui permet de synchroniser les fichiers du PC vers Google Drive
-        sudo cp -f ./Necessary/Obsidian-rclone/synchro-pc-obidian-to-google-drive.sh /usr/local/bin
-        sudo chmod u+x /usr/local/bin/synchro-pc-obidian-to-google-drive.sh
-        sudo chown $USER:$USER -R /usr/local/bin/synchro-pc-obidian-to-google-drive.sh
+        sudo cp -f ./Necessary/Obsidian-rclone/synchro-pc-obsidian-to-google-drive.sh /usr/local/bin
+        sudo chmod u+x /usr/local/bin/synchro-pc-obsidian-to-google-drive.sh
+        sudo chown $USER:$USER -R /usr/local/bin/synchro-pc-obsidian-to-google-drive.sh
 
         # Copie du script qui permet de synchroniser les fichiers de Google Drive vers le PC
         sudo cp -f ./Necessary/Obsidian-rclone/synchro-google-drive-to-pc-obsidian.sh /usr/local/bin
