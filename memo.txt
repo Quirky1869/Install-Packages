@@ -4,6 +4,8 @@
 
 # !!!!!!!    Avant de configurer rclone assurez-vous d'ouvrir obsidian une 1ere fois et selectionner comme coffre à ouvrir ~/Obsidian_Vault    !!!!!!! #
 
+# https://youtu.be/n7yB1x2vhKw?si=d1taOzN_OHBl2cXp&t=378
+
 # Install Rclone for Google Drive
 
 # sudo apt install rclone rclone-browser
