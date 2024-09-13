@@ -51,6 +51,14 @@ rclone sync Google-drive:/Obsidian-Google-Drive /home/$USER/Obsidian_Vault/
 # Compiz wobbly windows effect :
 # https://extensions.gnome.org/extension/3210/compiz-windows-effect/
 
+# Paramètres : 
+Friction : 3.5
+Sping : 6.4
+Speedup Factor : 15.5
+Mass : 50
+X Tiles : 6
+Y Tiles : 6
+
 
 # Pour changer le bashrc faite un : cp -f <.bashrc_voulu> .bashrc
 
