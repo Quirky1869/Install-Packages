@@ -234,7 +234,7 @@ case $choixDiscord in
     y)  # Si le choix est oui)
         echo "Vous avez choisi d'installer Discord"
         cd ~/$varDownload
-        wget https://dl.discordapp.net/apps/linux/0.0.54/discord-0.0.54.deb
+        wget https://stable.dl2.discordapp.net/apps/linux/0.0.68/discord-0.0.68.deb
         echo Installation de Discord :
 	sudo dpkg -i ./*.deb
 	sudo rm ./*deb
