@@ -713,6 +713,8 @@ alias sqlmap="sqlmap.py" # S'appui sur SQLmap
 alias service="systemctl list-units --type=service" # S'appui sur systemctl
 alias allservice="systemctl list-units --type=service --all" # S'appui sur systemctl
 alias servicesystemd="systemctl list-unit-files" # S'appui sur systemd
+alias whatfilemanager="xdg-mime query default inode/directory"
+alias whatenvironment="echo $XDG_CURRENT_DESKTOP
 EOF
 
         cp -f ./Necessary/bashrc/.bashrc* /home/$USER/
