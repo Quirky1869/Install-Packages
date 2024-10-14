@@ -150,6 +150,8 @@ sudo pip install -U notify-send
 python3 -m pip install pwntools
 sudo pip install scapy
 
+sudo snap install searchsploit
+
 
 #Choix install themes
 choixThemes=""
