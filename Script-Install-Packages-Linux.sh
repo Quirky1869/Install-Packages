@@ -151,6 +151,7 @@ python3 -m pip install pwntools
 sudo pip install scapy
 
 sudo snap install searchsploit
+sudo snap install enum4linux
 
 
 #Choix install themes
