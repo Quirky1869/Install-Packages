@@ -36,6 +36,7 @@ Install-packages est conçus pour pouvoir installer rapidement et facilement plu
 >- servicesystemd
 >- whatfilemanager
 >- whatenvironment
+>- ...
 
 - Si vous décider d'installer de nouveaux thèmes il génère un changement visuel du prompt que vous pouvez régler via les préférences de votre prompt ; des curseurs et icones qui sont accessibles via "Tweaks" 
 
