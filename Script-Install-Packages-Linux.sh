@@ -729,6 +729,7 @@ alias getuser="cut -d: -f1 /etc/passwd" # s'appui sur cut
 #alias sherlock="sherlock.py" # S'appui sur sherlock        #OLD SHERLOCK
 alias harvester="theHarvester.py" # S'appui sur The Harvester
 alias sqlmap="sqlmap.py" # S'appui sur SQLmap
+alias ninja="/home/$USER/Public/binaryninja/binaryninja" # S'appui sur Binary Ninja
 
 alias service="systemctl list-units --type=service" # S'appui sur systemctl
 alias allservice="systemctl list-units --type=service --all" # S'appui sur systemctl
@@ -751,6 +752,32 @@ EOF
         ;;
 esac
 done
+
+# Choix Ninja Binary
+choixNinjaBinary=""
+
+while [[ "$choixNinjaBinary" != "y" && "$choixNinjaBinary" != "n" ]]; do
+echo "Voulez-vous installer Ninja Binary (Reverse Engineering) ? ( y  /  n ) :"
+read choixNinjaBinary
+
+case $choixNinjaBinary in
+    y)  # Si le choix est oui)
+ 	cd ~/$varDownload
+    curl https://cdn.binary.ninja/installers/binaryninja_free_linux.zip -o binaryninja.zip
+    unzip binaryninja.zip
+    mv binaryninja Public/
+    sudo rm binaryninja.zip
+    cd
+        ;;
+    n)  # Si le choix est non)
+        echo "Vous avez choisi de ne pas installer Ninja Binary"
+        ;;
+    *)  # Si aucun choix ne correspond)
+        echo "Ta pas fait le bon choix Maurice (Attention à la casse)"
+        ;;
+esac
+done
+
 
 # Choix création des raccourcis clavier
 choixRaccourcisClavier=""
