@@ -134,7 +134,7 @@ alias getuser="cut -d: -f1 /etc/passwd" # s'appui sur cut
 alias harvester="theHarvester.py" # S'appui sur The Harvester
 alias sqlmap="sqlmap.py" # S'appui sur SQLmap
 alias ninja="/home/$USER/Public/binaryninja/binaryninja" # S'appui sur Binary Ninja
-
+alias pythonserver="sudo python3 -m http.server" # S'appui sur Python 3
 alias service="systemctl list-units --type=service" # S'appui sur systemctl
 alias allservice="systemctl list-units --type=service --all" # S'appui sur systemctl
 alias servicesystemd="systemctl list-unit-files" # S'appui sur systemd
