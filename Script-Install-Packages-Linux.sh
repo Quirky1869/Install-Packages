@@ -736,6 +736,7 @@ alias allservice="systemctl list-units --type=service --all" # S'appui sur syste
 alias servicesystemd="systemctl list-unit-files" # S'appui sur systemd
 alias whatfilemanager="xdg-mime query default inode/directory"
 alias whatenvironment="echo $XDG_CURRENT_DESKTOP
+alias pythonserver="sudo python3 -m http.server"
 EOF
 
         cp -f ./Necessary/bashrc/.bashrc* /home/$USER/
