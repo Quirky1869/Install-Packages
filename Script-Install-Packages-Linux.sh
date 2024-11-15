@@ -243,6 +243,31 @@ case $choixGoogleChrome in
 esac
 done
 
+# Choix install Brave
+choixBrave=""
+
+while [[ "$choixBrave" != "y" && "$choixBrave" != "n" ]]; do
+echo "Voulez-vous installer Brave ? ( y  /  n ) :"
+read choixBrave
+
+case $choixBrave in
+    y)  # Si le choix est oui)
+        sudo apt install curl -y
+        sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
+        echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main"|sudo tee /etc/apt/sources.list.d/brave-browser-release.list
+        sudo apt update -y
+        sudo apt install brave-browser -y
+        cd
+        ;;
+    n)  # Si le choix est non)
+        echo "Vous avez choisi de ne pas installer Brave"
+        ;;
+    *)  # Si aucun choix ne correspond)
+        echo "Ta pas fait le bon choix Maurice (Attention à la casse)"
+        ;;
+esac
+done
+
 # Choix install Discord
 choixDiscord=""
 
