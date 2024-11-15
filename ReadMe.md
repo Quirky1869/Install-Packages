@@ -58,4 +58,3 @@ Le script à été testé uniquement sur :
 # Problème connu
 
 - Discord et Burpsuite ne sont pas à jour -> Oui je sais, il est possible de devoir faire une update à la mano
-- Des .svg ont des erreurs lors du git clone -> Je sais aussi, certaines icones du thème "flat-remix" sont trop grandes pour GitHub
