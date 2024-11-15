@@ -15,7 +15,7 @@ echo "             8'    .88"
 echo "             8`._.' Y8."
 echo "            d/      `8b."
 echo "           dP   .    Y8b."
-echo "          d8:'  "  `::88b"
+echo "          d8:'    `::88b"
 echo "         d8"         'Y88b"
 echo "        :8P    '      :888"
 echo "         8a.   :     _a88P"
@@ -38,6 +38,32 @@ echo ===========================
 
 # Mise à jour et upgrade
 sudo apt update -y && sudo apt upgrade -y 
+
+# Choix install Visual Studio Code
+choixVisualStudioCode=""
+
+while [[ "$choixVisualStudioCode" != "y" && "$choixVisualStudioCode" != "n" ]]; do
+echo "Voulez-vous installer Visual Studio Code ? ( y  /  n ) :"
+read choixVisualStudioCode
+
+case $choixVisualStudioCode in
+    y)  # Si le choix est oui)
+        echo Telechargement de Visual Studio Code :
+        cd ~/$varDownload
+        wget --content-disposition https://go.microsoft.com/fwlink/?LinkID=760868
+        echo Installation de Visual Studio Code :
+        sudo dpkg -i ./*.deb
+        sudo rm ./*deb
+        cd
+        ;;
+    n)  # Si le choix est non)
+        echo "Vous avez choisi de ne pas installer Visual Studio Code"
+        ;;
+    *)  # Si aucun choix ne correspond)
+        echo "Ta pas fait le bon choix Maurice (Attention à la casse)"
+        ;;
+esac
+done
 
 # Choix install Virtualbox
 choixVirtualbox=""
@@ -210,32 +236,6 @@ case $choixGoogleChrome in
         ;;
     n)  # Si le choix est non)
         echo "Vous avez choisi de ne pas installer Google Chrome"
-        ;;
-    *)  # Si aucun choix ne correspond)
-        echo "Ta pas fait le bon choix Maurice (Attention à la casse)"
-        ;;
-esac
-done
-
-# Choix install Visual Studio Code
-choixVisualStudioCode=""
-
-while [[ "$choixVisualStudioCode" != "y" && "$choixVisualStudioCode" != "n" ]]; do
-echo "Voulez-vous installer Visual Studio Code ? ( y  /  n ) :"
-read choixVisualStudioCode
-
-case $choixVisualStudioCode in
-    y)  # Si le choix est oui)
-        echo Telechargement de Visual Studio Code :
-        cd ~/$varDownload
-        wget --content-disposition https://go.microsoft.com/fwlink/?LinkID=760868
-        echo Installation de Visual Studio Code :
-        sudo dpkg -i ./*.deb
-        sudo rm ./*deb
-        cd
-        ;;
-    n)  # Si le choix est non)
-        echo "Vous avez choisi de ne pas installer Visual Studio Code"
         ;;
     *)  # Si aucun choix ne correspond)
         echo "Ta pas fait le bon choix Maurice (Attention à la casse)"
@@ -735,7 +735,7 @@ alias service="systemctl list-units --type=service" # S'appui sur systemctl
 alias allservice="systemctl list-units --type=service --all" # S'appui sur systemctl
 alias servicesystemd="systemctl list-unit-files" # S'appui sur systemd
 alias whatfilemanager="xdg-mime query default inode/directory"
-alias whatenvironment="echo $XDG_CURRENT_DESKTOP
+alias whatenvironment="echo $XDG_CURRENT_DESKTOP"
 alias pythonserver="sudo python3 -m http.server"
 EOF
 
@@ -763,10 +763,9 @@ read choixNinjaBinary
 
 case $choixNinjaBinary in
     y)  # Si le choix est oui)
- 	cd ~/$varDownload
+ 	cd ~/Public
     curl https://cdn.binary.ninja/installers/binaryninja_free_linux.zip -o binaryninja.zip
     unzip binaryninja.zip
-    mv binaryninja Public/
     sudo rm binaryninja.zip
     cd
         ;;
