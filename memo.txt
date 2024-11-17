@@ -53,6 +53,7 @@ rclone sync Google-drive:/Obsidian-Google-Drive /home/$USER/Obsidian_Vault/
 # Compiz wobbly windows effect :
 # https://extensions.gnome.org/extension/3210/compiz-windows-effect/
 
+# Dans "Extensions"
 # Paramètres : 
 Friction : 3.5
 Sping : 6.4
