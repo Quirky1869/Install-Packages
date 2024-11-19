@@ -137,7 +137,7 @@ Y Tiles : 6
 # emblem-shared
 
 ############################################
-Sign-in Docker Desktop
+Sign-in Docker Desktop (https://docs.docker.com/desktop/setup/sign-in/#credentials-management-for-linux-users)
 
 gpg --generate-key (répondre aux questions)
 pass init <your_generated_gpg-id_public_key>  (où "your_generated_gpg-id_public_key" est la clé "pub" généré avec la commande précédente)
