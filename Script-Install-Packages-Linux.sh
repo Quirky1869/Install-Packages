@@ -152,7 +152,7 @@ sudo apt install -y tree wget recon-ng htop filezilla zip unzip rar unar unrar n
     bmon tcptrack nmap whois testdisk tshark git samba gnome-tweaks python3-impacket \
     gnome-disk-utility gparted xournal netdiscover dirb hydra netcat pluma bpytop edb-debugger pip \
     make gnome-shell-extensions gpaint rclone rclone-browser dsniff tcpdump libfuse2 pv curl network-manager \
-    diodon bat john flameshot binwalk hashcat libimage-exiftool-perl baobab pipx asciinema tmux drawing
+    diodon bat john flameshot binwalk hashcat libimage-exiftool-perl baobab pipx asciinema tmux drawing micro
 
 sudo pip install -U notify-send
 python3 -m pip install pwntools
@@ -762,6 +762,7 @@ alias servicesystemd="systemctl list-unit-files" # S'appui sur systemd
 alias whatfilemanager="xdg-mime query default inode/directory"
 alias whatenvironment="echo $XDG_CURRENT_DESKTOP"
 alias pythonserver="sudo python3 -m http.server"
+alias nano='micro'
 EOF
 
         cp -f ./Necessary/bashrc/.bashrc* /home/$USER/
