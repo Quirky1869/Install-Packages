@@ -145,4 +145,12 @@ pass init <your_generated_gpg-id_public_key>  (où "your_generated_gpg-id_public
 (message output) -> mkdir: created directory '/home/molly/.password-store/'
 
 
+############################################
+
+
+OREO CURSORS :
+https://www.pling.com/p/1360254/
+https://github.com/milkmadedev/oreo-cursors-compiled
+
+
 
