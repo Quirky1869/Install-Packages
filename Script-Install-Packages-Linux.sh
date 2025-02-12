@@ -189,7 +189,7 @@ case $choixThemes in
         mkdir /home/$USER/.local/share/icons/ 
         cp -r ./Necessary/Share-Icons/* /home/$USER/.local/share/icons/ 
 
-        # Import Icons
+        # Import Icons / Cursors
         mkdir /home/$USER/.icons/ 
         cp -r ./Necessary/Icons/* /home/$USER/.icons/ 
         ;;
