@@ -734,6 +734,7 @@ case $choixBashRc in
     y)  # Si le choix est oui)
         echo "Vous avez choisi de copier les fichiers bashrc"
         cp -f ./.bashrc ./.bashrc.ori
+        sed -i "s|^\s*alias ll='ls -al'|alias ll='ls -alFh'|" ~/.bashrc
 echo "Vous avez choisi de copier les fichiers bashrc"
 cat << 'EOF' >> ~/.bashrc
 
