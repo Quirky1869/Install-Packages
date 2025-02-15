@@ -53,7 +53,7 @@ Install-packages est conçus pour pouvoir installer rapidement et facilement plu
 # Version validé
 
 Le script à été testé uniquement sur : 
-**Ubuntu 22.04 LTS**
+[Ubuntu 22.04 LTS](https://releases.ubuntu.com/jammy/)
 
 # Problème connu
 
