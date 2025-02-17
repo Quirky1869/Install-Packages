@@ -20,6 +20,19 @@ Install-packages est conçus pour pouvoir installer rapidement et facilement plu
 - Un fichier log se nommant `Script-Install-Packages-Linux.sh.log` est créer dans `/var/log/`
 - Si vous décider de copier les `.bashrc`, un fichier .bashrc.ori est créé à côté du .bashrc, ils intègrent des petits changements sur le prompt (pour changer de `.bashrc` lancer la commande `cp -f <~/.bashrc_voulu> .bashrc` et relancer le prompt ou lancer un `source ~/.bashrc`) :<br>
 1 - Un changement visuel pour chaque `.bashrc_*`<br>
+
+| Neon (~/.bashrc_neon) | Japan (~/.bashrc_japan) |
+| :----------------: | :----------------: |
+| ![Neon](./Necessary/Images/Neon.png) | ![Japan](./Necessary/Images/japan.png)|
+
+| Post Apacalypse (~/.bashrc_post_apocalypse) | Kali (~/.bashrc_kali) |
+| :----------------: | :----------------: |
+| ![Post-Apacalypse](./Necessary/Images/post-apocalypse.png) | ![Kali](./Necessary/Images/kali.png)|
+
+| Biohazard (~/.bashrc_biohazard) | Green Space (~/.bashrc_green_space) |
+| :----------------: | :----------------: |
+| ![Biohazard](./Necessary/Images/biohazard.png) | ![Green-Space](./Necessary/Images/green-space.png)|
+
 2 - Une modification du $PATH (Ils servent pour les alias)<br>
 3 - Des alias :
 >- dns
@@ -37,6 +50,8 @@ Install-packages est conçus pour pouvoir installer rapidement et facilement plu
 >- whatfilemanager
 >- whatenvironment
 >- ...
+
+
 
 - Si vous décider d'installer de nouveaux thèmes il génère un changement visuel du prompt que vous pouvez régler via les préférences de votre prompt ; des curseurs et icones qui sont accessibles via "Tweaks" 
 

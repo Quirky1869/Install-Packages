@@ -734,8 +734,7 @@ case $choixBashRc in
     y)  # Si le choix est oui)
         echo "Vous avez choisi de copier les fichiers bashrc"
         cp -f ./.bashrc ./.bashrc.ori
-        sed -i "s|^\s*alias ll='ls -al'|alias ll='ls -alFh'|" ~/.bashrc
-echo "Vous avez choisi de copier les fichiers bashrc"
+        sed -i "s|^\s*alias ll='ls -al'|alias ll='ls -alhF'|" ~/.bashrc
 cat << 'EOF' >> ~/.bashrc
 
 ### PATH ###
@@ -749,9 +748,11 @@ export PATH="/opt/sqlmap-dev:$PATH"
 alias dns="nmcli device show | grep IP4.DNS" # S'appui sur network-manager
 alias ipls="netplan status" # S'appui sur iproute2
 alias metasploit="msfconsole" # S'appui sur metasploit-framework
+
 alias bat="batcat" # S'appui sur bat
 alias logoff="skill -KILL -u $USER" # S'appui sur procps
 alias getuser="cut -d: -f1 /etc/passwd" # s'appui sur cut
+
 #alias sherlock="sherlock.py" # S'appui sur sherlock        #OLD SHERLOCK
 alias harvester="theHarvester.py" # S'appui sur The Harvester
 alias sqlmap="sqlmap.py" # S'appui sur SQLmap
@@ -760,16 +761,17 @@ alias ninja="/home/$USER/Public/binaryninja/binaryninja" # S'appui sur Binary Ni
 alias service="systemctl list-units --type=service" # S'appui sur systemctl
 alias allservice="systemctl list-units --type=service --all" # S'appui sur systemctl
 alias servicesystemd="systemctl list-unit-files" # S'appui sur systemd
+
 alias whatfilemanager="xdg-mime query default inode/directory"
 alias whatenvironment="echo $XDG_CURRENT_DESKTOP"
 alias pythonserver="sudo python3 -m http.server"
-alias nano='micro'
 EOF
 
         cp -f ./Necessary/bashrc/.bashrc* /home/$USER/
         notify-send -i face-smile "BashRc" "Les fichiers .bashrc ont été copiés dans /home/$USER" -t 3000
         echo "Vous pouvez faire un : cp -f <.bashrc_voulu> .bashrc"
         source .bashrc
+        cp -f ./.bashrc ./.bashrc.ori.with.alias
 	cd
         ;;
     n)  # Si le choix est non)
