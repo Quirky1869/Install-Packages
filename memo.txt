@@ -165,3 +165,65 @@ Pour vs code (.md)
     "when": "editorTextFocus"
 }
 
+############################################
+
+Lien Kitty Terminal:
+https://sw.kovidgoyal.net/kitty/overview/#other-keyboard-shortcuts
+
+
+
+curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
+===========
+sudo ln -sf ~/.local/kitty.app/bin/kitty ~/.local/kitty.app/bin/kitten /usr/local/bin
+===========
+cp ~/.local/kitty.app/share/applications/kitty.desktop ~/.local/share/applications/
+===========
+cp ~/.local/kitty.app/share/applications/kitty-open.desktop ~/.local/share/applications/
+===========
+sed -i "s|Icon=kitty|Icon=$(readlink -f ~)/.local/kitty.app/share/icons/hicolor/256x256/apps/kitty.png|g" ~/.local/share/applications/kitty*.desktop
+===========
+sed -i "s|Exec=kitty|Exec=$(readlink -f ~)/.local/kitty.app/bin/kitty|g" ~/.local/share/applications/kitty*.desktop
+===========
+echo 'kitty.desktop' > ~/.config/xdg-terminals.list
+===========
+(Faire un sed sur le fichier "/home/$USER/.config/kitty/kitty.conf" pour ajouter les lignes :
+dynamic_background_opacity yes
+background_opacity 0.9
+) Vérifier le fichier .conf d'origine avant
+============
+Avec "sed" ajouter les lignes suivante :
+map ctrl+shift+left send_text all \x1b[1;6D
+map ctrl+shift+right send_text all \x1b[1;6C
+===========
+TOUT LES SED A FAIRE
+#### Permet de gerer l'opacité de la fenetre kitty (ctrl + shift + a puis l ou m) ####
+dynamic_background_opacity yes
+
+### Baisse l'opacité du terminal de manière définitive ####
+background_opacity 0.9
+
+#### Laisse passer le raccoourcis ctrl + shift + left ou right ####
+map ctrl+shift+left send_text all \x1b[1;6D
+map ctrl+shift+right send_text all \x1b[1;6C
+
+#### Permet avec un clique droit de coller ####
+mouse_map right press ungrabbed paste_from_clipboard
+
+#### Permet de naviguer entre les fenetres splitter (créer split ctrl + shift + entrée)(Fermer un split ctrl + shift + w) ####
+#map shift+alt+Down     next_window
+#map shift+alt+Up       previous_window
+map ctrl+Down     next_window
+map ctrl+Up       previous_window
+===========
+Pour mettre un nouveau thème faire :
+cd ~/.config/kitty
+git clone https://github.com/kovidgoyal/kitty-themes.git
+kitty +kitten themes
+(choisir son theme et ensuite faire entrée puis shift + d
+Un fichier du theme .conf sera placé dans le dossier "kitty")
+
+===========
+juste pour info : un theme dracula est disponible
+https://github.com/dracula/kitty
+
+
