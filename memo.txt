@@ -65,7 +65,7 @@ Y Tiles : 6
 
 # Pour changer le bashrc faite un : cp -f <.bashrc_voulu> .bashrc
 
-############################################
+#################### OBSIDIAN ########################
 
 # Bonnes pratiques obsidian
 
@@ -78,7 +78,7 @@ Y Tiles : 6
 
 # Les logos pour excalidraw sont stockés dans "/home/$USER/Documents/Excalidraw"
 
-############################################
+#################### NOTIFY-SEND ########################
 
 # Exemple de notify-send
 
@@ -136,7 +136,7 @@ Y Tiles : 6
 # emblem-readonly
 # emblem-shared
 
-############################################
+##################### DOCKER #######################
 Sign-in Docker Desktop (https://docs.docker.com/desktop/setup/sign-in/#credentials-management-for-linux-users)
 
 gpg --generate-key (répondre aux questions)
@@ -145,14 +145,14 @@ pass init <your_generated_gpg-id_public_key>  (où "your_generated_gpg-id_public
 (message output) -> mkdir: created directory '/home/molly/.password-store/'
 
 
-############################################
+####################### CURSORS #####################
 
 
 OREO CURSORS :
 https://www.pling.com/p/1360254/
 https://github.com/milkmadedev/oreo-cursors-compiled
 
-############################################
+####################### VS CODE #####################
 Pour vs code (.md)
 - L'extention "paste images" permet de choisir le dossier dans lequel les images seront copier -> le raccourci par défaut est crtl+alt+v
 - On peut régler le dossier par defaut des images, le nom ... dans les paramètres en tapant ceci "@ext:mushan.vscode-paste-image"
@@ -165,13 +165,13 @@ Pour vs code (.md)
     "when": "editorTextFocus"
 }
 
-############################################
+##################### MICRO #######################
 micro :
 Changer le type de colorisation dans micro
 `crtl + e`
 `set filetype shell`
 
-############################################
+##################### KITTY TERMINAL #######################
 Lien Kitty Terminal:
 https://sw.kovidgoyal.net/kitty/overview/#other-keyboard-shortcuts
 
@@ -260,7 +260,7 @@ Un fichier du theme .conf sera placé dans le dossier "kitty")
 juste pour info : un theme dracula est disponible
 https://github.com/dracula/kitty
 
-############################################
+##################### ZSH #######################
 
 !!! TERMINAL ZSH !!!
 
@@ -616,3 +616,78 @@ if [ -f ~/.oh-my-zsh/custom/plugins/zsh-completions/zsh-completions.plugin.zsh ]
     source ~/.oh-my-zsh/custom/plugins/zsh-completions/zsh-completions.plugin.zsh
 fi
 
+##################### SYMBOLES #######################
+
+TROUVER SUR : application "CARACTERES" de ubuntu
+ou
+"Universal character map" de Windows 
+
+kali :
+┌──
+└─
+㉿
+💀
+[38;5;33m\]
+[38;5;33m\]
+[38;5;33m\]
+[38;5;231m\]
+
+=====================
+╔═
+╚═
+╔═(test☠test-pc)⎯ [~/Documents]
+╚═$
+
+╓─
+╚═
+╓─(test⌾test-pc)⎯ [~/Documents]
+╚═$
+
+╒═
+╘══
+╒═(test⌬test-pc)⎯ [~/Documents]
+╘══$
+
+╓─
+╙
+╓─(test⏣test-pc)⎯ [~/Documents]
+╙───$
+
+╒═
+╘══❵
+╒═(test⏣test-pc)⎯ [~/Documents]
+╘══❵$
+
+
+⌬     ⌾     ⏣    
+
+⎯
+
+
+╒═(test⌬test-pc) ⎯ [~/Documents]
+╘══$
+
+=====================
+Japon :
+Aller à Kyoto
+⤷ U+4EAC    京
+⤷ U+90FD    都
+⤷ U+3078    へ
+⤷ U+884C   行
+⤷ U+304F   く
+
+▬▬ι══════ﺤ
+
+### Japan ###
+symbol='▬▬ι══════>'                                                                                                     hiragana='京都へ行く'
+
+export PS1="\[\e[38;5;9m\]\u\[\e[38;5;15m\]@\[\e[38;5;205m\]\h $symbol \[\e[38;5;248m\]\w $hiragana \[\033[0m\]$ "
+
+=====================
+battery_percentage=$(upower -i /org/freedesktop/UPower/devices/battery_BAT0 | grep -E "percentage" | awk '{print $2}')
+
+# Afficher le pourcentage de la batterie
+echo "Pourcentage de la batterie : $battery_percentage%"🔋
+
+
+#####################  #######################
