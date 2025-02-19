@@ -204,7 +204,7 @@ map alt+l launch --type=tab lazydocker
 dynamic_background_opacity yes
 
 ### Baisse l'opacité du terminal de manière définitive ####
-background_opacity 0.9
+background_opacity 0.95
 
 #### Permet de régler la couleur du background et foreground du terminal ####
 # foreground #dddddd
