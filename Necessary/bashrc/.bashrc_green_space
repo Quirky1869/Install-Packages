@@ -152,7 +152,7 @@ files="📄 \$(find . -mindepth 1 -maxdepth 1 -type f | wc -l) " # print number 
 symlinks="🔗 \$(find . -mindepth 1 -maxdepth 1 -type l | wc -l) " # print number of symlinks
 
 parse_git_branch() {
-git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ {\1}/'
+git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ git{\1}/'
 }
 
 up_universal_char_map=╒═
