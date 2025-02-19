@@ -140,7 +140,8 @@ alias allservice="systemctl list-units --type=service --all" # S'appui sur syste
 alias servicesystemd="systemctl list-unit-files" # S'appui sur systemd
 alias whatfilemanager="xdg-mime query default inode/directory"
 alias whatenvironment="echo $XDG_CURRENT_DESKTOP"
-alias nano='micro'
+
+alias lazydocker="/home/$USER/.local/bin/lazydocker" # S'appui sur LazyDocker
 
 ### Green Space ###
 up_universal_char_map=╒═
