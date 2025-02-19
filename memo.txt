@@ -136,7 +136,7 @@ Y Tiles : 6
 # emblem-readonly
 # emblem-shared
 
-##################### DOCKER #######################
+##################### DOCKER KEY #######################
 Sign-in Docker Desktop (https://docs.docker.com/desktop/setup/sign-in/#credentials-management-for-linux-users)
 
 gpg --generate-key (répondre aux questions)
@@ -299,7 +299,9 @@ curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/i
 # sudo apt install -y python3-nautilus python3-gi procps libjs-jquery
 # git clone https://github.com/bassmanitram/actions-for-nautilus.git
 # cd actions-for-nautilus
-# make install     OU        sudo make install_global
+# make install
+# Pour l'installer sur tout le système :
+# ⤷ sudo make install_global
 
 
 ##################### ZSH #######################
