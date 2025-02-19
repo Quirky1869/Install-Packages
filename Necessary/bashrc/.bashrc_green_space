@@ -144,6 +144,9 @@ alias whatenvironment="echo $XDG_CURRENT_DESKTOP"
 alias lazydocker="/home/$USER/.local/bin/lazydocker" # S'appui sur LazyDocker
 
 ### Green Space ###
+# https://gist.github.com/justintv/168835#:~:text=PS1%2B%3D%22%EE%97%BE%20%5C%24(find%20.%20%2Dmindepth%201%20%2Dmaxdepth%201%20%2Dtype%20d%20%7C%20wc%20%2Dl)%20%22%20%23%20print%20number%20of%20folders%0APS1%2B%3D%22%EF%9C%98%20%5C%24(find%20.%20%2Dmindepth%201%20%2Dmaxdepth%201%20%2Dtype%20f%20%7C%20wc%20%2Dl)%20%22%20%23%20print%20number%20of%20files%0APS1%2B%3D%22%EF%A0%B8%20%5C%24(find%20.%20%2Dmindepth%201%20%2Dmaxdepth%201%20%2Dtype%20l%20%7C%20wc%20%2Dl)%20%22%20%23%20print%20number%20of%20symlinks
+# https://www.it-connect.fr/linux-afficher-la-branche-git-dans-le-prompt/
+
 folders="📁 \$(find . -mindepth 1 -maxdepth 1 -type d | wc -l) " # print number of folders
 files="📄 \$(find . -mindepth 1 -maxdepth 1 -type f | wc -l) " # print number of files
 symlinks="🔗 \$(find . -mindepth 1 -maxdepth 1 -type l | wc -l) " # print number of symlinks
