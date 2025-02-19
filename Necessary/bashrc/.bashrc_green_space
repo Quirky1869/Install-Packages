@@ -144,6 +144,14 @@ alias whatenvironment="echo $XDG_CURRENT_DESKTOP"
 alias lazydocker="/home/$USER/.local/bin/lazydocker" # S'appui sur LazyDocker
 
 ### Green Space ###
+folders="📁 \$(find . -mindepth 1 -maxdepth 1 -type d | wc -l) " # print number of folders
+files="📄 \$(find . -mindepth 1 -maxdepth 1 -type f | wc -l) " # print number of files
+symlinks="🔗 \$(find . -mindepth 1 -maxdepth 1 -type l | wc -l) " # print number of symlinks
+
+parse_git_branch() {
+git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ {\1}/'
+}
+
 up_universal_char_map=╒═
 user_u='[38;5;57m\]'
 symbol=⌬
@@ -151,6 +159,7 @@ color_symbol='[38;5;40m\]'
 hostname_h='[38;5;48m\]'
 separator=🛸
 path_w='[38;5;91m\]'
+git_branch_symbol="</>" 
 down_universal_char_map=╘═══
 
-export PS1="\[\e$user_u$up_universal_char_map(\u\[\e$color_symbol$symbol \[\e$hostname_h\h)\[\e$path_w$separator [\w] \[\033[0m\]\n$down_universal_char_map$ "
+export PS1="\[\e$user_u$up_universal_char_map(\u\[\e$color_symbol$symbol \[\e$hostname_h\h)\[\e$path_w$separator [\w] \e$hostname_h $git_branch_symbol\$(parse_git_branch) $folders$files$symlinks \[\033[0m\]\n$down_universal_char_map$ "
