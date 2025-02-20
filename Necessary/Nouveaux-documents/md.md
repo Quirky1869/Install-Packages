@@ -1,6 +1,9 @@
 <!-- <span style="color:#1F6FEB;"> Mon texte en couleur </span> -->
 <!-- <div style="page-break-after: always;"></div> -->
 
+<!-- $\quad$        Faire une tabulation -->
+<!-- $\quad$ $\quad$        Faire 2 tabulations -->
+
 <!-- ## Table des matières -->
 <!-- 1. [Introduction](#introduction) -->
 <!-- 2. [Chapitre 1](#chapitre-1) -->
