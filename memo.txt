@@ -308,6 +308,7 @@ curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/i
 wget https://github.com/knqyf263/pet/releases/download/v1.0.1/pet_1.0.1_linux_amd64.deb
 sudo dpkg -i pet_1.0.1_linux_amd64.deb
 sudo apt update -y && sudo apt install fzf -y
+## export EDITOR=micro
 # pet configure
 # pet new
 # pet list
