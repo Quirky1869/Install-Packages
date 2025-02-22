@@ -828,6 +828,7 @@ EOF
     # Juste pour info : un theme dracula est disponible
     # https://github.com/dracula/kitty
 
+    # Actions for Nautilus :
     # https://github.com/bassmanitram/actions-for-nautilus
     sudo apt install -y python3-nautilus python3-gi procps libjs-jquery
     git clone https://github.com/bassmanitram/actions-for-nautilus.git
@@ -866,8 +867,6 @@ case $choixLazyDocker in
     # Puis selectionner le terminal kitty
     # gsettings set org.gnome.desktop.default-applications.terminal exec kitty
     # gsettings set org.gnome.desktop.default-applications.terminal exec /home/$USER/.local/kitty.app/bin/kitty
-
-    # Actions for Nautilus
 
     cd
         ;;
