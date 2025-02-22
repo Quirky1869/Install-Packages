@@ -1,5 +1,5 @@
 ################################ MEMO ################################
-suppr : recon-ng gpaint netcat -> sudo apt-get install netcat-traditional
+suppr : recon-ng gpaint netcat -> sudo apt-get install netcat-traditional        ou            sudo apt-get install netcat-openbsd
 ################################ RESTE A FAIRE ################################ 
 
 # !!!!!!!    Avant de configurer rclone assurez-vous d'ouvrir obsidian une 1ere fois et selectionner comme coffre à ouvrir ~/Obsidian_Vault    !!!!!!! #
