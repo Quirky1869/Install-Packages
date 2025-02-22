@@ -1,10 +1,7 @@
 ################################ MEMO ################################
 suppr : recon-ng gpaint netcat -> sudo apt-get install netcat-traditional        ou            sudo apt-get install netcat-openbsd
 
-recon ng : sudo apt install git python3-pip
-git clone https://github.com/lanmaster53/recon-ng.git
-cd recon-ng
-pip3 install -r REQUIREMENTS
+# Lien custom terminal : https://gist.github.com/justintv/168835     ;      https://www.it-connect.fr/linux-afficher-la-branche-git-dans-le-prompt/
 
 ################################ RESTE A FAIRE ################################ 
 
