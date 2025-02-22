@@ -888,7 +888,7 @@ case $choixPet in
     sudo dpkg -i pet_1.0.1_linux_amd64.deb
     sudo apt update -y && sudo apt install fzf -y
     export EDITOR=micro
-    sleep 2000
+    sleep 2
     pet configure
     # pet new
     # pet list
