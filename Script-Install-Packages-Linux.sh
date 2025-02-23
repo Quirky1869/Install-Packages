@@ -894,6 +894,9 @@ case $choixPet in
     export EDITOR=micro
     sleep 2
     pet configure
+    sleep 1
+    rm -f ~/.config/pet/snippet.toml
+    cp -f ./Necessary/Pet/snippet.toml ~/.config/pet/
     # pet new
     # pet list
     # pet edit
