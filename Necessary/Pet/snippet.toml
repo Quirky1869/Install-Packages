@@ -174,13 +174,13 @@
   command = "docker volume rm $(docker volume ls -q)"
 
 [[Snippets]]
-  Description = "docker, arreter tout les containers docker"
+  Description = "docker, arreter tous les containers docker"
   Output = ""
   Tag = []
   command = "docker stop $(docker ps -q)"
 
 [[Snippets]]
-  Description = "docker, permet de supprimer tout les containers docker"
+  Description = "docker, permet de supprimer tous les containers docker"
   Output = ""
   Tag = []
   command = "docker rm $(docker ps -aq)"
