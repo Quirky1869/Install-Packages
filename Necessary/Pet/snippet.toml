@@ -190,3 +190,9 @@
   Output = ""
   Tag = []
   command = "xfreerdp -u:<user> -p:<mdp> -v:<ip>"
+
+[[Snippets]]
+  Description = "docker, permet de demarrer tous les containers"
+  Output = ""
+  Tag = []
+  command = "docker start $(docker ps -aq)"
