@@ -160,3 +160,27 @@
   Output = ""
   Tag = []
   command = "crackmapexec smb <IP> -u '<user>' -H <NTLMV2> --shares"
+
+[[Snippets]]
+  Description = "docker, permet de supprimer toutes les images"
+  Output = ""
+  Tag = []
+  command = "docker rmi $(docker images -a -q)"
+
+[[Snippets]]
+  Description = "docker, permet de supprimer tous les volumes"
+  Output = ""
+  Tag = []
+  command = "docker volume rm $(docker volume ls -q)"
+
+[[Snippets]]
+  Description = "docker, arreter tout les containers docker"
+  Output = ""
+  Tag = []
+  command = "docker stop $(docker ps -q)"
+
+[[Snippets]]
+  Description = "docker, permet de supprimer tout les containers docker"
+  Output = ""
+  Tag = []
+  command = "docker rm $(docker ps -aq)"
