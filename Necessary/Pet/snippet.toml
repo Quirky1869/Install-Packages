@@ -184,3 +184,9 @@
   Output = ""
   Tag = []
   command = "docker rm $(docker ps -aq)"
+
+[[Snippets]]
+  Description = "xfreerdp, permet de prendre la main en RDP"
+  Output = ""
+  Tag = []
+  command = "xfreerdp -u:<user> -p:<mdp> -v:<ip>"
