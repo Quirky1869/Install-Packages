@@ -174,13 +174,13 @@
   command = "docker volume rm $(docker volume ls -q)"
 
 [[Snippets]]
-  Description = "docker, arreter tous les containers docker"
+  Description = "docker, arreter tout les containers docker"
   Output = ""
   Tag = []
   command = "docker stop $(docker ps -q)"
 
 [[Snippets]]
-  Description = "docker, permet de supprimer tous les containers docker"
+  Description = "docker, permet de supprimer tout les containers docker"
   Output = ""
   Tag = []
   command = "docker rm $(docker ps -aq)"
@@ -192,7 +192,7 @@
   command = "xfreerdp -u:<user> -p:<mdp> -v:<ip>"
 
 [[Snippets]]
-  Description = "docker, permet de demarrer tous les containers"
+  Description = "docker, permet de supprimer toutes les ressources non utilisées"
   Output = ""
   Tag = []
-  command = "docker start $(docker ps -aq)"
+  command = "docker system prune -a <-f>"
