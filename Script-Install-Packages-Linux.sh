@@ -26,6 +26,7 @@ choixVisualStudioCode=""
 
 while [[ "$choixVisualStudioCode" != "y" && "$choixVisualStudioCode" != "n" ]]; do
 echo "Voulez-vous installer Visual Studio Code ? ( y  /  n ) :"
+echo "Pour information : https://code.visualstudio.com/"
 read choixVisualStudioCode
 
 case $choixVisualStudioCode in
@@ -52,6 +53,7 @@ choixVirtualbox=""
 
 while [[ "$choixVirtualbox" != "y" && "$choixVirtualbox" != "n" ]]; do
 echo "Voulez-vous installer Virtualbox ? ( y  /  n ) :"
+echo "Pour information : https://www.virtualbox.org/"
 read choixVirtualbox
 
 case $choixVirtualbox in
@@ -72,6 +74,7 @@ choixWireshark=""
 
 while [[ "$choixWireshark" != "y" && "$choixWireshark" != "n" ]]; do
 echo "Voulez-vous installer Wireshark ? ( y  /  n ) :"
+echo "Pour information : https://www.wireshark.org/"
 read choixWireshark
 
 case $choixWireshark in
@@ -94,7 +97,8 @@ choixGNS3=""
 
 while [[ "$choixGNS3" != "y" && "$choixGNS3" != "n" ]]; do 
 
-echo "Voulez-vous installer GNS3 ? ( y / n ) :" 
+echo "Voulez-vous installer GNS3 ? ( y / n ) :"
+echo "Pour information : https://www.gns3.com/"
 read choixGNS3 
 
 case $choixGNS3 in 
@@ -213,6 +217,7 @@ choixGoogleChrome=""
 
 while [[ "$choixGoogleChrome" != "y" && "$choixGoogleChrome" != "n" ]]; do
 echo "Voulez-vous installer Google Chrome ? ( y  /  n ) :"
+echo "Pour information : https://www.google.com/intl/fr_fr/chrome/"
 read choixGoogleChrome
 
 case $choixGoogleChrome in
@@ -238,6 +243,7 @@ choixBrave=""
 
 while [[ "$choixBrave" != "y" && "$choixBrave" != "n" ]]; do
 echo "Voulez-vous installer Brave ? ( y  /  n ) :"
+echo "Pour information : https://brave.com/fr/"
 read choixBrave
 
 case $choixBrave in
@@ -263,6 +269,7 @@ choixDiscord=""
 
 while [[ "$choixDiscord" != "y" && "$choixDiscord" != "n" ]]; do
 echo "Voulez-vous installer Discord ? ( y  /  n ) :"
+echo "Pour information : https://discord.com/"
 read choixDiscord
 
 case $choixDiscord in
@@ -289,6 +296,7 @@ choixApache2=""
 
 while [[ "$choixApache2" != "y" && "$choixApache2" != "n" ]]; do
 echo "Voulez-vous installer Apache2 ? ( y /  n ) :"
+echo "Pour information : https://httpd.apache.org/"
 read choixApache2
 
 case $choixApache2 in
@@ -310,6 +318,7 @@ choixmariadb=""
 
 while [[ "$choixmariadb" != "y" && "$choixmariadb" != "n" ]]; do
 echo "Voulez-vous installer mariadb ? ( y  /  n ) :"
+echo "Pour information : https://mariadb.org/"
 read choixmariadb
 
 case $choixmariadb in
@@ -351,6 +360,7 @@ choixDockerDesktop=""
 
 while [[ "$choixDockerDesktop" != "y" && "$choixDockerDesktop" != "n" ]]; do
 echo "Voulez-vous installer Docker / Docker compose / Docker Desktop ? ( y  /  n ) :"
+echo "Pour information : https://www.docker.com/"
 read choixDockerDesktop
 
 case $choixDockerDesktop in
@@ -393,6 +403,7 @@ choixGithubDesktop=""
 
 while [[ "$choixGithubDesktop" != "y" && "$choixGithubDesktop" != "n" ]]; do
 echo "Voulez-vous installer GitHub Desktop ? ( y  /  n ) :"
+echo "Pour information : https://desktop.github.com/download/"
 read choixGithubDesktop
 
 case $choixGithubDesktop in
@@ -419,6 +430,7 @@ choixNordVPN=""
 
 while [[ "$choixNordVPN" != "y" && "$choixNordVPN" != "n" ]]; do
 echo "Voulez-vous installer NordVPN ? ( y  /  n ) :"
+echo "Pour information : https://nordvpn.com/fr/"
 read choixNordVPN
 
 case $choixNordVPN in
@@ -451,6 +463,7 @@ choixObsidian=""
 
 while [[ "$choixObsidian" != "y" && "$choixObsidian" != "n" ]]; do
 echo "Voulez-vous installer Obsidian et commencer à configurer rclone ? ( y  /  n ) :"
+echo "Pour information : https://obsidian.md/"
 read choixObsidian
 
 case $choixObsidian in
@@ -493,6 +506,7 @@ choixBurpSuite=""
 
 while [[ "$choixBurpSuite" != "y" && "$choixBurpSuite" != "n" ]]; do
 echo "Voulez-vous installer Burp Suite ? ( y  /  n ) :"
+echo "Pour information : https://portswigger.net/burp"
 read choixBurpSuite
 
 case $choixBurpSuite in
@@ -519,6 +533,7 @@ choixVagrant=""
 
 while [[ "$choixVagrant" != "y" && "$choixVagrant" != "n" ]]; do
 echo "Voulez-vous installer Vagrant ? ( y  /  n ) :"
+echo "Pour information : https://developer.hashicorp.com/vagrant"
 read choixVagrant
 
 case $choixVagrant in
@@ -545,6 +560,7 @@ choixAnsible=""
 
 while [[ "$choixAnsible" != "y" && "$choixAnsible" != "n" ]]; do
 echo "Voulez-vous installer Ansible ? ( y  /  n ) :"
+echo "Pour information : https://docs.ansible.com/"
 read choixAnsible
 
 case $choixAnsible in
@@ -572,6 +588,7 @@ choixMetasploit=""
 
 while [[ "$choixMetasploit" != "y" && "$choixMetasploit" != "n" ]]; do
 echo "Voulez-vous installer Metasploit ? ( y  /  n ) :"
+echo "Pour information : https://www.metasploit.com/"
 read choixMetasploit
 
 case $choixMetasploit in
@@ -607,6 +624,7 @@ choixTheHarvester=""
 
 while [[ "$choixTheHarvester" != "y" && "$choixTheHarvester" != "n" ]]; do
 echo "Voulez-vous installer The Harvester (OSINT) ? ( y  /  n ) :"
+echo "Pour information : https://github.com/laramies/theHarvester"
 read choixTheHarvester
 
 case $choixTheHarvester in
@@ -634,6 +652,7 @@ choixSherlock=""
 
 while [[ "$choixSherlock" != "y" && "$choixSherlock" != "n" ]]; do
 echo "Voulez-vous installer Sherlock (OSINT) ? ( y  /  n ) :"
+echo "Pour information : https://github.com/sherlock-project/sherlock"
 read choixSherlock
 
 case $choixSherlock in
@@ -663,6 +682,7 @@ choixHolehe=""
 
 while [[ "$choixHolehe" != "y" && "$choixHolehe" != "n" ]]; do
 echo "Voulez-vous installer Holehe (OSINT) ? ( y  /  n ) :"
+echo "Pour information : https://github.com/megadose/holehe"
 read choixHolehe
 
 case $choixHolehe in
@@ -689,6 +709,7 @@ choixSQLmap=""
 
 while [[ "$choixSQLmap" != "y" && "$choixSQLmap" != "n" ]]; do
 echo "Voulez-vous installer SQLmap ? ( y  /  n ) :"
+echo "Pour information : https://sqlmap.org/"
 read choixSQLmap
 
 case $choixSQLmap in
@@ -714,6 +735,7 @@ choixAperisolve=""
 
 while [[ "$choixAperisolve" != "y" && "$choixAperisolve" != "n" ]]; do
 echo "Voulez-vous installer Aperi'solve (STEGANOGRAPHIE) ? ( y  /  n ) :"
+echo "Pour information : https://www.aperisolve.com/"
 read choixAperisolve
 
 case $choixAperisolve in
@@ -737,6 +759,7 @@ choixKittyTerminal=""
 
 while [[ "$choixKittyTerminal" != "y" && "$choixKittyTerminal" != "n" ]]; do
 echo "Voulez-vous installer Kitty Terminal ? ( y  /  n ) :"
+echo "Pour information : https://sw.kovidgoyal.net/kitty/"
 read choixKittyTerminal
 
 case $choixKittyTerminal in
@@ -855,6 +878,7 @@ choixLazyDocker=""
 
 while [[ "$choixLazyDocker" != "y" && "$choixLazyDocker" != "n" ]]; do
 echo "Voulez-vous installer Lazy Docker ? ( y  /  n ) :"
+echo "Pour information : https://github.com/jesseduffield/lazydocker"
 read choixLazyDocker
 
 case $choixLazyDocker in
@@ -885,6 +909,7 @@ choixPet=""
 
 while [[ "$choixPet" != "y" && "$choixPet" != "n" ]]; do
 echo "Voulez-vous installer Pet ? ( y  /  n ) :"
+echo "Pour information : https://github.com/knqyf263/pet"
 read choixPet
 
 case $choixPet in
@@ -981,6 +1006,7 @@ choixNinjaBinary=""
 
 while [[ "$choixNinjaBinary" != "y" && "$choixNinjaBinary" != "n" ]]; do
 echo "Voulez-vous installer Ninja Binary (Reverse Engineering) ? ( y  /  n ) :"
+echo "Pour information : https://binary.ninja/"
 read choixNinjaBinary
 
 case $choixNinjaBinary in
