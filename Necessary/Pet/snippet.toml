@@ -174,13 +174,13 @@
   command = "docker volume rm $(docker volume ls -q)"
 
 [[Snippets]]
-  Description = "docker, arreter tout les containers docker"
+  Description = "docker, arreter tous les containers docker"
   Output = ""
   Tag = []
   command = "docker stop $(docker ps -q)"
 
 [[Snippets]]
-  Description = "docker, permet de supprimer tout les containers docker"
+  Description = "docker, permet de supprimer tous les containers docker"
   Output = ""
   Tag = []
   command = "docker rm $(docker ps -aq)"
@@ -192,7 +192,13 @@
   command = "xfreerdp -u:<user> -p:<mdp> -v:<ip>"
 
 [[Snippets]]
-  Description = "docker, permet de supprimer toutes les ressources non utilisées"
+  Description = "docker, permet de demarrer tous les containers"
   Output = ""
   Tag = []
-  command = "docker system prune -a <-f>"
+  command = "docker start $(docker ps -aq)"
+
+[[Snippets]]
+  Description = "ffmpeg, audio, permet de concaténer 2 audios (les 2 audios doivent etre encodés de la meme manière)"
+  Output = ""
+  Tag = []
+  command = "ffmpeg -i <fichier-1 (.wav)> -i <fichier-2 (.wav)> -filter_complex \"[0:0][1:0]concat=n=2:v=0:a=1[out]\" -map \"[out]\" <fichier de sortie (.wav)>"
