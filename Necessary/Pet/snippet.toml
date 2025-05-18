@@ -256,3 +256,9 @@
   Output = ""
   Tag = ["xfreerdp"]
   command = "xfreerdp -u:supportproxit -p:L#302196484193ug -v:4.211.105.162"
+
+[[Snippets]]
+  Description = "docker, ATTENTION !!! permet de nettoyer tout docker"
+  Output = ""
+  Tag = ["docker"]
+  command = "docker system prune -a"
