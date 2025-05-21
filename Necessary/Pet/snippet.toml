@@ -261,4 +261,10 @@
   Description = "docker, ATTENTION !!! permet de nettoyer tout docker"
   Output = ""
   Tag = ["docker"]
-  command = "docker system prune -a"
+  command = "docker system prune -a  
+
+[[Snippets]]
+  Description = "ffmpeg, concatener 2 audios"
+  Output = ""
+  Tag = ["ffmpeg"]
+  command = "ffmpeg -i <premier-audio.wav> -i <second-audio.wav> -filter_complex \"[0:0][1:0]concat=n=2:v=0:a=1[out]\" -map \"[out]\" output.wav"
