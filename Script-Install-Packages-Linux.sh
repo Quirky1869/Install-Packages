@@ -190,7 +190,7 @@ case $choixDocumentsScripts in
         cd
         ;;
     n)  # Si le choix est non)
-        echo "Vous avez choisi de ne pas installer Google Chrome"
+        echo "Vous avez choisi de ne pas copier le dossier 'Scripts'"
         ;;
     *)  # Si aucun choix ne correspond)
         echo "Ta pas fait le bon choix Maurice (Attention à la casse)"
