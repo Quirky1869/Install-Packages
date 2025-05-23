@@ -157,22 +157,46 @@ sudo apt install -y tree wget netcat-traditional htop filezilla zip unzip rar un
     gnome-disk-utility gparted xournal netdiscover dirb hydra pluma bpytop edb-debugger pip \
     make gnome-shell-extensions rclone rclone-browser dsniff tcpdump libfuse2 pv curl network-manager \
     diodon bat john flameshot binwalk hashcat libimage-exiftool-perl baobab pipx asciinema tmux drawing micro \
-    freerdp2-x11
+    freerdp2-x11 pinta hexcurse
 
+# pip
 sudo pip install -U notify-send
 python3 -m pip install pwntools
 sudo pip install scapy
 pip install pycryptodome
 pip install mkdocs-material
 
+# snap
 sudo snap install searchsploit
 sudo snap install enum4linux
 
-# recon ng : 
+# git
+## recon ng : 
 sudo apt install -y git python3-pip
 git clone https://github.com/lanmaster53/recon-ng.git
 cd recon-ng
 pip3 install -r REQUIREMENTS
+
+# Choix copie Documents/Scripts
+choixDocumentsScripts=""
+
+while [[ "$choixDocumentsScripts" != "y" && "$choixDocumentsScripts" != "n" ]]; do
+echo "Voulez-vous copier le dossier 'Scripts' ? ( y  /  n ) :"
+read choixDocumentsScripts
+
+case $choixDocumentsScripts in
+    y)  # Si le choix est oui)
+        cp -Rf ./Necessary/Scripts ~/Documents
+        cd
+        ;;
+    n)  # Si le choix est non)
+        echo "Vous avez choisi de ne pas installer Google Chrome"
+        ;;
+    *)  # Si aucun choix ne correspond)
+        echo "Ta pas fait le bon choix Maurice (Attention à la casse)"
+        ;;
+esac
+done
 
 #Choix install themes
 choixThemes=""
