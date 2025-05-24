@@ -181,16 +181,17 @@ pip3 install -r REQUIREMENTS
 choixDocumentsScripts=""
 
 while [[ "$choixDocumentsScripts" != "y" && "$choixDocumentsScripts" != "n" ]]; do
-echo "Voulez-vous copier le dossier 'Scripts' ? ( y  /  n ) :"
+echo "Voulez-vous copier le dossier Scripts ? ( y  /  n ) :"
 read choixDocumentsScripts
 
 case $choixDocumentsScripts in
     y)  # Si le choix est oui)
+    	cd
         cp -Rf ./Necessary/Scripts ~/Documents
         cd
         ;;
     n)  # Si le choix est non)
-        echo "Vous avez choisi de ne pas copier le dossier 'Scripts'"
+        echo "Vous avez choisi de ne pas copier le dossier Scripts"
         ;;
     *)  # Si aucun choix ne correspond)
         echo "Ta pas fait le bon choix Maurice (Attention à la casse)"
