@@ -156,9 +156,10 @@ https://www.pling.com/p/1360254/
 https://github.com/milkmadedev/oreo-cursors-compiled
 
 ####################### VS CODE #####################
+!!! ATTENTION l'espace de travail doit être approuvé !!! (Faire la commande code . dans un terminal)
 Pour vs code (.md)
 - L'extention "paste images" permet de choisir le dossier dans lequel les images seront copier -> le raccourci par défaut est crtl+alt+v
-- On peut régler le dossier par defaut des images, le nom ... dans les paramètres en tapant ceci "@ext:mushan.vscode-paste-image"
+- On peut régler le dossier par defaut des images, le nom ... dans les paramètres en tapant ceci "@ext:mushan.vscode-paste-image" dans les paramètres (fichier → préférences → paramètres)
 - Exemple de dossier par défaut : ${currentFileDir}/_images
 - Le raccourci clavier peut etre changer dans le fichier "keybindings.json" -> faire F1 puis taper "Preferences: open keyboard shortcuts (JSON)"
 - Mettre ceci pour changer la valeur par defaut du copier coller de paste image :
