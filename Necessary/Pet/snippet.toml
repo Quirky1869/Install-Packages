@@ -279,7 +279,7 @@
   Description = "ssh, générer un paire de clé ssh"
   Output = ""
   Tag = ["ssh"]
-  command = "ssh-keygen -t <ecdsa ou rsa> -N \"<passphrase-si vide pas de passphrase>\" -f <key-name>"
+  command = "ssh-keygen -t <ed25519 ou ecdsa ou rsa> -N \"<passphrase-si vide pas de passphrase>\" -f <key-name>"
 
 [[Snippets]]
   Description = "ssh, se connecter en ssh à un hôte distant"
