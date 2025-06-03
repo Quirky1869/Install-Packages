@@ -268,3 +268,21 @@
   Output = ""
   Tag = ["ffmpeg"]
   command = "ffmpeg -i <premier-audio.wav> -i <second-audio.wav> -filter_complex \"[0:0][1:0]concat=n=2:v=0:a=1[out]\" -map \"[out]\" output.wav"
+
+[[Snippets]]
+  Description = "ssh, permet de copier un clé ssh publique spécifique vers un serveur distant"
+  Output = ""
+  Tag = ["ssh"]
+  command = "ssh-copy-id -f -i <ssh-key.pub> <remote-user>@<remote-ip>"
+
+[[Snippets]]
+  Description = "ssh, générer un paire de clé ssh"
+  Output = ""
+  Tag = ["ssh"]
+  command = "ssh-keygen -t <ecdsa ou rsa> -N \"<passphrase-si vide pas de passphrase>\" -f <key-name>"
+
+[[Snippets]]
+  Description = "ssh, se connecter en ssh à un hôte distant"
+  Output = ""
+  Tag = ["ssh"]
+  command = "ssh <remote-user>@<remote-ip>"
