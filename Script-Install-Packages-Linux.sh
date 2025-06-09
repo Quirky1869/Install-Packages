@@ -965,6 +965,39 @@ case $choixPet in
 esac
 done
 
+# Choix Arsenal
+choixArsenal=""
+
+while [[ "$choixArsenal" != "y" && "$choixArsenal" != "n" ]]; do
+echo "Voulez-vous installer Arsenal ? ( y  /  n ) :"
+echo "Pour information : https://github.com/Orange-Cyberdefense/arsenal"
+read choixArsenal
+
+case $choixArsenal in
+    y)  # Si le choix est oui)
+    python3 -m pip install arsenal-cli
+
+    echo "alias a='arsenal'" | sudo tee -a ~/.bashrc
+
+    if [ -f "$HOME/.zshrc" ]; then
+        echo "alias a='arsenal'" | sudo tee -a ~/.zshrc
+    else
+        echo "Le fichier ~/.zshrc n'existe pas."
+    fi
+
+    echo "dev.tty.legacy_tiocsti=1" | sudo tee -a /etc/sysctl.conf
+    sudo sysctl -p
+    cd
+        ;;
+    n)  # Si le choix est non)
+        echo "Vous avez choisi de ne pas installer Pet"
+        ;;
+    *)  # Si aucun choix ne correspond)
+        echo "Ta pas fait le bon choix Maurice (Attention à la casse)"
+        ;;
+esac
+done
+
 # Choix Bashrc
 choixBashRc=""
 
