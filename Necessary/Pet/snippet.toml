@@ -279,7 +279,7 @@
   Description = "ssh, permet de copier un clé ssh publique spécifique vers un serveur distant (depuis un client)"
   Output = ""
   Tag = ["ssh"]
-  command = "ssh-copy-id -f -i <ssh-key.pub> <remote-user>@<remote-ip>"
+  command = "ssh-copy-id -f -i <ssh-key.pub> -p <port-ssh> <remote-user>@<remote-ip>"
 
 [[Snippets]]
   Description = "ssh, se connecter en ssh à un hôte distant"
