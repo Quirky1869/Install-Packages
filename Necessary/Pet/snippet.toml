@@ -286,3 +286,9 @@
   Output = ""
   Tag = ["ssh"]
   command = "ssh <remote-user>@<remote-ip>"
+
+[[Snippets]]
+  Description = "ssh, se connecter a la VM zabbix en ssh"
+  Output = ""
+  Tag = ["ssh"]
+  command = "ssh flex@82.138.92.200 -p 2222"
