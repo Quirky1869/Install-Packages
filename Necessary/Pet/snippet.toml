@@ -201,25 +201,25 @@
   Description = "xfreerdp, AVD2"
   Output = ""
   Tag = ["xfreerdp"]
-  command = "xfreerdp -u:Administrateur -p:Proxit84000* -v:4.212.12.215"
+  command = "xfreerdp -u:Administrateur -p:<mdp> -v:4.212.12.215"
 
 [[Snippets]]
   Description = "xfreerdp, AVD1"
   Output = ""
   Tag = ["xfreerdp"]
-  command = "xfreerdp -u:Administrateur -p:Proxit84000* -v:51.11.211.157"
+  command = "xfreerdp -u:Administrateur -p:<mdp> -v:51.11.211.157"
 
 [[Snippets]]
   Description = "xfreerdp, AVD3"
   Output = ""
   Tag = ["xfreerdp"]
-  command = "xfreerdp -u:Administrateur -p:Proxit84000* -v:4.178.190.47"
+  command = "xfreerdp -u:Administrateur -p:<mdp> -v:4.178.190.47"
 
 [[Snippets]]
   Description = "xfreerdp, OgapConcept"
   Output = ""
   Tag = ["xfreerdp"]
-  command = "xfreerdp -u:Administrateur -p:0G@pConcept84* -v:40.89.131.253"
+  command = "xfreerdp -u:Administrateur -p:<mdp> -v:40.89.131.253"
 
 [[Snippets]]
   Description = "find, chercher un fichier dans tout l'ordinateur"
@@ -249,13 +249,13 @@
   Description = "xfreerdp, winerl - SRV-APP-WINERL"
   Output = ""
   Tag = ["xfreerdp"]
-  command = "xfreerdp -u:supportproxit -p:L#302196484193ug -v:4.178.153.109"
+  command = "xfreerdp -u:supportproxit -p:<mdp> -v:4.178.153.109"
 
 [[Snippets]]
   Description = "xfreerdp, winerl - AVD-WINERL"
   Output = ""
   Tag = ["xfreerdp"]
-  command = "xfreerdp -u:supportproxit -p:L#302196484193ug -v:4.211.105.162"
+  command = "xfreerdp -u:supportproxit -p:<mdp> -v:4.211.105.162"
 
 [[Snippets]]
   Description = "docker, ATTENTION !!! permet de nettoyer tout docker"
