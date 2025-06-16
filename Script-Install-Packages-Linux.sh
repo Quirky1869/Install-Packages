@@ -1061,6 +1061,32 @@ EOF
 esac
 done
 
+# Choix tgpt
+choixTgpt=""
+
+while [[ "$choixTgpt" != "y" && "$choixTgpt" != "n" ]]; do
+echo "Voulez-vous installer tgpt (ia dans le terminal) ? ( y  /  n ) :"
+echo "Pour information : https://github.com/aandrew-me/tgpt"
+read choixTgpt
+
+case $choixTgpt in
+    y)  # Si le choix est oui)
+ 	cd
+    curl -sSL https://raw.githubusercontent.com/aandrew-me/tgpt/main/install | bash -s /usr/local/bin
+    tgpt -h
+    # Pour désinstaller :
+    # sudo rm $(which tgpt)
+    cd
+        ;;
+    n)  # Si le choix est non)
+        echo "Vous avez choisi de ne pas installer tgpt"
+        ;;
+    *)  # Si aucun choix ne correspond)
+        echo "Ta pas fait le bon choix Maurice (Attention à la casse)"
+        ;;
+esac
+done
+
 # Choix Ninja Binary
 choixNinjaBinary=""
 
