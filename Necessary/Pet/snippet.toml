@@ -201,25 +201,25 @@
   Description = "xfreerdp, AVD2"
   Output = ""
   Tag = ["xfreerdp"]
-  command = "xfreerdp -u:Administrateur -p:<mdp> -v:4.212.12.215"
+  command = "xfreerdp -u:Administrateur -p:Proxit84000* -v:4.212.12.215"
 
 [[Snippets]]
   Description = "xfreerdp, AVD1"
   Output = ""
   Tag = ["xfreerdp"]
-  command = "xfreerdp -u:Administrateur -p:<mdp> -v:51.11.211.157"
+  command = "xfreerdp -u:Administrateur -p:Proxit84000* -v:51.11.211.157"
 
 [[Snippets]]
   Description = "xfreerdp, AVD3"
   Output = ""
   Tag = ["xfreerdp"]
-  command = "xfreerdp -u:Administrateur -p:<mdp> -v:4.178.190.47"
+  command = "xfreerdp -u:Administrateur -p:Proxit84000* -v:4.178.190.47"
 
 [[Snippets]]
   Description = "xfreerdp, OgapConcept"
   Output = ""
   Tag = ["xfreerdp"]
-  command = "xfreerdp -u:Administrateur -p:<mdp> -v:40.89.131.253"
+  command = "xfreerdp -u:Administrateur -p:0G@pConcept84* -v:40.89.131.253"
 
 [[Snippets]]
   Description = "find, chercher un fichier dans tout l'ordinateur"
@@ -249,13 +249,13 @@
   Description = "xfreerdp, winerl - SRV-APP-WINERL"
   Output = ""
   Tag = ["xfreerdp"]
-  command = "xfreerdp -u:supportproxit -p:<mdp> -v:4.178.153.109"
+  command = "xfreerdp -u:supportproxit -p:L#302196484193ug -v:4.178.153.109"
 
 [[Snippets]]
   Description = "xfreerdp, winerl - AVD-WINERL"
   Output = ""
   Tag = ["xfreerdp"]
-  command = "xfreerdp -u:supportproxit -p:<mdp> -v:4.211.105.162"
+  command = "xfreerdp -u:supportproxit -p:L#302196484193ug -v:4.211.105.162"
 
 [[Snippets]]
   Description = "docker, ATTENTION !!! permet de nettoyer tout docker"
@@ -270,16 +270,16 @@
   command = "ffmpeg -i <premier-audio.wav> -i <second-audio.wav> -filter_complex \"[0:0][1:0]concat=n=2:v=0:a=1[out]\" -map \"[out]\" output.wav"
 
 [[Snippets]]
-  Description = "ssh, générer un paire de clé ssh (sur le client)"
+  Description = "ssh, permet de copier un clé ssh publique spécifique vers un serveur distant"
+  Output = ""
+  Tag = ["ssh"]
+  command = "ssh-copy-id -f -i <ssh-key.pub> <remote-user>@<remote-ip>"
+
+[[Snippets]]
+  Description = "ssh, générer un paire de clé ssh"
   Output = ""
   Tag = ["ssh"]
   command = "ssh-keygen -t <ed25519 ou ecdsa ou rsa> -N \"<passphrase-si vide pas de passphrase>\" -f ~/.ssh/<key-name>"
-
-[[Snippets]]
-  Description = "ssh, permet de copier un clé ssh publique spécifique vers un serveur distant (depuis un client)"
-  Output = ""
-  Tag = ["ssh"]
-  command = "ssh-copy-id -f -i <ssh-key.pub> -p <port-ssh> <remote-user>@<remote-ip>"
 
 [[Snippets]]
   Description = "ssh, se connecter en ssh à un hôte distant"
@@ -292,3 +292,45 @@
   Output = ""
   Tag = ["ssh"]
   command = "ssh flex@82.138.92.200 -p 2222"
+
+[[Snippets]]
+  Description = "PKI, créer une autorité de certification (CA) auto signée, génère clé privé ca.key + certificat ca.crt"
+  Output = ""
+  Tag = ["PKI"]
+  command = "openssl req -x509 -newkey rsa:4096 -sha256 -days 3650 -keyout ca.key -out ca.crt -subj \"/CN=www.modelCA.com/O=Model CA LTD./C=FR\" -passout pass:<mot de passe>"
+
+[[Snippets]]
+  Description = "PKI, lire le contenu du certificat .crt"
+  Output = ""
+  Tag = ["PKI"]
+  command = "openssl x509 -in <ca.crt> -text -noout"
+
+[[Snippets]]
+  Description = "PKI, lire le contenu de la clé privée .key"
+  Output = ""
+  Tag = ["PKI"]
+  command = "openssl rsa -in <ca.key> -text -noout"
+
+[[Snippets]]
+  Description = "PKi, on créer un .csr ; demande de signature de certificat"
+  Output = ""
+  Tag = ["PKI"]
+  command = "openssl req -newkey rsa:2048 -sha256 -keyout <server.key> -out <server.csr> -subj \"</CN=www.michael.com/O=Bank32 Inc./C=US>\" -passout pass:<mot de passe>"
+
+[[Snippets]]
+  Description = "PKI, on examine le contenu du .csr"
+  Output = ""
+  Tag = ["PKI"]
+  command = "openssl req -in <server.csr> -text -noout"
+
+[[Snippets]]
+  Description = "PKI, générer un .csr avec sa clé (.key) avec des noms alternatifs"
+  Output = ""
+  Tag = ["PKI"]
+  command = "openssl req -newkey rsa:2048 -sha256 -keyout <server.key> -out <server.csr> -subj \"</CN=www.michael.com/O=Bank32 Inc./C=FR>\" -passout pass:<mot de passe> -addext \"subjectAltName = <DNS:www.michael.com, DNS:www.michaelA.com, DNS:www.michaelB.com>\""
+
+[[Snippets]]
+  Description = "PKI, on signe une demande de certificat (CSR) avec une autorité de certification locale (CA)"
+  Output = ""
+  Tag = ["PKI"]
+  command = "openssl ca -config openssl.cnf -policy policy_anything -md sha256 -days 3650 -in <server.csr> -out <server.crt> -batch -cert <ca.crt> -keyfile <ca.key>"
