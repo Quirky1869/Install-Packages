@@ -334,3 +334,9 @@
   Output = ""
   Tag = ["PKI"]
   command = "openssl ca -config openssl.cnf -policy policy_anything -md sha256 -days 3650 -in <server.csr> -out <server.crt> -batch -cert <ca.crt> -keyfile <ca.key>"
+
+[[Snippets]]
+  Description = "repository, liste tout les repository present sur la machine"
+  Output = ""
+  Tag = ["repository"]
+  command = "grep -r ^ /etc/apt/sources.list /etc/apt/sources.list.d/"
