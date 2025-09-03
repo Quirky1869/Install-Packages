@@ -340,3 +340,10 @@
   Output = ""
   Tag = ["repository"]
   command = "grep -r ^ /etc/apt/sources.list /etc/apt/sources.list.d/"
+
+[[Snippets]]
+  Description = "ffuf, commande pour trouver les sub-domains d'un site web"
+  Output = ""
+  Tag = ["ffuf"]
+  command = "ffuf -w <chemin-word-list.txt> -u <http://planning.htb/> -H \"<Host:FUZZ.planning.htb>\" -fc <301>"
+  
