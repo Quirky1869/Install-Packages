@@ -189,7 +189,7 @@ case $choixDocumentsScripts in
     y)  # Si le choix est oui)
     	cd
         cp -Rf ./Necessary/Scripts ~/Documents
-	sudo chmod u+x ~/Documents/Scripts
+	    sudo chmod -R u+x ~/Documents/Scripts
         cd
         ;;
     n)  # Si le choix est non)
