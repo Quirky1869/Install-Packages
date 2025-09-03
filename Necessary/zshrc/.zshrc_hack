@@ -284,8 +284,12 @@ alias servicesystemd="systemctl list-unit-files" # S'appui sur systemd
 alias whatfilemanager="xdg-mime query default inode/directory"
 alias whatenvironment="echo $XDG_CURRENT_DESKTOP"
 
-alias ninja="/home/$USER/Public/binaryninja/binaryninja"
-alias docker="sudo docker"
+alias ninja="/home/$USER/Public/binaryninja/binaryninja" # S'appui sur Binaryninja
+alias docker="sudo docker" # S'appui sur docker
+alias docksh="docker exec -it" # S'appui sur docker
+#alias sshlist="~/Public/ssh-list" # S'appui sur ssh-list (https://github.com/akinoiro/ssh-list)
+
+
 
 alias 3cx="/opt/google/chrome/google-chrome --profile-directory=Default --app-id=nlpendabdhapjkjlaefgikkcfoldfnac %U"
 alias sharepoint="/opt/google/chrome/google-chrome --profile-directory=Default --app-id=kndjacdfoigegepplldliojaijgkknic"

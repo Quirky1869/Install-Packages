@@ -212,8 +212,8 @@ case $choixThemes in
     y)  # Si le choix est oui)
         # Import Theme Terminal
         dconf load /org/gnome/terminal/legacy/profiles:/ < ./Necessary/gnome-terminal-profiles.dconf
-	# Export
- 	# dconf dump /org/gnome/terminal/legacy/profiles:/ > ./gnome-terminal-profiles.dconf
+	    # Export
+ 	    # dconf dump /org/gnome/terminal/legacy/profiles:/ > ./gnome-terminal-profiles.dconf
 
         # Import Modeles
         cp -r ./Necessary/Nouveaux-documents/* /home/$USER/Modèles 
@@ -304,11 +304,11 @@ case $choixDiscord in
         echo "Vous avez choisi d'installer Discord"
         cd ~/$varDownload
         #wget https://stable.dl2.discordapp.net/apps/linux/0.0.68/discord-0.0.68.deb
-	wget --content-disposition "https://discord.com/api/download?platform=linux&format=deb"
+	    wget --content-disposition "https://discord.com/api/download?platform=linux&format=deb"
         echo Installation de Discord :
-	sudo dpkg -i ./*.deb
-	sudo rm ./*deb
-	cd
+	    sudo dpkg -i ./*.deb
+	    sudo rm ./*deb
+	    cd
         ;;
     n)  # Si le choix est non)
         echo "Vous avez choisi de ne pas installer Discord"
@@ -399,7 +399,7 @@ case $choixDockerDesktop in
         sudo apt install apt-transport-https ca-certificates curl gnupg
         curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker.gpg
         echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu jammy stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-	sudo apt update -y
+	    sudo apt update -y
         sudo apt install -y docker-ce 
         sudo apt install -y docker-ce-cli
         sudo apt install -y containerd.io
@@ -409,13 +409,13 @@ case $choixDockerDesktop in
         sudo systemctl is-active docker
         sleep 5
         #wget https://desktop.docker.com/linux/main/amd64/137060/docker-desktop-4.27.2-amd64.deb
-	curl 'https://desktop.docker.com/linux/main/amd64/docker-desktop-amd64.deb?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-linux-amd64' -o docker-desktop.deb
+	    curl 'https://desktop.docker.com/linux/main/amd64/docker-desktop-amd64.deb?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-linux-amd64' -o docker-desktop.deb
         sudo apt install ./*.deb
         sudo rm ./*deb
-	#sudo snap install docker
+	    #sudo snap install docker
         cd
         sudo systemctl restart docker
-	sudo adduser $USER docker
+	    sudo adduser $USER docker
         ;;
     n)  # Si le choix est non)
         echo "Vous avez choisi de ne pas installer Docker Desktop"
@@ -442,7 +442,7 @@ case $choixGithubDesktop in
         wget https://github.com/shiftkey/desktop/releases/download/release-3.1.7-linux1/GitHubDesktop-linux-3.1.7-linux1.deb
         sudo apt install -f ./GitHubDesktop-linux-3.1.7-linux1.deb
         rm ./*.deb
-	cd
+	    cd
         ;;
     n)  # Si le choix est non)
         echo "Vous avez choisi de ne pas installer GitHub Desktop"
@@ -475,7 +475,7 @@ case $choixNordVPN in
         # nordvpn c Belgium -> se connecter en belgique
         # nordvpn d -> se deconnecter
         sudo rm ./*.deb
-	cd
+	    cd
         ;;
     n)  # Si le choix est non)
         echo "Vous avez choisi de ne pas installer NordVPN"
@@ -516,9 +516,9 @@ case $choixObsidian in
         mkdir /home/$USER/Documents/Excalidraw
         cp -f ./Necessary/Excalidraw/* /home/$USER/Documents/Excalidraw
         notify-send -i dialog-information "Obsidian installé avec succès" "Il faudra finaliser le paramètrage de rclone" -t 2000
-	notify-send -i face-wink "Rclone" "Regarder le fichier memo.txt pour configurer rclone" -t 2000
-    notify-send "Excalidraw" "Les logos pour Excalidraw sont dans /home/$USER/Documents/Excalidraw" -t 2000
-	cd
+	    notify-send -i face-wink "Rclone" "Regarder le fichier memo.txt pour configurer rclone" -t 2000
+        notify-send "Excalidraw" "Les logos pour Excalidraw sont dans /home/$USER/Documents/Excalidraw" -t 2000
+	    cd
         ;;
     n)  # Si le choix est non)
         echo "Vous avez choisi de ne pas installer Obsidian"
@@ -545,7 +545,7 @@ case $choixBurpSuite in
         chmod +x burpsuite*
         sudo ./burpsuite*
         sudo rm -r burpsuite*
-	cd
+	    cd
         ;;
     n)  # Si le choix est non)
         echo "Vous avez choisi de ne pas installer Burp Suite"
@@ -566,13 +566,13 @@ read choixVagrant
 
 case $choixVagrant in
     y)  # Si le choix est oui)
-    cd /home/$USER/Documents
+        cd /home/$USER/Documents
         wget -O- https://apt.releases.hashicorp.com/gpg | sudo gpg --dearmor -o /usr/share/keyrings/hashicorp-archive-keyring.gpg
         echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
         sudo apt update && sudo apt install -y vagrant
         vagrant plugin install vagrant-vbguest
         vagrant --version
-	cd
+	    cd
         ;;
     n)  # Si le choix est non)
         echo "Vous avez choisi de ne pas installer Vagrant'"
@@ -593,13 +593,13 @@ read choixAnsible
 
 case $choixAnsible in
     y)  # Si le choix est oui)
-    cd /home/$USER/Documents
+        cd /home/$USER/Documents
         sudo apt update
         sudo apt install software-properties-common
         sudo add-apt-repository --yes --update ppa:ansible/ansible
         sudo apt install -y ansible
         ansible --version
-	cd
+	    cd
         ;;
     n)  # Si le choix est non)
         echo "Vous avez choisi de ne pas installer Ansible'"
@@ -621,20 +621,20 @@ read choixMetasploit
 
 case $choixMetasploit in
     y)  # Si le choix est oui)
-    #cd /home/$USER/Documents
-    cd /opt
-    sudo apt-get install -y build-essential zlib1g zlib1g-dev libxml2 libxml2-dev libxslt-dev locate libreadline6-dev libcurl4-openssl-dev git-core autoconf curl postgresql postgresql-contrib libpq-dev libapr1 libaprutil1 libsvn1 libpcap-dev
-    sudo git clone https://github.com/rapid7/metasploit-framework.git
-    sudo chown $USER:$USER -R metasploit-framework
-    cd metasploit-framework
-    sudo bash -c 'for MSF in $(ls msf*); do ln -s /usr/local/src/metasploit-framework/$MSF /usr/local/bin/$MSF;done'
-    sudo service postgresql start
-    sudo snap install metasploit-framework
-    sudo msfdb init
-    msfdb init
-    #msfconsole     # Commande pour lancé metasploit
-    notify-send "Metasploit" 'Metasploit peut etre lance avec la commande "msfconsole"'
-    cd
+        #cd /home/$USER/Documents
+        cd /opt
+        sudo apt-get install -y build-essential zlib1g zlib1g-dev libxml2 libxml2-dev libxslt-dev locate libreadline6-dev libcurl4-openssl-dev git-core autoconf curl postgresql postgresql-contrib libpq-dev libapr1 libaprutil1 libsvn1 libpcap-dev
+        sudo git clone https://github.com/rapid7/metasploit-framework.git
+        sudo chown $USER:$USER -R metasploit-framework
+        cd metasploit-framework
+        sudo bash -c 'for MSF in $(ls msf*); do ln -s /usr/local/src/metasploit-framework/$MSF /usr/local/bin/$MSF;done'
+        sudo service postgresql start
+        sudo snap install metasploit-framework
+        sudo msfdb init
+        msfdb init
+        #msfconsole     # Commande pour lancé metasploit
+        notify-send "Metasploit" 'Metasploit peut etre lance avec la commande "msfconsole"'
+        cd
         ;;
     n)  # Si le choix est non
         echo "Vous avez choisi de ne pas installer Metasploit'"
@@ -657,12 +657,12 @@ read choixTheHarvester
 
 case $choixTheHarvester in
     y)  # Si le choix est oui)
-    cd /opt
-    sudo git clone https://github.com/laramies/theHarvester.git
-    sudo chown $USER:$USER -R theHarvester # Changement du owner ; si l'option -f est entrée des problèmes ont lieu lors de la génération des fichiers si le owner est root
-    cd theHarvester
-    python3 -m pip install -r requirements/base.txt
-    cd
+        cd /opt
+        sudo git clone https://github.com/laramies/theHarvester.git
+        sudo chown $USER:$USER -R theHarvester # Changement du owner ; si l'option -f est entrée des problèmes ont lieu lors de la génération des fichiers si le owner est root
+        cd theHarvester
+        python3 -m pip install -r requirements/base.txt
+        cd
         ;;
     n)  # Si le choix est non)
         echo "Vous avez choisi de ne pas installer TheHarvester'"
@@ -685,15 +685,15 @@ read choixSherlock
 
 case $choixSherlock in
     y)  # Si le choix est oui)
-    #cd /opt
-    #sudo git clone https://github.com/sherlock-project/sherlock.git
-    #sudo chown $USER:$USER -R sherlock # Changement du owner ; sinon à la fin de l'execution des erreurs ont lieu sur les scripts "threading.py", "thread.py", "sherlock.py" (line : 508)
-    #chmod +x /opt/sherlock/sherlock/sherlock.py
-    #cd sherlock
-    #python3 -m pip install -r requirements.txt
-    sudo apt install -y pipx
-    pipx install sherlock-project
-    cd
+        #cd /opt
+        #sudo git clone https://github.com/sherlock-project/sherlock.git
+        #sudo chown $USER:$USER -R sherlock # Changement du owner ; sinon à la fin de l'execution des erreurs ont lieu sur les scripts "threading.py", "thread.py", "sherlock.py" (line : 508)
+        #chmod +x /opt/sherlock/sherlock/sherlock.py
+        #cd sherlock
+        #python3 -m pip install -r requirements.txt
+        sudo apt install -y pipx
+        pipx install sherlock-project
+        cd
         ;;
     n)  # Si le choix est non
         echo "Vous avez choisi de ne pas installer Sherlock'"
@@ -716,11 +716,11 @@ read choixHolehe
 case $choixHolehe in
     y)  # Si le choix est oui)
     	cd /opt
-  	sudo git clone https://github.com/megadose/holehe.git
-   	sudo chown $USER:$USER -R holehe
-	cd holehe/
-	sudo python3 setup.py install
-    cd
+  	    sudo git clone https://github.com/megadose/holehe.git
+   	    sudo chown $USER:$USER -R holehe
+	    cd holehe/
+	    sudo python3 setup.py install
+        cd
         ;;
     n)  # Si le choix est non)
         echo "Vous avez choisi de ne pas installer Holehe'"
@@ -743,10 +743,10 @@ read choixSQLmap
 case $choixSQLmap in
     y)  # Si le choix est oui)
     	cd /opt
-  	sudo git clone --depth 1 https://github.com/sqlmapproject/sqlmap.git sqlmap-dev
-   	sudo chown $USER:$USER -R sqlmap-dev
+  	    sudo git clone --depth 1 https://github.com/sqlmapproject/sqlmap.git sqlmap-dev
+   	    sudo chown $USER:$USER -R sqlmap-dev
     	sed -i 's|#!/usr/bin/env python|#!/usr/bin/env python3|' /opt/sqlmap-dev/sqlmap.py
-    cd
+        cd
         ;;
     n)  # Si le choix est non)
         echo "Vous avez choisi de ne pas installer SQLmap'"
@@ -768,9 +768,9 @@ read choixAperisolve
 
 case $choixAperisolve in
     y)  # Si le choix est oui)
- 	sudo sh -c "$(curl -fs https://www.aperisolve.com/install.sh)"
-  	sleep 3
-    cd
+ 	    sudo sh -c "$(curl -fs https://www.aperisolve.com/install.sh)"
+  	    sleep 3
+        cd
         ;;
     n)  # Si le choix est non)
         echo "Vous avez choisi de ne pas installer Aperi'solve"
@@ -792,20 +792,20 @@ read choixKittyTerminal
 
 case $choixKittyTerminal in
     y)  # Si le choix est oui)
-    curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
-    sudo ln -sf ~/.local/kitty.app/bin/kitty ~/.local/kitty.app/bin/kitten /usr/local/bin
+        curl -L https://sw.kovidgoyal.net/kitty/installer.sh | sh /dev/stdin
+        sudo ln -sf ~/.local/kitty.app/bin/kitty ~/.local/kitty.app/bin/kitten /usr/local/bin
 
-    cp ~/.local/kitty.app/share/applications/kitty.desktop ~/.local/share/applications/
+        cp ~/.local/kitty.app/share/applications/kitty.desktop ~/.local/share/applications/
 
-    cp ~/.local/kitty.app/share/applications/kitty-open.desktop ~/.local/share/applications/
+        cp ~/.local/kitty.app/share/applications/kitty-open.desktop ~/.local/share/applications/
 
-    sed -i "s|Icon=kitty|Icon=$(readlink -f ~)/.local/kitty.app/share/icons/hicolor/256x256/apps/kitty.png|g" ~/.local/share/applications/kitty*.desktop
+        sed -i "s|Icon=kitty|Icon=$(readlink -f ~)/.local/kitty.app/share/icons/hicolor/256x256/apps/kitty.png|g" ~/.local/share/applications/kitty*.desktop
 
-    sed -i "s|Exec=kitty|Exec=$(readlink -f ~)/.local/kitty.app/bin/kitty|g" ~/.local/share/applications/kitty*.desktop
+        sed -i "s|Exec=kitty|Exec=$(readlink -f ~)/.local/kitty.app/bin/kitty|g" ~/.local/share/applications/kitty*.desktop
 
-    echo 'kitty.desktop' > ~/.config/xdg-terminals.list
+        echo 'kitty.desktop' > ~/.config/xdg-terminals.list
 
-    touch ~/.config/kitty/kitty.conf
+        touch ~/.config/kitty/kitty.conf
 
 cat <<EOF >> ~/.config/kitty/kitty.conf
 #### Permet de lancer une application (ici lazydocker) dans un nouvel onglet (tab) ou fenetre (window) ####
@@ -871,25 +871,25 @@ map ctrl+Up       previous_window
 # initial_window_height 400
 EOF
 
-    cd ~/.config/kitty
-    git clone https://github.com/kovidgoyal/kitty-themes.git
-    # Commande pour changer de theme -> kitty +kitten themes
+        cd ~/.config/kitty
+        git clone https://github.com/kovidgoyal/kitty-themes.git
+        # Commande pour changer de theme -> kitty +kitten themes
 
-    notify-send -i face-wink "Kitty themes" "Commande pour changer de thème : kitty +kitten themes" -t 3000
+        notify-send -i face-wink "Kitty themes" "Commande pour changer de thème : kitty +kitten themes" -t 3000
 
-    # Juste pour info : un theme dracula est disponible
-    # https://github.com/dracula/kitty
+        # Juste pour info : un theme dracula est disponible
+        # https://github.com/dracula/kitty
 
-    # Actions for Nautilus :
-    # https://github.com/bassmanitram/actions-for-nautilus
-    sudo apt install -y python3-nautilus python3-gi procps libjs-jquery
-    git clone https://github.com/bassmanitram/actions-for-nautilus.git
-    cd actions-for-nautilus
-    make install
-    cd ..
-    rm -rf actions-for-nautilus
-    notify-send -i face-wink "Nouvelle application" "Application installée : actions for nautilus" -t 3000
-    cd
+        # Actions for Nautilus :
+        # https://github.com/bassmanitram/actions-for-nautilus
+        sudo apt install -y python3-nautilus python3-gi procps libjs-jquery
+        git clone https://github.com/bassmanitram/actions-for-nautilus.git
+        cd actions-for-nautilus
+        make install
+        cd ..
+        rm -rf actions-for-nautilus
+        notify-send -i face-wink "Nouvelle application" "Application installée : actions for nautilus" -t 3000
+        cd
         ;;
     n)  # Si le choix est non)
         echo "Vous avez choisi de ne pas installer Kitty Terminal"
@@ -911,15 +911,15 @@ read choixLazyDocker
 
 case $choixLazyDocker in
     y)  # Si le choix est oui)
-    curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash
+        curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash
     
-    #=============== Mettre kitty en terminal par defaut ==================
-    # sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator ~/.local/kitty.app/bin/kitty 50
-    # sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator $(which kitty) 50
-    # sudo update-alternatives --config x-terminal-emulator
-    # Puis selectionner le terminal kitty
-    # gsettings set org.gnome.desktop.default-applications.terminal exec kitty
-    # gsettings set org.gnome.desktop.default-applications.terminal exec /home/$USER/.local/kitty.app/bin/kitty
+        #=============== Mettre kitty en terminal par defaut ==================
+        # sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator ~/.local/kitty.app/bin/kitty 50
+        # sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator $(which kitty) 50
+        # sudo update-alternatives --config x-terminal-emulator
+        # Puis selectionner le terminal kitty
+        # gsettings set org.gnome.desktop.default-applications.terminal exec kitty
+        # gsettings set org.gnome.desktop.default-applications.terminal exec /home/$USER/.local/kitty.app/bin/kitty
 
     cd
         ;;
@@ -942,21 +942,21 @@ read choixPet
 
 case $choixPet in
     y)  # Si le choix est oui)
-    wget https://github.com/knqyf263/pet/releases/download/v1.0.1/pet_1.0.1_linux_amd64.deb
-    sudo dpkg -i pet_1.0.1_linux_amd64.deb
-    sudo apt update -y && sudo apt install fzf -y
-    export EDITOR=micro
-    sleep 2
-    pet configure
-    sleep 1
-    rm -f ~/.config/pet/snippet.toml
-    cp -f ./Necessary/Pet/snippet.toml ~/.config/pet/
-    # pet new
-    # pet list
-    # pet edit
-    # pet search
-    # pet exec
-    cd
+        wget https://github.com/knqyf263/pet/releases/download/v1.0.1/pet_1.0.1_linux_amd64.deb
+        sudo dpkg -i pet_1.0.1_linux_amd64.deb
+        sudo apt update -y && sudo apt install fzf -y
+        export EDITOR=micro
+        sleep 2
+        pet configure
+        sleep 1
+        rm -f ~/.config/pet/snippet.toml
+        cp -f ./Necessary/Pet/snippet.toml ~/.config/pet/
+        # pet new
+        # pet list
+        # pet edit
+        # pet search
+        # pet exec
+        cd
         ;;
     n)  # Si le choix est non)
         echo "Vous avez choisi de ne pas installer Pet"
@@ -977,19 +977,19 @@ read choixArsenal
 
 case $choixArsenal in
     y)  # Si le choix est oui)
-    python3 -m pip install arsenal-cli
+        python3 -m pip install arsenal-cli
 
-    echo "alias a='arsenal'" | sudo tee -a ~/.bashrc
+        echo "alias a='arsenal'" | sudo tee -a ~/.bashrc
 
-    if [ -f "$HOME/.zshrc" ]; then
-        echo "alias a='arsenal'" | sudo tee -a ~/.zshrc
-    else
-        echo "Le fichier ~/.zshrc n'existe pas."
-    fi
+        if [ -f "$HOME/.zshrc" ]; then
+            echo "alias a='arsenal'" | sudo tee -a ~/.zshrc
+        else
+            echo "Le fichier ~/.zshrc n'existe pas."
+        fi
 
-    echo "dev.tty.legacy_tiocsti=1" | sudo tee -a /etc/sysctl.conf
-    sudo sysctl -p
-    cd
+        echo "dev.tty.legacy_tiocsti=1" | sudo tee -a /etc/sysctl.conf
+        sudo sysctl -p
+        cd
         ;;
     n)  # Si le choix est non)
         echo "Vous avez choisi de ne pas installer Pet"
@@ -1044,6 +1044,10 @@ alias whatenvironment="echo $XDG_CURRENT_DESKTOP"
 alias pythonserver="sudo python3 -m http.server"
 
 alias lazydocker="/home/$USER/.local/bin/lazydocker" # S'appui sur LazyDocker
+alias docker="sudo docker" # S'appui sur docker
+alias docksh="docker exec -it" # S'appui sur docker
+
+#alias sshlist="~/Public/ssh-list" # S'appui sur ssh-list (https://github.com/akinoiro/ssh-list)
 EOF
 
         cp -f ./Necessary/bashrc/.bashrc* /home/$USER/
@@ -1072,12 +1076,12 @@ read choixTgpt
 
 case $choixTgpt in
     y)  # Si le choix est oui)
- 	cd
-    curl -sSL https://raw.githubusercontent.com/aandrew-me/tgpt/main/install | bash -s /usr/local/bin
-    tgpt -h
-    # Pour désinstaller :
-    # sudo rm $(which tgpt)
-    cd
+ 	    cd
+        curl -sSL https://raw.githubusercontent.com/aandrew-me/tgpt/main/install | bash -s /usr/local/bin
+        tgpt -h
+        # Pour désinstaller :
+        # sudo rm $(which tgpt)
+        cd
         ;;
     n)  # Si le choix est non)
         echo "Vous avez choisi de ne pas installer tgpt"
@@ -1098,11 +1102,11 @@ read choixNinjaBinary
 
 case $choixNinjaBinary in
     y)  # Si le choix est oui)
- 	cd ~/Public
-    curl https://cdn.binary.ninja/installers/binaryninja_free_linux.zip -o binaryninja.zip
-    unzip binaryninja.zip
-    sudo rm binaryninja.zip
-    cd
+ 	    cd ~/Public
+        curl https://cdn.binary.ninja/installers/binaryninja_free_linux.zip -o binaryninja.zip
+        unzip binaryninja.zip
+        sudo rm binaryninja.zip
+        cd
         ;;
     n)  # Si le choix est non)
         echo "Vous avez choisi de ne pas installer Ninja Binary"
@@ -1114,6 +1118,34 @@ esac
 done
 
 
+# Choix Ssh List
+# Lien : https://github.com/akinoiro/ssh-list
+choixSshList=""
+
+while [[ "$choixSshList" != "y" && "$choixSshList" != "n" ]]; do
+echo "Voulez-vous installer ssh list ? ( y  /  n ) :"
+echo "Pour information : https://github.com/akinoiro/ssh-list"
+read choixSshList
+
+case $choixSshList in
+    y)  # Si le choix est oui)
+ 	    cp -Rf ./Necessary/ssh-list/ssh-list ~/Public
+        sudo chmod u+x ~/Public/ssh-list
+        echo "Création du lien symbolique pour sshlist dans /usr/local/bin"
+        sudo ln -s ~/Public/ssh-list /usr/local/bin/sshlist
+        # Supprimer le lien : sudo rm /usr/local/bin/sshlist
+        # Emplacement fichier config : ~/.ssh/ssh-list.json
+        cd
+        ;;
+    n)  # Si le choix est non)
+        echo "Vous avez choisi de ne pas installer ssh list"
+        ;;
+    *)  # Si aucun choix ne correspond)
+        echo "Ta pas fait le bon choix Maurice (Attention à la casse)"
+        ;;
+esac
+done
+
 # Choix création des raccourcis clavier
 choixRaccourcisClavier=""
 
@@ -1124,7 +1156,7 @@ read choixRaccourcisClavier
 case $choixRaccourcisClavier in
     y)  # Si le choix est oui)
 
-	gsettings set org.gnome.shell.keybindings toggle-message-tray "[]" # Valeur raccourci "Afficher la liste des notifications" supprimé
+	    gsettings set org.gnome.shell.keybindings toggle-message-tray "[]" # Valeur raccourci "Afficher la liste des notifications" supprimé
 	
         gsettings set org.gnome.settings-daemon.plugins.media-keys custom-keybindings "['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom1/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom2/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom3/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom4/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom5/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom6/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom7/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom8/', '/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom9/']" # Création des emplacements personnalisés des raccourcis claviers
 

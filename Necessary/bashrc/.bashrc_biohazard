@@ -142,7 +142,10 @@ alias whatfilemanager="xdg-mime query default inode/directory"
 alias whatenvironment="echo $XDG_CURRENT_DESKTOP"
 
 alias lazydocker="/home/$USER/.local/bin/lazydocker" # S'appui sur LazyDocker
+alias docker="sudo docker" # S'appui sur docker
+alias docksh="docker exec -it" # S'appui sur docker
 
+#alias sshlist="~/Public/ssh-list" # S'appui sur ssh-list (https://github.com/akinoiro/ssh-list)
 
 ### Biohazard ###
 
