@@ -352,4 +352,9 @@
   Output = ""
   Tag = ["scp"]
   command = "scp <fichier-a-envoyer> <user-distant>@<ip-distante>:<chemin-distant>"
-  
+
+[[Snippets]]
+  Description = "wget, permet de télécharger tout un dossier via wget"
+  Output = ""
+  Tag = ["wget"]
+  command = "wget -r -np -nH --cut-dirs=1 -R \"*index.html*\" <http://192.168.201.33:8090/Image_disque/>"
