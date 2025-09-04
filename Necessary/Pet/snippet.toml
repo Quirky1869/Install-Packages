@@ -347,3 +347,9 @@
   Tag = ["ffuf"]
   command = "ffuf -w <chemin-word-list.txt> -u <http://planning.htb/> -H \"<Host:FUZZ.planning.htb>\" -fc <301>"
   
+[[Snippets]]
+  Description = "scp, envoyer fichier via ssh ; ex : scp linpeas.sh admin@10.10.11.68:/home/grafana"
+  Output = ""
+  Tag = ["scp"]
+  command = "scp <fichier-a-envoyer> <user-distant>@<ip-distante>:<chemin-distant>"
+  
