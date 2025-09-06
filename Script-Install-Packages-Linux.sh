@@ -967,6 +967,63 @@ case $choixPet in
 esac
 done
 
+# Choix Lazy Docker
+#Lien : https://github.com/jesseduffield/lazydocker
+choixLazyDocker=""
+
+while [[ "$choixLazyDocker" != "y" && "$choixLazyDocker" != "n" ]]; do
+echo "Voulez-vous installer Lazy Docker ? ( y  /  n ) :"
+echo "Pour information : https://github.com/jesseduffield/lazydocker"
+read choixLazyDocker
+
+case $choixLazyDocker in
+    y)  # Si le choix est oui)
+        curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash
+    
+        #=============== Mettre kitty en terminal par defaut ==================
+        # sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator ~/.local/kitty.app/bin/kitty 50
+        # sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator $(which kitty) 50
+        # sudo update-alternatives --config x-terminal-emulator
+        # Puis selectionner le terminal kitty
+        # gsettings set org.gnome.desktop.default-applications.terminal exec kitty
+        # gsettings set org.gnome.desktop.default-applications.terminal exec /home/$USER/.local/kitty.app/bin/kitty
+
+    cd
+        ;;
+    n)  # Si le choix est non)
+        echo "Vous avez choisi de ne pas installer Lazy Docker"
+        ;;
+    *)  # Si aucun choix ne correspond)
+        echo "Ta pas fait le bon choix Maurice (Attention à la casse)"
+        ;;
+esac
+done
+
+# Choix DCV
+# Lien : https://github.com/tokuhirom/dcv
+choixdcv=""
+
+while [[ "$choixdcv" != "y" && "$choixdcv" != "n" ]]; do
+echo "Voulez-vous installer dcv ? ( y  /  n ) :"
+echo "Pour information : https://github.com/tokuhirom/dcv"
+read choixdcv
+
+case $choixdcv in
+    y)  # Si le choix est oui)
+        cp -rf ./Necessary/dcv/dcv ~/Public/dcv
+        sudo ln -s ~/Public/dcv /usr/local/bin/dcv
+        echo "Vous pouvez maintenant lancer la commande dcv"
+        cd
+        ;;
+    n)  # Si le choix est non)
+        echo "Vous avez choisi de ne pas installer dcv"
+        ;;
+    *)  # Si aucun choix ne correspond)
+        echo "Ta pas fait le bon choix Maurice (Attention à la casse)"
+        ;;
+esac
+done
+
 # Choix Arsenal
 choixArsenal=""
 
