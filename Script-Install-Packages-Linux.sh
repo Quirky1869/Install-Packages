@@ -1014,6 +1014,8 @@ case $choixdcv in
         sudo ln -s ~/Public/dcv /usr/local/bin/dcv
         echo "Vous pouvez maintenant lancer la commande dcv"
         cd
+        # Fichier de conf : ~/.config/dcv/config.toml
+        # Vori les log : dcv -debug dcv.log
         ;;
     n)  # Si le choix est non)
         echo "Vous avez choisi de ne pas installer dcv"
