@@ -72,4 +72,4 @@ Le script à été testé uniquement sur :
 
 # Problème connu
 
-- Discord et Burpsuite ne sont pas à jour -> Oui je sais, il est possible de devoir faire une update à la mano
+- Burpsuite n'est pas à jour -> Oui je sais, il est possible de devoir faire une update à la mano
