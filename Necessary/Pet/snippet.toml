@@ -201,25 +201,25 @@
   Description = "xfreerdp, AVD2"
   Output = ""
   Tag = ["xfreerdp"]
-  command = "xfreerdp -u:Administrateur -p:<mot-de-passe> -v:4.212.12.215"
+  command = "xfreerdp -u:Administrateur -p:Proxit84000* -v:4.212.12.215"
 
 [[Snippets]]
   Description = "xfreerdp, AVD1"
   Output = ""
   Tag = ["xfreerdp"]
-  command = "xfreerdp -u:Administrateur -p:<mot-de-passe> -v:51.11.211.157"
+  command = "xfreerdp -u:Administrateur -p:Proxit84000* -v:51.11.211.157"
 
 [[Snippets]]
   Description = "xfreerdp, AVD3"
   Output = ""
   Tag = ["xfreerdp"]
-  command = "xfreerdp -u:Administrateur -p:<mot-de-passe> -v:4.178.190.47"
+  command = "xfreerdp -u:Administrateur -p:Proxit84000* -v:4.178.190.47"
 
 [[Snippets]]
   Description = "xfreerdp, OgapConcept"
   Output = ""
   Tag = ["xfreerdp"]
-  command = "xfreerdp -u:Administrateur -p:<mot-de-passe> -v:40.89.131.253"
+  command = "xfreerdp -u:Administrateur -p:0G@pConcept84* -v:40.89.131.253"
 
 [[Snippets]]
   Description = "find, chercher un fichier dans tout l'ordinateur"
@@ -249,13 +249,13 @@
   Description = "xfreerdp, winerl - SRV-APP-WINERL"
   Output = ""
   Tag = ["xfreerdp"]
-  command = "xfreerdp -u:supportproxit -p:<mot-de-passe> -v:4.178.153.109"
+  command = "xfreerdp -u:supportproxit -p:L#302196484193ug -v:4.178.153.109"
 
 [[Snippets]]
   Description = "xfreerdp, winerl - AVD-WINERL"
   Output = ""
   Tag = ["xfreerdp"]
-  command = "xfreerdp -u:supportproxit -p:<mot-de-passe> -v:4.211.105.162"
+  command = "xfreerdp -u:supportproxit -p:L#302196484193ug -v:4.211.105.162"
 
 [[Snippets]]
   Description = "docker, ATTENTION !!! permet de nettoyer tout docker"
@@ -336,25 +336,19 @@
   command = "openssl ca -config openssl.cnf -policy policy_anything -md sha256 -days 3650 -in <server.csr> -out <server.crt> -batch -cert <ca.crt> -keyfile <ca.key>"
 
 [[Snippets]]
-  Description = "repository, liste tout les repository present sur la machine"
+  Description = "python3, venv, création d'un venv en python"
   Output = ""
-  Tag = ["repository"]
-  command = "grep -r ^ /etc/apt/sources.list /etc/apt/sources.list.d/"
+  Tag = ["python3,venv"]
+  command = "python3 -m venv <nom-de-notre-venv>"
 
 [[Snippets]]
-  Description = "ffuf, commande pour trouver les sub-domains d'un site web"
+  Description = "python3, venv, rentrer dans le venv (ne peux pas etre executer depuis pet)"
   Output = ""
-  Tag = ["ffuf"]
-  command = "ffuf -w <chemin-word-list.txt> -u <http://planning.htb/> -H \"<Host:FUZZ.planning.htb>\" -fc <301>"
-  
-[[Snippets]]
-  Description = "scp, envoyer fichier via ssh ; ex : scp linpeas.sh admin@10.10.11.68:/home/grafana"
-  Output = ""
-  Tag = ["scp"]
-  command = "scp <fichier-a-envoyer> <user-distant>@<ip-distante>:<chemin-distant>"
+  Tag = ["python3,", "venv"]
+  command = "source <nom-de-notre-venv>/bin/activate"
 
 [[Snippets]]
-  Description = "wget, permet de télécharger tout un dossier via wget"
+  Description = "python3, venv, sortir du venv (ne peux pas etre executer depuis pet)"
   Output = ""
-  Tag = ["wget"]
-  command = "wget -r -np -nH --cut-dirs=1 -R \"*index.html*\" <http://192.168.201.33:8090/Image_disque/>"
+  Tag = ["python3,", "venv"]
+  command = "deactivate"
