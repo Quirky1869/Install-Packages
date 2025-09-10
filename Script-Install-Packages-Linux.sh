@@ -869,6 +869,9 @@ map ctrl+Up       previous_window
 # remember_window_size  yes
 # initial_window_width  640
 # initial_window_height 400
+
+#### Permettre l'affichage de 10 000 lignes dans le terminal ####
+scrollback_lines 10000
 EOF
 
         cd ~/.config/kitty
