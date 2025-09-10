@@ -352,3 +352,9 @@
   Output = ""
   Tag = ["python3,", "venv"]
   command = "deactivate"
+
+[[Snippets]]
+  Description = "scp, permet d'envoyer un fichier via ssh"
+  Output = ""
+  Tag = ["scp"]
+  command = "scp <fichier-a-envoyer> <id-distant>@<ip-distante>:</home/nathan - chemin distant>"
