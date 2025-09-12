@@ -755,4 +755,17 @@ battery_percentage=$(upower -i /org/freedesktop/UPower/devices/battery_BAT0 | gr
 echo "Pourcentage de la batterie : $battery_percentage%"🔋
 
 
-#####################  #######################
+############################################
+
+# Fonction pour lancer Chrome avec une IP personnalisable dans le ~/.zshrc
+chrome-ip() {
+    if [ -z "$1" ]; then
+        echo "Usage: chrome-ip <ip_address>"
+        echo "Exemple: chrome-ip 45.86.97.161"
+        return 1
+    fi
+    google-chrome "https://$1:4430"
+}
+
+############################################
+
