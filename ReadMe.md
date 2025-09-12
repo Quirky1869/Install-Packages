@@ -1,16 +1,16 @@
-![image](./Necessary/Images/Linux.png)
+![image](./Necessary/Images/tux.png)  
 
 # README
 
-**Veuillez lire tout le readme.md svp**
+**Veuillez lire tout le readme.md svp**  
 
 # Disclaimer
 
-Je ne serai responsable en aucun cas des problèmes rencontrés lors de l'installation des packages sur votre ordinateur que ca soit pendant ou après l'installation. Je vous conseil de lire au complet le script "Script-Install-Packages-Linux.sh", d'une part pour comprendre exactement ce qu'il va faire sur votre ordinateur et d'autre part pour enlever ce que vous ne voulez pas (à vos risques ; soyez sûr de ce que vous faites)
+Je ne serai responsable en aucun cas des problèmes rencontrés lors de l'installation des packages sur votre ordinateur que ca soit pendant ou après l'installation. Je vous conseil de lire au complet le script "Script-Install-Packages-Linux.sh", d'une part pour comprendre exactement ce qu'il va faire sur votre ordinateur et d'autre part pour enlever ce que vous ne voulez pas (à vos risques ; soyez sûr de ce que vous faites)  
 
 # Introduction
 
-Install-packages est conçus pour pouvoir installer rapidement et facilement plusieurs packages et applications ; idéal sur un nouvel OS fraichement installé
+Install-packages est conçus pour pouvoir installer rapidement et facilement plusieurs packages et applications ; idéal sur un nouvel OS fraichement installé  
 
 # Informations
 
@@ -19,7 +19,7 @@ Install-packages est conçus pour pouvoir installer rapidement et facilement plu
 - Si vous décider d'installer rclone, les 2 fichiers présent dans "./Necessary/Obsidian-rclone" sont à modifier ; les chemins se nommant "Google-drive:/Obsidian-Google-Drive" et "/home/$USER/Obsidian_Vault/" vous sont personnels, ils dépendent des dossiers de votre pc et des dossiers de votre google-drive
 - Un fichier log se nommant `Script-Install-Packages-Linux.sh.log` est créé dans `/var/log/`
 - Si vous décider de copier les `.bashrc`, un fichier .bashrc.ori est créé à côté du .bashrc, ils intègrent des petits changements sur le prompt (pour changer de `.bashrc` lancer la commande `cp -f <~/.bashrc_voulu> .bashrc` et relancer le prompt ou lancer un `source ~/.bashrc`) :<br>
-1 - Un changement visuel pour chaque `.bashrc_*`<br>
+1 - Un changement visuel pour chaque `.bashrc_*`<br>  
 
 | Neon (~/.bashrc_neon) | Japan (~/.bashrc_japan) |
 | :----------------: | :----------------: |
@@ -33,23 +33,23 @@ Install-packages est conçus pour pouvoir installer rapidement et facilement plu
 | :----------------: | :----------------: |
 | ![Biohazard](./Necessary/Images/biohazard.png) | ![Green-Space](./Necessary/Images/green-space.png)|
 
-2 - Une modification du $PATH (Ils servent pour les alias)<br>
+2 - Une modification du $PATH (Ils servent pour les alias)<br>  
 3 - Des alias :
->- dns
->- ipls
->- bat
->- logoff
->- getuser
->- sherlock (valide **uniquement** si vous avez fait l'installation de sherlock)
->- metasploit (valide **uniquement** si vous avez fait l'installation de metasploit)
->- harvester (valide **uniquement** si vous avez fait l'installation de theHarvester)
->- sqlmap (valide **uniquement** si vous avez fait l'installation de SQLmap)
->- service
->- allservice
->- servicesystemd
->- whatfilemanager
->- whatenvironment
->- ...
+>- dns  
+>- ipls  
+>- bat  
+>- logoff  
+>- getuser  
+>- sherlock (valide **uniquement** si vous avez fait l'installation de sherlock)  
+>- metasploit (valide **uniquement** si vous avez fait l'installation de metasploit)  
+>- harvester (valide **uniquement** si vous avez fait l'installation de theHarvester)  
+>- sqlmap (valide **uniquement** si vous avez fait l'installation de SQLmap)  
+>- service  
+>- allservice  
+>- servicesystemd  
+>- whatfilemanager  
+>- whatenvironment  
+>- ...  
 
 
 
@@ -67,8 +67,8 @@ Install-packages est conçus pour pouvoir installer rapidement et facilement plu
 
 # Version validé
 
-Le script à été testé uniquement sur : 
-[Ubuntu 22.04 LTS](https://releases.ubuntu.com/jammy/)
+Le script à été testé uniquement sur :  
+[Ubuntu 22.04 LTS](https://releases.ubuntu.com/jammy/)  
 
 # Problème connu
 
