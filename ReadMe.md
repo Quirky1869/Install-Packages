@@ -57,6 +57,8 @@ Install-packages est conçus pour pouvoir installer rapidement et facilement plu
 
 # Etape d'installation
 
+![vhs tape run](Necessary/Gif/install-packages-ubuntu.gif)
+
 - 1 - Copier le dossier "**Necessary**" et le fichier "**Script-Install-Packages-Linux.sh**" dans votre dossier personnel -> ~ ou /home/$USER
 
 - 1.1 - Lancé un **chmod +x Script-Install-Packages-Linux.sh**
