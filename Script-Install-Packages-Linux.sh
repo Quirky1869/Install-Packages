@@ -9,7 +9,7 @@ echo "╚═╝╚═╝  ╚═══╝╚══════╝   ╚═╝   
 
 sleep 3
 
-# Emplacement fichier log
+# Emplacement du fichier log
 LOG_FILE="/var/log/Script-Install-Packages-Linux.sh.log"
 
 # Déclaration des variables
