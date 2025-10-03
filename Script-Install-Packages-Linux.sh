@@ -7,13 +7,17 @@ echo "██║██║╚██╗██║╚════██║   ██�
 echo "██║██║ ╚████║███████║   ██║   ██║  ██║███████╗███████╗      ██║     ██║  ██║╚██████╗██║  ██╗██║  ██║╚██████╔╝███████╗███████║"
 echo "╚═╝╚═╝  ╚═══╝╚══════╝   ╚═╝   ╚═╝  ╚═╝╚══════╝╚══════╝      ╚═╝     ╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚══════╝" 
 
-sleep 3
+sleep 2
 
 # Emplacement du fichier log
 LOG_FILE="/var/log/Script-Install-Packages-Linux.sh.log"
 
 # Déclaration des variables
-varDownload="Téléchargements" # If you're computer is in english replace "Téléchargements" with "Downloads"
+if [[ "$LANG" == fr_* ]]; then
+    varDownload="Téléchargements"
+else
+    varDownload="Downloads"
+fi
 
 echo "Debut de l'installation :" 
 echo =========================== 
@@ -143,7 +147,7 @@ interrupt_handler() {
     # echo "Suppression du dossier Necessary..."
     # rm -rf "/home/$USER/Necessary"
     echo "Interruption de l'exécution du script par l'utilisateur."
-    sleep 3
+    sleep 2
     exit 1
 }
 
@@ -306,8 +310,8 @@ case $choixDiscord in
         #wget https://stable.dl2.discordapp.net/apps/linux/0.0.68/discord-0.0.68.deb
 	    wget --content-disposition "https://discord.com/api/download?platform=linux&format=deb"
         echo Installation de Discord :
-	    sudo dpkg -i ./*.deb
-	    sudo rm ./*deb
+	    sudo dpkg -i ./discord*
+	    sudo rm ./discord*
 	    cd
         ;;
     n)  # Si le choix est non)
@@ -342,14 +346,14 @@ esac
 done
 
 # Choix install mariadb
-choixmariadb=""
+choixMariadb=""
 
-while [[ "$choixmariadb" != "y" && "$choixmariadb" != "n" ]]; do
-echo "Voulez-vous installer mariadb ? ( y  /  n ) :"
+while [[ "$choixMariadb" != "y" && "$choixMariadb" != "n" ]]; do
+echo "Voulez-vous installer Mariadb ? ( y  /  n ) :"
 echo "Pour information : https://mariadb.org/"
-read choixmariadb
+read choixMariadb
 
-case $choixmariadb in
+case $choixMariadb in
     y)  # Si le choix est oui)
         echo "Vous avez choisi d'installer mariadb"
         sudo apt install -y mariadb-server
@@ -407,7 +411,7 @@ case $choixDockerDesktop in
         sudo apt install -y docker-compose-plugin
         echo "Etat actuel de Docker"
         sudo systemctl is-active docker
-        sleep 5
+        sleep 2
         #wget https://desktop.docker.com/linux/main/amd64/137060/docker-desktop-4.27.2-amd64.deb
 	    curl 'https://desktop.docker.com/linux/main/amd64/docker-desktop-amd64.deb?utm_source=docker&utm_medium=webreferral&utm_campaign=docs-driven-download-linux-amd64' -o docker-desktop.deb
         sudo apt install ./*.deb
@@ -769,7 +773,7 @@ read choixAperisolve
 case $choixAperisolve in
     y)  # Si le choix est oui)
  	    sudo sh -c "$(curl -fs https://www.aperisolve.com/install.sh)"
-  	    sleep 3
+  	    sleep 2
         cd
         ;;
     n)  # Si le choix est non)
@@ -899,6 +903,33 @@ EOF
         ;;
     n)  # Si le choix est non)
         echo "Vous avez choisi de ne pas installer Kitty Terminal"
+        ;;
+    *)  # Si aucun choix ne correspond)
+        echo "Ta pas fait le bon choix Maurice (Attention à la casse)"
+        ;;
+esac
+done
+
+# Choix install Agg (Générateur de Gif pour asciinema)
+#Lien : https://github.com/asciinema/agg
+choixAgg=""
+
+while [[ "$choixAgg" != "y" && "$choixAgg" != "n" ]]; do
+echo "Voulez-vous installer Agg ? ( y  /  n ) :"
+echo "Pour information : https://github.com/asciinema/agg"
+read choixAgg
+
+case $choixAgg in
+    y)  # Si le choix est oui)
+        cd
+        cp -rf ~/Necessary/agg/agg ~/Public/agg
+        sudo ln -s ~/Public/agg /usr/local/bin/agg
+        cd
+        ;;
+        # Utilisation : asciinema rec
+        # agg file.cast output.gif
+    n)  # Si le choix est non)
+        echo "Vous avez choisi de ne pas installer Agg"
         ;;
     *)  # Si aucun choix ne correspond)
         echo "Ta pas fait le bon choix Maurice (Attention à la casse)"
@@ -1271,7 +1302,7 @@ case $choixRaccourcisClavier in
         echo "Navigation -> Changer de fenêtre directement -> Alt + Tabulation"
         echo "Lanceurs -> Dossier Personnel -> Super + E"
         echo "Lanceurs -> Lancer un terminal -> Alt + T"
-        sleep 10
+        sleep 5
 	cd
         ;;
     n)  # Si le choix est non
@@ -1291,7 +1322,7 @@ notify-send -i emblem-important "Pensez à supprimer le dossier ~/Necessary" -t 
 # Pause
 echo Installation terminée il faut fermer la session pour appliquer tous les paramètres
 notify-send -u critical "Installation terminée il faut fermer la session pour appliquer tous les paramètres" -t 4000
-sleep 3
+sleep 2
 
 cd
 rm .sudo_as_admin_successful

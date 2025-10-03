@@ -1,4 +1,4 @@
-![image](./Necessary/Images/tux.png)  
+![image](./Necessary/Images/Linux.png)  
 
 # README
 
@@ -53,19 +53,19 @@ Install-packages est conçus pour pouvoir installer rapidement et facilement plu
 
 
 
-- Si vous décider d'installer de nouveaux thèmes il génère un changement visuel du prompt que vous pouvez régler via les préférences de votre prompt ; des curseurs et icones qui sont accessibles via "Tweaks" 
+- Si vous décider d'installer de nouveaux thèmes il génère un changement visuel du prompt que vous pouvez régler via les préférences de votre prompt ; des curseurs et icones qui sont accessibles via "Tweaks"
 
 # Etape d'installation
 
-![vhs tape run](Necessary/Gif/install-packages-ubuntu.gif)
+- 1 - Copier le dossier "**Necessary**" et le fichier "**Script-Install-Packages-Linux.sh**" dans votre dossier personnel
 
-- 1 - Copier le dossier "**Necessary**" et le fichier "**Script-Install-Packages-Linux.sh**" dans votre dossier personnel -> ~ ou /home/$USER
-
-- 1.1 - Lancé un **chmod +x Script-Install-Packages-Linux.sh**
+- 1.1 - Donner les droit d'exécution pour l'owner sur le fichier **Script-Install-Packages-Linux.sh**
 
 - 2 - Lancer le fichier "**Script-Install-Packages-Linux.sh**" et suivez les instructions
 
 - 3 - Après l'installation lire le memo.txt si besoin
+
+![vhs tape run](Necessary/Gif/install-packages-ubuntu.gif)  
 
 # Version validé
 
