@@ -873,7 +873,7 @@ map ctrl+Up       previous_window
 # cursor #2a7aef
 
 #### Permet de régler la taille du terminal par défaut ####
-# remember_window_size  yes
+remember_window_size  yes
 # initial_window_width  640
 # initial_window_height 400
 
