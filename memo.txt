@@ -348,7 +348,7 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 - chsh -s $(which zsh)
 - sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"       (répondre "y" à la question voulez vouos changer de shell)
 mv -f ~/.zshrc  ~/.zshrc.ori
-cp -f ./Necessary/zsh/.zschrc  ~/.zschrc
+cp -f ./Necessary/zsh/.zshrc  ~/.zshrc
 source ~/.zshrc
 
 (si cela ne fonctionne pas il faut installer les plugins en premier dans le .zshrc créer d'origine puis refaire un source .zshrc et ensuite faire un cp de .zshrc-kali .zshrc)
