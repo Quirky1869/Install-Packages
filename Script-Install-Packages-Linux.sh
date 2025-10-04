@@ -26,6 +26,13 @@ echo ===========================
 sudo apt update -y && sudo apt upgrade -y 
 
 # Choix install Visual Studio Code
+
+# ▄    ▄  ▄▄▄▄           ▄▄▄   ▄▄▄▄  ▄▄▄▄   ▄▄▄▄▄▄
+# ▀▄  ▄▀ █▀   ▀        ▄▀   ▀ ▄▀  ▀▄ █   ▀▄ █     
+#  █  █  ▀█▄▄▄         █      █    █ █    █ █▄▄▄▄▄
+#  ▀▄▄▀      ▀█        █      █    █ █    █ █     
+#   ██   ▀▄▄▄█▀         ▀▄▄▄▀  █▄▄█  █▄▄▄▀  █▄▄▄▄▄
+
 choixVisualStudioCode=""
 
 while [[ "$choixVisualStudioCode" != "y" && "$choixVisualStudioCode" != "n" ]]; do
@@ -53,6 +60,13 @@ esac
 done
 
 # Choix install Virtualbox
+
+# ▄    ▄ ▄▄▄▄▄  ▄▄▄▄▄ ▄▄▄▄▄▄▄ ▄    ▄   ▄▄   ▄      ▄▄▄▄▄   ▄▄▄▄  ▄    ▄
+# ▀▄  ▄▀   █    █   ▀█   █    █    █   ██   █      █    █ ▄▀  ▀▄  █  █ 
+#  █  █    █    █▄▄▄▄▀   █    █    █  █  █  █      █▄▄▄▄▀ █    █   ██  
+#  ▀▄▄▀    █    █   ▀▄   █    █    █  █▄▄█  █      █    █ █    █  ▄▀▀▄ 
+#   ██   ▄▄█▄▄  █    ▀   █    ▀▄▄▄▄▀ █    █ █▄▄▄▄▄ █▄▄▄▄▀  █▄▄█  ▄▀  ▀▄
+
 choixVirtualbox=""
 
 while [[ "$choixVirtualbox" != "y" && "$choixVirtualbox" != "n" ]]; do
@@ -74,6 +88,13 @@ esac
 done
 
 # Choix install Wireshark
+
+#▄     ▄ ▄▄▄▄▄  ▄▄▄▄▄  ▄▄▄▄▄▄  ▄▄▄▄  ▄    ▄   ▄▄   ▄▄▄▄▄  ▄    ▄
+#█  █  █   █    █   ▀█ █      █▀   ▀ █    █   ██   █   ▀█ █  ▄▀ 
+#▀ █▀█ █   █    █▄▄▄▄▀ █▄▄▄▄▄ ▀█▄▄▄  █▄▄▄▄█  █  █  █▄▄▄▄▀ █▄█   
+# ██ ██▀   █    █   ▀▄ █          ▀█ █    █  █▄▄█  █   ▀▄ █  █▄ 
+# █   █  ▄▄█▄▄  █    ▀ █▄▄▄▄▄ ▀▄▄▄█▀ █    █ █    █ █    ▀ █   ▀▄
+
 choixWireshark=""
 
 while [[ "$choixWireshark" != "y" && "$choixWireshark" != "n" ]]; do
@@ -97,6 +118,13 @@ esac
 done
 
 # Choix installation de GNS3
+
+#   ▄▄▄  ▄▄   ▄  ▄▄▄▄   ▄▄▄▄ 
+# ▄▀   ▀ █▀▄  █ █▀   ▀ ▀   ▀█
+# █   ▄▄ █ █▄ █ ▀█▄▄▄    ▄▄▄▀
+# █    █ █  █ █     ▀█     ▀█
+#  ▀▄▄▄▀ █   ██ ▀▄▄▄█▀ ▀▄▄▄█▀
+
 choixGNS3="" 
 
 while [[ "$choixGNS3" != "y" && "$choixGNS3" != "n" ]]; do 
@@ -155,6 +183,13 @@ interrupt_handler() {
 trap interrupt_handler SIGINT
 
 # Installation des packets
+
+# ▄▄▄▄▄    ▄▄     ▄▄▄  ▄    ▄ ▄▄▄▄▄▄▄▄▄▄▄▄▄  ▄▄▄▄ 
+# █   ▀█   ██   ▄▀   ▀ █  ▄▀  █        █    █▀   ▀
+# █▄▄▄█▀  █  █  █      █▄█    █▄▄▄▄▄   █    ▀█▄▄▄ 
+# █       █▄▄█  █      █  █▄  █        █        ▀█
+# █      █    █  ▀▄▄▄▀ █   ▀▄ █▄▄▄▄▄   █    ▀▄▄▄█▀
+
 echo Installation des packets 
 sudo apt install -y tree wget netcat-traditional htop filezilla zip unzip rar unar unrar net-tools \
     bmon tcptrack nmap whois testdisk tshark git samba gnome-tweaks python3-impacket \
@@ -165,6 +200,14 @@ sudo apt install -y tree wget netcat-traditional htop filezilla zip unzip rar un
     
 
 # pip
+
+# ▄▄▄▄▄  ▄▄▄▄▄  ▄▄▄▄▄ 
+# █   ▀█   █    █   ▀█
+# █▄▄▄█▀   █    █▄▄▄█▀
+# █        █    █     
+# █      ▄▄█▄▄  █     
+
+
 sudo pip install -U notify-send
 python3 -m pip install pwntools
 sudo pip install scapy
@@ -172,10 +215,24 @@ pip install pycryptodome
 pip install mkdocs-material
 
 # snap
+
+#  ▄▄▄▄  ▄▄   ▄   ▄▄   ▄▄▄▄▄ 
+# █▀   ▀ █▀▄  █   ██   █   ▀█
+# ▀█▄▄▄  █ █▄ █  █  █  █▄▄▄█▀
+#     ▀█ █  █ █  █▄▄█  █     
+# ▀▄▄▄█▀ █   ██ █    █ █ 
+
 sudo snap install searchsploit
 sudo snap install enum4linux
 
 # git
+
+#   ▄▄▄  ▄▄▄▄▄ ▄▄▄▄▄▄▄
+# ▄▀   ▀   █      █   
+# █   ▄▄   █      █   
+# █    █   █      █   
+#  ▀▄▄▄▀ ▄▄█▄▄    █ 
+
 ## recon ng : 
 sudo apt install -y git python3-pip
 git clone https://github.com/lanmaster53/recon-ng.git
@@ -183,6 +240,13 @@ cd recon-ng
 pip3 install -r REQUIREMENTS
 
 # Choix copie Documents/Scripts
+
+# ▄▄▄▄    ▄▄▄▄    ▄▄▄       ▄  ▄▄▄▄    ▄▄▄  ▄▄▄▄▄  ▄▄▄▄▄  ▄▄▄▄▄ ▄▄▄▄▄▄▄  ▄▄▄▄ 
+# █   ▀▄ ▄▀  ▀▄ ▄▀   ▀     █  █▀   ▀ ▄▀   ▀ █   ▀█   █    █   ▀█   █    █▀   ▀
+# █    █ █    █ █         █   ▀█▄▄▄  █      █▄▄▄▄▀   █    █▄▄▄█▀   █    ▀█▄▄▄ 
+# █    █ █    █ █        █        ▀█ █      █   ▀▄   █    █        █        ▀█
+# █▄▄▄▀   █▄▄█   ▀▄▄▄▀  █     ▀▄▄▄█▀  ▀▄▄▄▀ █    ▀ ▄▄█▄▄  █        █    ▀▄▄▄█▀
+
 choixDocumentsScripts=""
 
 while [[ "$choixDocumentsScripts" != "y" && "$choixDocumentsScripts" != "n" ]]; do
@@ -206,6 +270,13 @@ esac
 done
 
 #Choix install themes
+
+#▄▄▄▄▄▄▄ ▄    ▄ ▄▄▄▄▄▄ ▄    ▄ ▄▄▄▄▄▄  ▄▄▄▄ 
+#   █    █    █ █      ██  ██ █      █▀   ▀
+#   █    █▄▄▄▄█ █▄▄▄▄▄ █ ██ █ █▄▄▄▄▄ ▀█▄▄▄ 
+#   █    █    █ █      █ ▀▀ █ █          ▀█
+#   █    █    █ █▄▄▄▄▄ █    █ █▄▄▄▄▄ ▀▄▄▄█▀
+
 choixThemes=""
 
 while [[ "$choixThemes" != "y" && "$choixThemes" != "n" ]]; do
@@ -244,6 +315,13 @@ esac
 done
 
 # Choix install Google Chrome
+
+#   ▄▄▄   ▄▄▄▄   ▄▄▄▄    ▄▄▄  ▄      ▄▄▄▄▄▄          ▄▄▄  ▄    ▄ ▄▄▄▄▄   ▄▄▄▄  ▄    ▄ ▄▄▄▄▄▄
+# ▄▀   ▀ ▄▀  ▀▄ ▄▀  ▀▄ ▄▀   ▀ █      █             ▄▀   ▀ █    █ █   ▀█ ▄▀  ▀▄ ██  ██ █     
+# █   ▄▄ █    █ █    █ █   ▄▄ █      █▄▄▄▄▄        █      █▄▄▄▄█ █▄▄▄▄▀ █    █ █ ██ █ █▄▄▄▄▄
+# █    █ █    █ █    █ █    █ █      █             █      █    █ █   ▀▄ █    █ █ ▀▀ █ █     
+#  ▀▄▄▄▀  █▄▄█   █▄▄█   ▀▄▄▄▀ █▄▄▄▄▄ █▄▄▄▄▄         ▀▄▄▄▀ █    █ █    ▀  █▄▄█  █    █ █▄▄▄▄▄
+
 choixGoogleChrome=""
 
 while [[ "$choixGoogleChrome" != "y" && "$choixGoogleChrome" != "n" ]]; do
@@ -270,6 +348,13 @@ esac
 done
 
 # Choix install Brave
+
+# ▄▄▄▄▄  ▄▄▄▄▄    ▄▄   ▄    ▄ ▄▄▄▄▄▄
+# █    █ █   ▀█   ██   ▀▄  ▄▀ █     
+# █▄▄▄▄▀ █▄▄▄▄▀  █  █   █  █  █▄▄▄▄▄
+# █    █ █   ▀▄  █▄▄█   ▀▄▄▀  █     
+# █▄▄▄▄▀ █    ▀ █    █   ██   █▄▄▄▄▄
+
 choixBrave=""
 
 while [[ "$choixBrave" != "y" && "$choixBrave" != "n" ]]; do
@@ -296,6 +381,13 @@ esac
 done
 
 # Choix install Discord
+
+# ▄▄▄▄   ▄▄▄▄▄   ▄▄▄▄    ▄▄▄   ▄▄▄▄  ▄▄▄▄▄  ▄▄▄▄  
+# █   ▀▄   █    █▀   ▀ ▄▀   ▀ ▄▀  ▀▄ █   ▀█ █   ▀▄
+# █    █   █    ▀█▄▄▄  █      █    █ █▄▄▄▄▀ █    █
+# █    █   █        ▀█ █      █    █ █   ▀▄ █    █
+# █▄▄▄▀  ▄▄█▄▄  ▀▄▄▄█▀  ▀▄▄▄▀  █▄▄█  █    ▀ █▄▄▄▀ 
+
 choixDiscord=""
 
 while [[ "$choixDiscord" != "y" && "$choixDiscord" != "n" ]]; do
@@ -324,6 +416,13 @@ esac
 done
 
 # Choix installation Apache2
+
+#   ▄▄   ▄▄▄▄▄    ▄▄     ▄▄▄  ▄    ▄ ▄▄▄▄▄▄         ▄▄▄▄ 
+#   ██   █   ▀█   ██   ▄▀   ▀ █    █ █             ▀   ▀█
+#  █  █  █▄▄▄█▀  █  █  █      █▄▄▄▄█ █▄▄▄▄▄            ▄▀
+#  █▄▄█  █       █▄▄█  █      █    █ █               ▄▀  
+# █    █ █      █    █  ▀▄▄▄▀ █    █ █▄▄▄▄▄        ▄█▄▄▄▄
+
 choixApache2=""
 
 while [[ "$choixApache2" != "y" && "$choixApache2" != "n" ]]; do
@@ -346,6 +445,13 @@ esac
 done
 
 # Choix install mariadb
+
+# ▄    ▄   ▄▄   ▄▄▄▄▄  ▄▄▄▄▄    ▄▄          ▄▄▄▄   ▄▄▄▄▄ 
+# ██  ██   ██   █   ▀█   █      ██          █   ▀▄ █    █
+# █ ██ █  █  █  █▄▄▄▄▀   █     █  █         █    █ █▄▄▄▄▀
+# █ ▀▀ █  █▄▄█  █   ▀▄   █     █▄▄█         █    █ █    █
+# █    █ █    █ █    ▀ ▄▄█▄▄  █    █        █▄▄▄▀  █▄▄▄▄▀
+
 choixMariadb=""
 
 while [[ "$choixMariadb" != "y" && "$choixMariadb" != "n" ]]; do
@@ -384,6 +490,13 @@ esac
 done
 
 # Choix install Docker Desktop
+
+# ▄▄▄▄    ▄▄▄▄    ▄▄▄  ▄    ▄ ▄▄▄▄▄▄ ▄▄▄▄▄ 
+# █   ▀▄ ▄▀  ▀▄ ▄▀   ▀ █  ▄▀  █      █   ▀█
+# █    █ █    █ █      █▄█    █▄▄▄▄▄ █▄▄▄▄▀
+# █    █ █    █ █      █  █▄  █      █   ▀▄
+# █▄▄▄▀   █▄▄█   ▀▄▄▄▀ █   ▀▄ █▄▄▄▄▄ █    ▀
+
 # Lien : https://linuxiac.com/how-to-install-docker-on-linux-mint-21/
 # Lien : https://docs.docker.com/desktop/install/ubuntu/
 
@@ -431,6 +544,14 @@ esac
 done
 
 # Choix install GitHub Desktop
+
+#   ▄▄▄  ▄▄▄▄▄ ▄▄▄▄▄▄▄ ▄    ▄ ▄    ▄ ▄▄▄▄▄         ▄▄▄▄   ▄▄▄▄▄▄  ▄▄▄▄  ▄    ▄▄▄▄▄▄▄▄  ▄▄▄▄  ▄▄▄▄▄ 
+# ▄▀   ▀   █      █    █    █ █    █ █    █        █   ▀▄ █      █▀   ▀ █  ▄▀    █    ▄▀  ▀▄ █   ▀█
+# █   ▄▄   █      █    █▄▄▄▄█ █    █ █▄▄▄▄▀        █    █ █▄▄▄▄▄ ▀█▄▄▄  █▄█      █    █    █ █▄▄▄█▀
+# █    █   █      █    █    █ █    █ █    █        █    █ █          ▀█ █  █▄    █    █    █ █     
+#  ▀▄▄▄▀ ▄▄█▄▄    █    █    █ ▀▄▄▄▄▀ █▄▄▄▄▀        █▄▄▄▀  █▄▄▄▄▄ ▀▄▄▄█▀ █   ▀▄   █     █▄▄█  █     
+
+
 choixGithubDesktop=""
 
 while [[ "$choixGithubDesktop" != "y" && "$choixGithubDesktop" != "n" ]]; do
@@ -458,6 +579,13 @@ esac
 done
 
 # Choix install NordVPN
+
+# ▄▄   ▄  ▄▄▄▄  ▄▄▄▄▄  ▄▄▄▄          ▄    ▄ ▄▄▄▄▄  ▄▄   ▄
+# █▀▄  █ ▄▀  ▀▄ █   ▀█ █   ▀▄        ▀▄  ▄▀ █   ▀█ █▀▄  █
+# █ █▄ █ █    █ █▄▄▄▄▀ █    █         █  █  █▄▄▄█▀ █ █▄ █
+# █  █ █ █    █ █   ▀▄ █    █         ▀▄▄▀  █      █  █ █
+# █   ██  █▄▄█  █    ▀ █▄▄▄▀           ██   █      █   ██
+
 choixNordVPN=""
 
 while [[ "$choixNordVPN" != "y" && "$choixNordVPN" != "n" ]]; do
@@ -491,6 +619,13 @@ esac
 done
 
 # Obsidian et début de configuration de rclone
+
+#  ▄▄▄▄  ▄▄▄▄▄   ▄▄▄▄  ▄▄▄▄▄  ▄▄▄▄   ▄▄▄▄▄    ▄▄   ▄▄   ▄
+# ▄▀  ▀▄ █    █ █▀   ▀   █    █   ▀▄   █      ██   █▀▄  █
+# █    █ █▄▄▄▄▀ ▀█▄▄▄    █    █    █   █     █  █  █ █▄ █
+# █    █ █    █     ▀█   █    █    █   █     █▄▄█  █  █ █
+#  █▄▄█  █▄▄▄▄▀ ▀▄▄▄█▀ ▄▄█▄▄  █▄▄▄▀  ▄▄█▄▄  █    █ █   ██
+
 choixObsidian=""
 
 while [[ "$choixObsidian" != "y" && "$choixObsidian" != "n" ]]; do
@@ -534,6 +669,14 @@ esac
 done
 
 # Choix install Burp Suite
+
+# ▄▄▄▄▄  ▄    ▄ ▄▄▄▄▄  ▄▄▄▄▄          ▄▄▄▄  ▄    ▄ ▄▄▄▄▄ ▄▄▄▄▄▄▄ ▄▄▄▄▄▄
+# █    █ █    █ █   ▀█ █   ▀█        █▀   ▀ █    █   █      █    █     
+# █▄▄▄▄▀ █    █ █▄▄▄▄▀ █▄▄▄█▀        ▀█▄▄▄  █    █   █      █    █▄▄▄▄▄
+# █    █ █    █ █   ▀▄ █                 ▀█ █    █   █      █    █     
+# █▄▄▄▄▀ ▀▄▄▄▄▀ █    ▀ █             ▀▄▄▄█▀ ▀▄▄▄▄▀ ▄▄█▄▄    █    █▄▄▄▄▄
+
+
 choixBurpSuite=""
 
 while [[ "$choixBurpSuite" != "y" && "$choixBurpSuite" != "n" ]]; do
@@ -561,6 +704,13 @@ esac
 done
 
 # Choix install Vagrant
+
+# ▄    ▄   ▄▄     ▄▄▄  ▄▄▄▄▄    ▄▄   ▄▄   ▄▄▄▄▄▄▄▄
+# ▀▄  ▄▀   ██   ▄▀   ▀ █   ▀█   ██   █▀▄  █   █   
+#  █  █   █  █  █   ▄▄ █▄▄▄▄▀  █  █  █ █▄ █   █   
+#  ▀▄▄▀   █▄▄█  █    █ █   ▀▄  █▄▄█  █  █ █   █   
+#   ██   █    █  ▀▄▄▄▀ █    ▀ █    █ █   ██   █  
+
 choixVagrant=""
 
 while [[ "$choixVagrant" != "y" && "$choixVagrant" != "n" ]]; do
@@ -588,6 +738,13 @@ esac
 done
 
 # Choix install Ansible
+
+#   ▄▄   ▄▄   ▄  ▄▄▄▄  ▄▄▄▄▄  ▄▄▄▄▄  ▄      ▄▄▄▄▄▄
+#   ██   █▀▄  █ █▀   ▀   █    █    █ █      █     
+#  █  █  █ █▄ █ ▀█▄▄▄    █    █▄▄▄▄▀ █      █▄▄▄▄▄
+#  █▄▄█  █  █ █     ▀█   █    █    █ █      █     
+# █    █ █   ██ ▀▄▄▄█▀ ▄▄█▄▄  █▄▄▄▄▀ █▄▄▄▄▄ █▄▄▄▄▄
+
 choixAnsible=""
 
 while [[ "$choixAnsible" != "y" && "$choixAnsible" != "n" ]]; do
@@ -615,6 +772,14 @@ esac
 done
 
 # Choix install Metasploit
+
+# ▄    ▄ ▄▄▄▄▄▄▄▄▄▄▄▄▄   ▄▄    ▄▄▄▄  ▄▄▄▄▄  ▄       ▄▄▄▄  ▄▄▄▄▄ ▄▄▄▄▄▄▄
+# ██  ██ █        █      ██   █▀   ▀ █   ▀█ █      ▄▀  ▀▄   █      █   
+# █ ██ █ █▄▄▄▄▄   █     █  █  ▀█▄▄▄  █▄▄▄█▀ █      █    █   █      █   
+# █ ▀▀ █ █        █     █▄▄█      ▀█ █      █      █    █   █      █   
+# █    █ █▄▄▄▄▄   █    █    █ ▀▄▄▄█▀ █      █▄▄▄▄▄  █▄▄█  ▄▄█▄▄    █   
+
+
 # Lien : https://www.metasploit.com/
 choixMetasploit=""
 
@@ -650,6 +815,13 @@ esac
 done
 
 # Choix install The Harvester
+
+#▄▄▄▄▄▄▄ ▄    ▄ ▄▄▄▄▄▄        ▄    ▄   ▄▄   ▄▄▄▄▄  ▄    ▄ ▄▄▄▄▄▄  ▄▄▄▄ ▄▄▄▄▄▄▄ ▄▄▄▄▄▄ ▄▄▄▄▄ 
+#   █    █    █ █             █    █   ██   █   ▀█ ▀▄  ▄▀ █      █▀   ▀   █    █      █   ▀█
+#   █    █▄▄▄▄█ █▄▄▄▄▄        █▄▄▄▄█  █  █  █▄▄▄▄▀  █  █  █▄▄▄▄▄ ▀█▄▄▄    █    █▄▄▄▄▄ █▄▄▄▄▀
+#   █    █    █ █             █    █  █▄▄█  █   ▀▄  ▀▄▄▀  █          ▀█   █    █      █   ▀▄
+#   █    █    █ █▄▄▄▄▄        █    █ █    █ █    ▀   ██   █▄▄▄▄▄ ▀▄▄▄█▀   █    █▄▄▄▄▄ █    ▀
+
 # Lien : https://github.com/laramies/theHarvester
 # Lien : https://julien.io/retrouver-les-adresses-emails-avec-theharvester/
 choixTheHarvester=""
@@ -678,6 +850,13 @@ esac
 done
 
 # Choix install Sherlock
+
+#  ▄▄▄▄  ▄    ▄ ▄▄▄▄▄▄ ▄▄▄▄▄  ▄       ▄▄▄▄    ▄▄▄  ▄    ▄
+# █▀   ▀ █    █ █      █   ▀█ █      ▄▀  ▀▄ ▄▀   ▀ █  ▄▀ 
+# ▀█▄▄▄  █▄▄▄▄█ █▄▄▄▄▄ █▄▄▄▄▀ █      █    █ █      █▄█   
+#     ▀█ █    █ █      █   ▀▄ █      █    █ █      █  █▄ 
+# ▀▄▄▄█▀ █    █ █▄▄▄▄▄ █    ▀ █▄▄▄▄▄  █▄▄█   ▀▄▄▄▀ █   ▀▄
+
 # Lien : https://github.com/sherlock-project/sherlock
 # Lien : https://www.geeek.org/sherlock-securite-linux/
 choixSherlock=""
@@ -709,6 +888,13 @@ esac
 done
 
 # Choix install Holehe
+
+# ▄    ▄  ▄▄▄▄  ▄      ▄▄▄▄▄▄ ▄    ▄ ▄▄▄▄▄▄
+# █    █ ▄▀  ▀▄ █      █      █    █ █     
+# █▄▄▄▄█ █    █ █      █▄▄▄▄▄ █▄▄▄▄█ █▄▄▄▄▄
+# █    █ █    █ █      █      █    █ █     
+# █    █  █▄▄█  █▄▄▄▄▄ █▄▄▄▄▄ █    █ █▄▄▄▄▄
+
 # Lien : https://github.com/megadose/holehe?tab=readme-ov-file
 choixHolehe=""
 
@@ -736,6 +922,14 @@ esac
 done
 
 # Choix install SQLmap
+
+#  ▄▄▄▄   ▄▄▄▄  ▄      ▄    ▄   ▄▄   ▄▄▄▄▄ 
+# █▀   ▀ ▄▀  ▀▄ █      ██  ██   ██   █   ▀█
+# ▀█▄▄▄  █    █ █      █ ██ █  █  █  █▄▄▄█▀
+#     ▀█ █    █ █      █ ▀▀ █  █▄▄█  █     
+# ▀▄▄▄█▀  █▄▄█▀ █▄▄▄▄▄ █    █ █    █ █     
+#            █                             
+
 # Lien : https://github.com/sqlmapproject/sqlmap
 choixSQLmap=""
 
@@ -762,6 +956,13 @@ esac
 done
 
 # Choix install Aperi'solve
+
+#   ▄▄   ▄▄▄▄▄  ▄▄▄▄▄▄ ▄▄▄▄▄  ▄▄▄▄▄   ▄▄▄▄   ▄▄▄▄  ▄      ▄    ▄ ▄▄▄▄▄▄
+#   ██   █   ▀█ █      █   ▀█   █    █▀   ▀ ▄▀  ▀▄ █      ▀▄  ▄▀ █     
+#  █  █  █▄▄▄█▀ █▄▄▄▄▄ █▄▄▄▄▀   █    ▀█▄▄▄  █    █ █       █  █  █▄▄▄▄▄
+#  █▄▄█  █      █      █   ▀▄   █        ▀█ █    █ █       ▀▄▄▀  █     
+# █    █ █      █▄▄▄▄▄ █    ▀ ▄▄█▄▄  ▀▄▄▄█▀  █▄▄█  █▄▄▄▄▄   ██   █▄▄▄▄▄
+
 # Lien : https://github.com/Zeecka/AperiSolve
 choixAperisolve=""
 
@@ -786,6 +987,13 @@ esac
 done
 
 # Choix install Kitty Terminal
+
+# ▄    ▄ ▄▄▄▄▄ ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄     ▄       ▄▄▄▄▄▄▄ ▄▄▄▄▄▄ ▄▄▄▄▄  ▄    ▄ ▄▄▄▄▄  ▄▄   ▄   ▄▄   ▄     
+# █  ▄▀    █      █      █    ▀▄ ▄▀           █    █      █   ▀█ ██  ██   █    █▀▄  █   ██   █     
+# █▄█      █      █      █     ▀█▀            █    █▄▄▄▄▄ █▄▄▄▄▀ █ ██ █   █    █ █▄ █  █  █  █     
+# █  █▄    █      █      █      █             █    █      █   ▀▄ █ ▀▀ █   █    █  █ █  █▄▄█  █     
+# █   ▀▄ ▄▄█▄▄    █      █      █             █    █▄▄▄▄▄ █    ▀ █    █ ▄▄█▄▄  █   ██ █    █ █▄▄▄▄▄
+
 # Lien : https://sw.kovidgoyal.net/kitty/overview/#other-keyboard-shortcuts
 choixKittyTerminal=""
 
@@ -911,6 +1119,14 @@ esac
 done
 
 # Choix install Zsh
+
+# ▄▄▄▄▄▄  ▄▄▄▄  ▄    ▄          ▄▄▄          ▄▄▄▄  ▄    ▄ ▄    ▄▄     ▄ ▄▄▄▄▄▄  ▄▄▄▄  ▄    ▄
+#     █▀ █▀   ▀ █    █         █            ▄▀  ▀▄ █    █ ██  ██ ▀▄ ▄▀      █▀ █▀   ▀ █    █
+#   ▄█   ▀█▄▄▄  █▄▄▄▄█         ██           █    █ █▄▄▄▄█ █ ██ █  ▀█▀     ▄█   ▀█▄▄▄  █▄▄▄▄█
+#  ▄▀        ▀█ █    █        █  █▄█        █    █ █    █ █ ▀▀ █   █     ▄▀        ▀█ █    █
+# ██▄▄▄▄ ▀▄▄▄█▀ █    █        ▀█▄▄█▄         █▄▄█  █    █ █    █   █    ██▄▄▄▄ ▀▄▄▄█▀ █    █
+
+
 #Lien : https://github.com/ohmyzsh/ohmyzsh
 choixZsh=""
 
@@ -926,14 +1142,45 @@ case $choixZsh in
 		chsh -s $(which zsh)
 		sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 		cp -f ~/.zshrc  ~/.zshrc.ori
-		cp -f ./Necessary/zsh/.zshrc-perso  ~/.zshrc
+		cp -f ./Necessary/zsh/.zshrc_perso  ~/.zshrc
 		source ~/.zschrc
 		git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
 		git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
 		git clone https://github.com/zsh-users/zsh-completions ~/.oh-my-zsh/custom/plugins/zsh-completions
 		source ~/.zshrc
-		notify-send "Zsh et ohmyzsh on été installé" -t 2000
+		notify-send "Zsh et ohmyzsh ont été installé" -t 2000
 		notify-send "une fermeture de session sera nécessaire" -t 2000
+        cd
+    n)  # Si le choix est non)
+        echo "Vous avez choisi de ne pas installer Zsh"
+        ;;
+    *)  # Si aucun choix ne correspond)
+        echo "Ta pas fait le bon choix Maurice (Attention à la casse)"
+        ;;
+esac
+done
+
+# Choix install Exa
+
+# ▄▄▄▄▄▄ ▄    ▄   ▄▄  
+# █       █  █    ██  
+# █▄▄▄▄▄   ██    █  █ 
+# █       ▄▀▀▄   █▄▄█ 
+# █▄▄▄▄▄ ▄▀  ▀▄ █    █
+
+#Lien : https://github.com/ogham/exa
+choixExa=""
+
+while [[ "$choixExa" != "y" && "$choixExa" != "n" ]]; do
+echo "Voulez-vous installer Exa ? ( y  /  n ) :"
+echo "Pour information : https://github.com/ogham/exa"
+read choixExa
+
+case $choixExa in
+    y)  # Si le choix est oui)
+        cd
+        sudo apt install exa -y
+        cd
     n)  # Si le choix est non)
         echo "Vous avez choisi de ne pas installer Zsh"
         ;;
@@ -944,6 +1191,13 @@ esac
 done
 
 # Choix install Agg (Générateur de Gif pour asciinema)
+
+#   ▄▄     ▄▄▄    ▄▄▄ 
+#   ██   ▄▀   ▀ ▄▀   ▀
+#  █  █  █   ▄▄ █   ▄▄
+#  █▄▄█  █    █ █    █
+# █    █  ▀▄▄▄▀  ▀▄▄▄▀
+
 #Lien : https://github.com/asciinema/agg
 choixAgg=""
 
@@ -971,6 +1225,13 @@ esac
 done
 
 # Choix Lazy Docker
+
+# ▄        ▄▄   ▄▄▄▄▄▄▄     ▄ ▄▄▄▄    ▄▄▄▄    ▄▄▄  ▄    ▄ ▄▄▄▄▄▄ ▄▄▄▄▄ 
+# █        ██       █▀ ▀▄ ▄▀  █   ▀▄ ▄▀  ▀▄ ▄▀   ▀ █  ▄▀  █      █   ▀█
+# █       █  █    ▄█    ▀█▀   █    █ █    █ █      █▄█    █▄▄▄▄▄ █▄▄▄▄▀
+# █       █▄▄█   ▄▀      █    █    █ █    █ █      █  █▄  █      █   ▀▄
+# █▄▄▄▄▄ █    █ ██▄▄▄▄   █    █▄▄▄▀   █▄▄█   ▀▄▄▄▀ █   ▀▄ █▄▄▄▄▄ █    ▀
+
 #Lien : https://github.com/jesseduffield/lazydocker
 choixLazyDocker=""
 
@@ -1003,6 +1264,13 @@ esac
 done
 
 # Choix PET
+
+# ▄▄▄▄▄  ▄▄▄▄▄▄▄▄▄▄▄▄▄
+# █   ▀█ █        █   
+# █▄▄▄█▀ █▄▄▄▄▄   █   
+# █      █        █   
+# █      █▄▄▄▄▄   █   
+
 choixPet=""
 
 while [[ "$choixPet" != "y" && "$choixPet" != "n" ]]; do
@@ -1037,39 +1305,14 @@ case $choixPet in
 esac
 done
 
-# Choix Lazy Docker
-#Lien : https://github.com/jesseduffield/lazydocker
-choixLazyDocker=""
-
-while [[ "$choixLazyDocker" != "y" && "$choixLazyDocker" != "n" ]]; do
-echo "Voulez-vous installer Lazy Docker ? ( y  /  n ) :"
-echo "Pour information : https://github.com/jesseduffield/lazydocker"
-read choixLazyDocker
-
-case $choixLazyDocker in
-    y)  # Si le choix est oui)
-        curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash
-    
-        #=============== Mettre kitty en terminal par defaut ==================
-        # sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator ~/.local/kitty.app/bin/kitty 50
-        # sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator $(which kitty) 50
-        # sudo update-alternatives --config x-terminal-emulator
-        # Puis selectionner le terminal kitty
-        # gsettings set org.gnome.desktop.default-applications.terminal exec kitty
-        # gsettings set org.gnome.desktop.default-applications.terminal exec /home/$USER/.local/kitty.app/bin/kitty
-
-    cd
-        ;;
-    n)  # Si le choix est non)
-        echo "Vous avez choisi de ne pas installer Lazy Docker"
-        ;;
-    *)  # Si aucun choix ne correspond)
-        echo "Ta pas fait le bon choix Maurice (Attention à la casse)"
-        ;;
-esac
-done
-
 # Choix DCV
+
+# ▄▄▄▄     ▄▄▄  ▄    ▄
+# █   ▀▄ ▄▀   ▀ ▀▄  ▄▀
+# █    █ █       █  █ 
+# █    █ █       ▀▄▄▀ 
+# █▄▄▄▀   ▀▄▄▄▀   ██  
+
 # Lien : https://github.com/tokuhirom/dcv
 choixdcv=""
 
@@ -1097,6 +1340,13 @@ esac
 done
 
 # Choix Arsenal
+
+#   ▄▄   ▄▄▄▄▄   ▄▄▄▄  ▄▄▄▄▄▄ ▄▄   ▄   ▄▄   ▄     
+#   ██   █   ▀█ █▀   ▀ █      █▀▄  █   ██   █     
+#  █  █  █▄▄▄▄▀ ▀█▄▄▄  █▄▄▄▄▄ █ █▄ █  █  █  █     
+#  █▄▄█  █   ▀▄     ▀█ █      █  █ █  █▄▄█  █     
+# █    █ █    ▀ ▀▄▄▄█▀ █▄▄▄▄▄ █   ██ █    █ █▄▄▄▄▄
+
 choixArsenal=""
 
 while [[ "$choixArsenal" != "y" && "$choixArsenal" != "n" ]]; do
@@ -1130,6 +1380,13 @@ esac
 done
 
 # Choix Bashrc
+
+# ▄▄▄▄▄    ▄▄    ▄▄▄▄  ▄    ▄        ▄▄▄▄▄    ▄▄▄ 
+# █    █   ██   █▀   ▀ █    █        █   ▀█ ▄▀   ▀
+# █▄▄▄▄▀  █  █  ▀█▄▄▄  █▄▄▄▄█        █▄▄▄▄▀ █     
+# █    █  █▄▄█      ▀█ █    █        █   ▀▄ █     
+# █▄▄▄▄▀ █    █ ▀▄▄▄█▀ █    █        █    ▀  ▀▄▄▄▀
+
 choixBashRc=""
 
 while [[ "$choixBashRc" != "y" && "$choixBashRc" != "n" ]]; do
@@ -1196,6 +1453,13 @@ esac
 done
 
 # Choix tgpt
+
+#▄▄▄▄▄▄▄   ▄▄▄  ▄▄▄▄▄ ▄▄▄▄▄▄▄
+#   █    ▄▀   ▀ █   ▀█   █   
+#   █    █   ▄▄ █▄▄▄█▀   █   
+#   █    █    █ █        █   
+#   █     ▀▄▄▄▀ █        █   
+
 choixTgpt=""
 
 while [[ "$choixTgpt" != "y" && "$choixTgpt" != "n" ]]; do
@@ -1222,6 +1486,13 @@ esac
 done
 
 # Choix Ninja Binary
+
+# ▄▄   ▄ ▄▄▄▄▄  ▄▄   ▄   ▄▄▄    ▄▄          ▄▄▄▄▄  ▄▄▄▄▄  ▄▄   ▄   ▄▄   ▄▄▄▄▄ ▄     ▄
+# █▀▄  █   █    █▀▄  █     █    ██          █    █   █    █▀▄  █   ██   █   ▀█ ▀▄ ▄▀ 
+# █ █▄ █   █    █ █▄ █     █   █  █         █▄▄▄▄▀   █    █ █▄ █  █  █  █▄▄▄▄▀  ▀█▀  
+# █  █ █   █    █  █ █     █   █▄▄█         █    █   █    █  █ █  █▄▄█  █   ▀▄   █   
+# █   ██ ▄▄█▄▄  █   ██ ▀▄▄▄▀  █    █        █▄▄▄▄▀ ▄▄█▄▄  █   ██ █    █ █    ▀   █   
+
 choixNinjaBinary=""
 
 while [[ "$choixNinjaBinary" != "y" && "$choixNinjaBinary" != "n" ]]; do
@@ -1248,6 +1519,13 @@ done
 
 
 # Choix Ssh List
+
+#  ▄▄▄▄   ▄▄▄▄  ▄    ▄        ▄      ▄▄▄▄▄   ▄▄▄▄ ▄▄▄▄▄▄▄
+# █▀   ▀ █▀   ▀ █    █        █        █    █▀   ▀   █   
+# ▀█▄▄▄  ▀█▄▄▄  █▄▄▄▄█        █        █    ▀█▄▄▄    █   
+#     ▀█     ▀█ █    █        █        █        ▀█   █   
+# ▀▄▄▄█▀ ▀▄▄▄█▀ █    █        █▄▄▄▄▄ ▄▄█▄▄  ▀▄▄▄█▀   █   
+
 # Lien : https://github.com/akinoiro/ssh-list
 choixSshList=""
 
@@ -1276,6 +1554,13 @@ esac
 done
 
 # Choix création des raccourcis clavier
+
+# ▄▄▄▄▄    ▄▄     ▄▄▄    ▄▄▄   ▄▄▄▄  ▄    ▄ ▄▄▄▄▄    ▄▄▄  ▄▄▄▄▄   ▄▄▄▄           ▄▄▄  ▄        ▄▄   ▄    ▄ ▄▄▄▄▄  ▄▄▄▄▄▄ ▄▄▄▄▄ 
+# █   ▀█   ██   ▄▀   ▀ ▄▀   ▀ ▄▀  ▀▄ █    █ █   ▀█ ▄▀   ▀   █    █▀   ▀        ▄▀   ▀ █        ██   ▀▄  ▄▀   █    █      █   ▀█
+# █▄▄▄▄▀  █  █  █      █      █    █ █    █ █▄▄▄▄▀ █        █    ▀█▄▄▄         █      █       █  █   █  █    █    █▄▄▄▄▄ █▄▄▄▄▀
+# █   ▀▄  █▄▄█  █      █      █    █ █    █ █   ▀▄ █        █        ▀█        █      █       █▄▄█   ▀▄▄▀    █    █      █   ▀▄
+# █    ▀ █    █  ▀▄▄▄▀  ▀▄▄▄▀  █▄▄█  ▀▄▄▄▄▀ █    ▀  ▀▄▄▄▀ ▄▄█▄▄  ▀▄▄▄█▀         ▀▄▄▄▀ █▄▄▄▄▄ █    █   ██   ▄▄█▄▄  █▄▄▄▄▄ █    ▀
+
 choixRaccourcisClavier=""
 
 while [[ "$choixRaccourcisClavier" != "y" && "$choixRaccourcisClavier" != "n" ]]; do
@@ -1361,6 +1646,13 @@ cd
 rm .sudo_as_admin_successful
 
 # Choix Logoff
+
+# ▄       ▄▄▄▄    ▄▄▄   ▄▄▄▄  ▄▄▄▄▄▄ ▄▄▄▄▄▄
+# █      ▄▀  ▀▄ ▄▀   ▀ ▄▀  ▀▄ █      █     
+# █      █    █ █   ▄▄ █    █ █▄▄▄▄▄ █▄▄▄▄▄
+# █      █    █ █    █ █    █ █      █     
+# █▄▄▄▄▄  █▄▄█   ▀▄▄▄▀  █▄▄█  █      █     
+
 choixLogoff=""
 
 while [[ "$choixLogoff" != "y" && "$choixLogoff" != "n" ]]; do

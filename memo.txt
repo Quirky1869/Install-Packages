@@ -960,10 +960,12 @@ alias dns="nmcli device show | grep IP4.DNS" # S'appui sur network-manager
 alias ipls="netplan status" # S'appui sur iproute2
 alias metasploit="msfconsole" # S'appui sur metasploit-framework
 alias bat="batcat"
+
 alias logoff="skill -KILL -u $USER" # S'appui sur procps
 alias getuser="cut -d: -f1 /etc/passwd" # s'appui sur cut
 alias pythonserver="sudo python3 -m http.server" # S'appui sur python3
 alias service="systemctl list-units --type=service" # S'appui sur systemctl
+
 alias allservice="systemctl list-units --type=service --all" # S'appui sur systemctl
 alias servicesystemd="systemctl list-unit-files" # S'appui sur systemd
 alias whatfilemanager="xdg-mime query default inode/directory"
@@ -973,8 +975,10 @@ alias ninja="/home/$USER/Public/binaryninja/binaryninja"
 alias docker="sudo docker"
 alias docksh="docker exec -it"
 alias lazydocker="/home/$USER/.local/bin/lazydocker" # S'appui sur LazyDocker
-alias volatility="python3 ~/Public/volatility3/vol.py"
-alias compiler="~/Documents/Scripts/compiler.sh"
+
+#alias volatility="python3 ~/Public/volatility3/vol.py"
+#alias compiler="~/Documents/Scripts/compiler.sh"
+alias e="exa -alFhg"
 
 
 #alias aircrack-ng="sudo aircrack-ng"
