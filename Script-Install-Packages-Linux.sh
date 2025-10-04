@@ -910,6 +910,39 @@ EOF
 esac
 done
 
+# Choix install Zsh
+#Lien : https://github.com/ohmyzsh/ohmyzsh
+choixZsh=""
+
+while [[ "$choixZsh" != "y" && "$choixZsh" != "n" ]]; do
+echo "Voulez-vous installer Zsh ? ( y  /  n ) :"
+echo "Pour information : https://github.com/ohmyzsh/ohmyzsh"
+read choixZsh
+
+case $choixZsh in
+    y)  # Si le choix est oui)
+        cd
+        sudo apt install -y zsh git curl
+		chsh -s $(which zsh)
+		sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+		cp -f ~/.zshrc  ~/.zshrc.ori
+		cp -f ./Necessary/zsh/.zshrc-perso  ~/.zshrc
+		source ~/.zschrc
+		git clone https://github.com/zsh-users/zsh-autosuggestions ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions
+		git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting
+		git clone https://github.com/zsh-users/zsh-completions ~/.oh-my-zsh/custom/plugins/zsh-completions
+		source ~/.zshrc
+		notify-send "Zsh et ohmyzsh on été installé" -t 2000
+		notify-send "une fermeture de session sera nécessaire" -t 2000
+    n)  # Si le choix est non)
+        echo "Vous avez choisi de ne pas installer Zsh"
+        ;;
+    *)  # Si aucun choix ne correspond)
+        echo "Ta pas fait le bon choix Maurice (Attention à la casse)"
+        ;;
+esac
+done
+
 # Choix install Agg (Générateur de Gif pour asciinema)
 #Lien : https://github.com/asciinema/agg
 choixAgg=""
