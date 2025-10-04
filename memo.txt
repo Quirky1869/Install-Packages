@@ -1,3 +1,6 @@
+################################ ASCII ART ################################
+Mono 9
+ASNI SHADOW
 ################################ MEMO ################################
 suppr : recon-ng gpaint netcat -> sudo apt-get install netcat-traditional        ou            sudo apt-get install netcat-openbsd
 
