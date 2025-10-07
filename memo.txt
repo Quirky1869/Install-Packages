@@ -6,7 +6,7 @@ suppr : recon-ng gpaint netcat -> sudo apt-get install netcat-traditional       
 
 # Lien custom terminal : https://gist.github.com/justintv/168835     ;      https://www.it-connect.fr/linux-afficher-la-branche-git-dans-le-prompt/
 
-################################ RESTE A FAIRE ################################ 
+################################ OBSIDIAN ################################ 
 
 # !!!!!!!    Avant de configurer rclone assurez-vous d'ouvrir obsidian une 1ere fois et selectionner comme coffre à ouvrir ~/Obsidian_Vault    !!!!!!! #
 
@@ -46,8 +46,19 @@ Faite de Google Chrome votre navigateur par defaut (en le lançant une fenetre d
 # Si on veux télécharger les fichiers/dossiers de google-drive vers notre pc alors il faut taper :
 rclone sync Google-drive:/Obsidian-Google-Drive /home/$USER/Obsidian_Vault/
 
+!!!!!!!!!!!!
+# Bonnes pratiques obsidian
 
-# !!!!!!! Pour faire une tache au demmarage avec cron !!!!!!! #
+# Activer les modules -> paramètres -> Modules complémentaires -> activé
+# Rechercher Excalidraw et l'installer + installer les plugins de logo
+
+# Dans Paramètres -> fichiers et liens -> chemin du dossier des pièces jointes -> "Dans le dossier spécifié ci-dessous" -> selectionner un dossier créer 
+
+# Dans Paramètres -> Apparence installé les themes voulu si cela n'est pas deja fait
+
+# Les logos pour excalidraw sont stockés dans "/home/$USER/Documents/Excalidraw"
+
+################################ CRONTAB ################################
 
 # Faire "crontab -e"
 # Dans le nano qui s'ouvre taper "@reboot bash /usr/local/bin/synchro-google-drive-to-pc-obsidian.sh"
@@ -70,19 +81,6 @@ Y Tiles : 6
 
 
 # Pour changer le bashrc faite un : cp -f <.bashrc_voulu> .bashrc
-
-#################### OBSIDIAN ########################
-
-# Bonnes pratiques obsidian
-
-# Activer les modules -> paramètres -> Modules complémentaires -> activé
-# Rechercher Excalidraw et l'installer + installer les plugins de logo
-
-# Dans Paramètres -> fichiers et liens -> chemin du dossier des pièces jointes -> "Dans le dossier spécifié ci-dessous" -> selectionner un dossier créer 
-
-# Dans Paramètres -> Apparence installé les themes voulu si cela n'est pas deja fait
-
-# Les logos pour excalidraw sont stockés dans "/home/$USER/Documents/Excalidraw"
 
 #################### NOTIFY-SEND ########################
 
@@ -153,10 +151,9 @@ pass init <your_generated_gpg-id_public_key>  (où "your_generated_gpg-id_public
 ####################### YT Downloader #######################
 
 https://github.com/yt-dlp/yt-dlp            -            https://pypi.org/project/yt-dlp/
-https://github.com/aandrew-me/ytDownloader
+https://github.com/aandrew-me/ytDownloader             -             https://stacher.io/
 
 ####################### CURSORS #####################
-
 
 OREO CURSORS :
 https://www.pling.com/p/1360254/
@@ -176,13 +173,13 @@ Pour vs code (.md)
     "when": "editorTextFocus"
 }
 
-##################### MICRO #######################
+####################### MICRO #######################
 micro :
 Changer le type de colorisation dans micro
 `crtl + e`
 `set filetype shell`
 
-##################### KITTY TERMINAL #######################
+####################### KITTY TERMINAL #######################
 Lien Kitty Terminal:
 https://sw.kovidgoyal.net/kitty/overview/#other-keyboard-shortcuts
 
@@ -279,12 +276,8 @@ git clone https://github.com/kovidgoyal/kitty-themes.git
 # Juste pour info : un theme dracula est disponible
 # https://github.com/dracula/kitty
 
+####################### Mettre kitty en terminal par defaut #######################
 
-===================== Lazy Docker ==================
-# https://github.com/jesseduffield/lazydocker
-curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash
-
-=============== Mettre kitty en terminal par defaut ==================
 # sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator ~/.local/kitty.app/bin/kitty 50
 # sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator $(which kitty) 50
 # sudo update-alternatives --config x-terminal-emulator
@@ -292,11 +285,11 @@ curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/i
 # gsettings set org.gnome.desktop.default-applications.terminal exec kitty
 # gsettings set org.gnome.desktop.default-applications.terminal exec /home/$USER/.local/kitty.app/bin/kitty
 
+####################### Lazy Docker #######################
+# https://github.com/jesseduffield/lazydocker
+curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/install_update_linux.sh | bash
 
-
-
-
-=============== noir obscur =================
+####################### noir obscur #######################
 # https://github.com/Stunkymonkey/nautilus-open-any-terminal/tree/master
 # 
 # sudo apt install python3-nautilus gir1.2-gtk-4.0
@@ -305,7 +298,7 @@ curl https://raw.githubusercontent.com/jesseduffield/lazydocker/master/scripts/i
 # sudo glib-compile-schemas /usr/share/glib-2.0/schemas
 
 
-============== noir obscur mais 2 ===============
+####################### noir obscur mais 2 #######################
 # https://github.com/bassmanitram/actions-for-nautilus
 # sudo apt install -y python3-nautilus python3-gi procps libjs-jquery
 # git clone https://github.com/bassmanitram/actions-for-nautilus.git
@@ -332,7 +325,7 @@ sudo apt update -y && sudo apt install fzf -y
 
 !!! TERMINAL ZSH !!!
 
-========== A la mano ===============
+=============== A la mano ===============
 sudo apt update -y (sudo apt update -y --fix-missing)
 sudo apt install zsh git curl
 
@@ -345,7 +338,7 @@ chsh -s $(which zsh)    OU     "which zsh"      puis  "chsh -s /usr/bin/zsh"
 ### install oh-my-zsh ###
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
-=========== Dans le script =============
+=============== Dans le script =============
 - sudo apt update -y (sudo apt update -y --fix-missing)
 - sudo apt install zsh git curl
 - chsh -s $(which zsh)
@@ -1094,7 +1087,6 @@ battery_percentage=$(upower -i /org/freedesktop/UPower/devices/battery_BAT0 | gr
 # Afficher le pourcentage de la batterie
 echo "Pourcentage de la batterie : $battery_percentage%"🔋
 
-
 ############################################
 
 # Fonction pour lancer Chrome avec une IP personnalisable dans le ~/.zshrc
@@ -1108,4 +1100,3 @@ chrome-ip() {
 }
 
 ############################################
-
