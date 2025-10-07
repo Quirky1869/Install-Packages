@@ -25,8 +25,7 @@ Install-packages est conçu pour pouvoir installer rapidement et facilement plus
 - Si vous décidez de copier les `.bashrc`, un fichier .bashrc.ori est créé à côté du .bashrc, ils intègrent des petits changements sur le prompt (pour changer de `.bashrc` lancer la commande `cp -f <~/.bashrc_voulu> .bashrc` et relancer le prompt ou lancer un `source ~/.bashrc`) :<br>
 1 - Un changement visuel pour chaque `.bashrc_*`<br>  
 
-| Neon (~/.bashrc_neon) ![Static Badge](https://img.shields.io/badge/Neon-Terminal-cyan)
- | Japan (~/.bashrc_japan) |
+| Neon (~/.bashrc_neon) ![Static Badge](https://img.shields.io/badge/Neon-Terminal-cyan) | Japan (~/.bashrc_japan) |
 | :----------------: | :----------------: |
 | ![Neon](./Necessary/Images/Neon.png) | ![Japan](./Necessary/Images/japan.png)|
 
