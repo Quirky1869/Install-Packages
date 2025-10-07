@@ -18,12 +18,11 @@ Install-packages est conçu pour pouvoir installer rapidement et facilement plus
 
 # Informations
 
-- Si votre ordinateur est en anglais, il faut changer la variable "varDownload" au début du .sh
 - Certaines installations durant le script ont besoin d'une fermeture de session (elle est prévu en fin de script), veuillez effectuer la fermeture de session avant d'essayer un packages, applis ...
 - Si vous décider d'installer rclone, les 2 fichiers présents dans "./Necessary/Obsidian-rclone" sont à modifier ; les chemins se nommant "Google-drive:/Obsidian-Google-Drive" et "/home/$USER/Obsidian_Vault/" vous sont personnels, ils dépendent des dossiers de votre pc et des dossiers de votre google-drive
 - Un fichier log se nommant `Script-Install-Packages-Linux.sh.log` est créé dans `/var/log/`
-- Si vous décidez de copier les `.bashrc`, un fichier .bashrc.ori est créé à côté du .bashrc, ils intègrent des petits changements sur le prompt (pour changer de `.bashrc` lancer la commande `cp -f <~/.bashrc_voulu> .bashrc` et relancer le prompt ou lancer un `source ~/.bashrc`) :<br>
-1 - Un changement visuel pour chaque `.bashrc_*`<br>  
+- Si vous décidez de copier les `.bashrc`, un fichier .bashrc.ori est créé à côté du .bashrc, ils intègrent des petits changements sur le prompt (pour changer de `.bashrc` lancer la commande `cp -f <~/.bashrc_voulu> .bashrc` et relancer le prompt ou lancer un `source ~/.bashrc`) :  
+1 - Un changement visuel pour chaque `.bashrc_*`   
 
 | Neon (~/.bashrc_neon) | Japan (~/.bashrc_japan) |
 | :----------------: | :----------------: |
