@@ -1,5 +1,9 @@
 ![image](./Necessary/Images/Linux.png)  
 
+![Static Badge](https://img.shields.io/badge/Ubuntu-22.04-300A25)
+![Static Badge](https://img.shields.io/badge/Install-Packages-cyan)
+[![License](https://img.shields.io/github/license/Quirky1869/Install-Packages?color=8A2BE2)](https://github.com/Quirky1869/Install-Packages/blob/python/LICENSE)
+
 # README
 
 **Veuillez lire tout le readme.md svp**  
