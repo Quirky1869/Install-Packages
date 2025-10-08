@@ -183,7 +183,7 @@
   Description = "docker, permet de supprimer tout les containers docker"
   Output = ""
   Tag = ["docker"]
-  command = "docker rm $(docker ps -aq)"
+  command = "docker rm -f $(docker ps -aq)"
 
 [[Snippets]]
   Description = "xfreerdp, permet de prendre la main en RDP"
